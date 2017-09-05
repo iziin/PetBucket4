@@ -19,7 +19,6 @@ namespace PetBucket4.Controllers
 
         public ActionResult Index()
         {
-            ViewData.Model = _db.Pets.ToList();
             return View();
         }
 
