@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-5 login-window">
+            <h1>Login</h1>
+            <form>
+                <p>
+                    Username/Email: <br/>
+                    <input type="text" name="username"/>
+                </p>
+                <p>
+                    Password: 
+                    <br />
+                    <input type="text" name="password"/> 
+                </p>
+                <p>
+                    <input type="submit" value="Login" />
+                </p>
+            </form>
+            <p>
+                <a href="#">Click here</a> if you've forgotten your username, email or password.
+            </p>
+            <p>
+                Don't have an account? @Html.ActionLink("Click Here", "Register", "Home") to create one!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
