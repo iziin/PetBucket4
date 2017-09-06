@@ -4,5 +4,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Booking</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-5 login-window">
+            <h1>Booking</h1>
+
+            <form method="post" action="#" id="booking-form">
+                <p>
+                    Name of Pet:
+                    <br />
+                    <input type="text" name="pet-name" id="pet-name-txt" />
+                </p>
+                <p>
+                    Type of Pet:
+                    <br/>
+                    <select name="pet" id="pet-select">
+                        <option value="dog" id="dog-select">Dog</option>
+                        <option value="cat" id="cat-select">Cat</option>
+                        <option value="bird" id="bird-select">Bird</option>
+                        <option value="reptile" id="reptile-select">Reptile</option>
+                        <option value="rodent" id="rodent-select">Rodent</option>
+                    </select>
+                </p>
+                <p>
+                    Drop Off Date: <br />
+                    <input type="datetime-local" id="drop-off-date" name="drop-off-date" />
+                </p>
+                <p>
+                    Pick-Up Date:
+                    <br />
+                    <input type="datetime-local" id="pick-up-date" name="pick-up-date" />
+                </p>
+                <p>
+                    Service:
+                    <br />
+                    <select name="service" id="service-select">
+                        <option value="Basic" id="basic-select">Basic</option>
+                        <option value="Standard" id="standard-select">Standard</option>
+                        <option value="Premium" id="premium-select">Premium</option>
+                        <option value="To-Your-Door" id="to-your-door-select">To-Your-Door</option>
+                    </select>
+                </p>
+                <input type="submit" value="Booking" id="submit-booking" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
 
