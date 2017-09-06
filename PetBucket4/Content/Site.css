@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("../Images/dog2.jpg");
+    background-size: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +23,13 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+.logo {
+    height: 75px;
+}
+
+.login-list {
+    float: right;
 }

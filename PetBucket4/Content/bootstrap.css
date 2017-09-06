@@ -4058,8 +4058,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-header:before,
 .navbar-header:after {
-  display: table;
-  content: " ";
+    display: table;
+    content: "navbar-header ";
 }
 
 .navbar-header:after {

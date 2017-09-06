@@ -29,10 +29,30 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Booking()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Booking Page.";
 
+            return View();
+        }
+
+        public ActionResult Community()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult Services()
+        {
             return View();
         }
     }
