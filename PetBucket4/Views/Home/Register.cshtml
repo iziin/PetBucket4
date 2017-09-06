@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-5 login-window">
+            <h1>Register</h1>
+
+            <form method="post" action="#" id="register-form">
+                <p>
+                    First Name: <br />
+                    <input type="text" name="f-name" id="f-name-txt" />
+                </p>
+                <p>
+                    Last Name:
+                    <br />
+                    <input type="text" name="l-name" id="l-name-txt" />
+                </p>
+                <p>
+                    Email Address:
+                    <br />
+                    <input type="text" name="email-address" id="email-address-txt" />
+                </p>
+                <p>
+                    Confirm Email Address:
+                    <br />
+                    <input type="text" name="con-email-address" id="con-email-address-txt" />
+                </p>
+                <p>
+                    Home Phone (if applicable): <br />
+                    <input type="text" name="h-phone" id="h-phone-txt" />
+                </p>
+                <p>
+                    Mobile Phone (if applicable): <br />
+                    <input type="text" name="m-phone" id="m-phone-txt" />
+                </p>
+                <p>
+                    Address: <br/>
+                    <input type="text" name="address" id="address-txt" />
+                </p>
+                <p>
+                    Age: <br />
+                    <input type="text" name="age" id="age-txt" />
+                </p>
+                <p>
+                    Sex: <br />
+                    <select name="sex" id="sex-select">
+                        <option value="Other" id="other-select">Other</option>
+                        <option value="Male" id="male-select">Male</option>
+                        <option value="Female" id="female-select">Female</option>
+                    </select>
+                </p>
+                <p>
+                    Emergency Contact Name: <br/>
+                    <input type="text" name="ec-name" id="ec-name-txt" />
+                </p>
+                <p>
+                    Emergency Contact Number: <br />
+                    <input type="text" name="ec-number" id="ec-number-txt" />
+                </p>
+                <p>
+                    Password: <br />
+                    <input type="text" name="new-password" id="new-password-txt" />
+                </p>
+                <p>
+                    Confirm Password: <br />
+                    <input type="text" name="con-new-password" id="con-new-password" />
+                </p>
+                <p>
+                    <input type="submit" value="Register" id="submit-register" />
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
