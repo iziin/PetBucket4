@@ -41,17 +41,40 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-
         public ActionResult Register()
         {
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(Customer U)
+        {
+            if(ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    db.Customers.Add(U);
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    U = null;
+                    ViewBag.Message = "Successfully Registration Complete";
+                }
+            }
+            return View();
+        }
+
         public ActionResult Services()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult UserDashBoard()
         {
             return View();
         }

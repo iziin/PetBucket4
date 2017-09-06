@@ -1,9 +1,13 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@{
+    ViewBag.Title = "Login";
+}
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -12,17 +16,16 @@
 <body>
     <div class="row">
         <div class="col-md-5 login-window">
-
             <h1>Login</h1>
             <form method="post" action="#" id="login-form">
                 <p>
-                    Username/Email: <br/>
-                    <input type="text" id="username-txt" name="username"/>
+                    Username/Email: <br />
+                    <input type="text" id="username-txt" name="username" />
                 </p>
                 <p>
-                    Password: 
+                    Password:
                     <br />
-                    <input type="text" naem="password" id="password-txt"/> 
+                    <input type="text" naem="password" id="password-txt" />
                 </p>
                 <p>
                     <input type="submit" value="Login" id="login-submit" />
@@ -38,3 +41,4 @@
     </div>
 </body>
 </html>
+

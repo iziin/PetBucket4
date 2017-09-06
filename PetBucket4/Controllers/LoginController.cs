@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
+using PetBucket4.Models;
 
 namespace PetBucket4.Controllers
 {
@@ -35,5 +37,7 @@ namespace PetBucket4.Controllers
         public void Delete(int id)
         {
         }
+
+
     }
 }

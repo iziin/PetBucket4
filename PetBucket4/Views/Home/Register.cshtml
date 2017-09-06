@@ -1,84 +1,87 @@
-﻿@{
-    ViewBag.Title = "Login";
+﻿@model PetBucket4.Models.Customer
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Register</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div class="row">
-        <div class="col-md-5 login-window">
-            <h1>Register</h1>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    if(ViewBag.Message != null)
+    {
+        <div style="border:solid 1px green">
+            @ViewBag.Message
+        </div>
+    }
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-            <form method="post" action="#" id="register-form">
-                <p>
-                    First Name: <br />
-                    <input type="text" name="f-name" id="f-name-txt" />
-                </p>
-                <p>
-                    Last Name:
-                    <br />
-                    <input type="text" name="l-name" id="l-name-txt" />
-                </p>
-                <p>
-                    Email Address:
-                    <br />
-                    <input type="text" name="email-address" id="email-address-txt" />
-                </p>
-                <p>
-                    Confirm Email Address:
-                    <br />
-                    <input type="text" name="con-email-address" id="con-email-address-txt" />
-                </p>
-                <p>
-                    Home Phone (if applicable): <br />
-                    <input type="text" name="h-phone" id="h-phone-txt" />
-                </p>
-                <p>
-                    Mobile Phone (if applicable): <br />
-                    <input type="text" name="m-phone" id="m-phone-txt" />
-                </p>
-                <p>
-                    Address: <br/>
-                    <input type="text" name="address" id="address-txt" />
-                </p>
-                <p>
-                    Age: <br />
-                    <input type="text" name="age" id="age-txt" />
-                </p>
-                <p>
-                    Sex: <br />
-                    <select name="sex" id="sex-select">
-                        <option value="Other" id="other-select">Other</option>
-                        <option value="Male" id="male-select">Male</option>
-                        <option value="Female" id="female-select">Female</option>
-                    </select>
-                </p>
-                <p>
-                    Emergency Contact Name: <br/>
-                    <input type="text" name="ec-name" id="ec-name-txt" />
-                </p>
-                <p>
-                    Emergency Contact Number: <br />
-                    <input type="text" name="ec-number" id="ec-number-txt" />
-                </p>
-                <p>
-                    Password: <br />
-                    <input type="text" name="new-password" id="new-password-txt" />
-                </p>
-                <p>
-                    Confirm Password: <br />
-                    <input type="text" name="con-new-password" id="con-new-password" />
-                </p>
-                <p>
-                    <input type="submit" value="Register" id="submit-register" />
-                </p>
-            </form>
+        <div class="form-group">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.given_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.given_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.given_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.surname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.surname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.surname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.mobile_no, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.mobile_no, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.mobile_no, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
-</body>
-</html>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
