@@ -52,7 +52,19 @@ textarea {
     margin-left: 18px;
     margin-bottom: 30px;
     border-radius: 6px;
-    width: 30%;
+}
+
+.center-insert {
+    opacity: 0.9;
+    background-color: #eeeeee;
+    margin-right: 0px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.force-width-30{
+    width: 30%
 }
 
 .large-insert {
@@ -61,6 +73,14 @@ textarea {
     border-radius: 6px;
     margin-left: 36px;
     padding: 20px;
+}
+
+.large-insert-title{
+    opacity: 0.9;
+    background-color: #eeeeee;
+    border-radius: 6px;
+    margin-left: 36px;
+    padding: 5px;
 }
 
 .login-window {
