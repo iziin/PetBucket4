@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "MyAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="jumbotron large-insert">
+        <h1 class="text-center">My Account</h1>
+        <p>Hello (username), welcome back to PetBucket!</p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-10 center-insert">
+        <h2>Bookings</h2>
+        <p>Click below to create a new booking or manage a current booking.</p>
+        <p>@Html.ActionLink("Create a Booking", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+        @Html.ActionLink("Manage a Booking", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-10 center-insert">
+        <h2>Check on Your Pets</h2>
+        <p>Click below to check up on your pets currently in our care. See photos and videos of your pet playing and enjoying themselves, 
+        lovingly taken by our staff. Or watch your pet live with our livestream, available 24 hours a day and 7 days a week.</p>
+        <p>@Html.ActionLink("Check on Your Pet", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-10 center-insert">
+        <h2>Change My Account Details</h2>
+        <p>Click below to update or change your account details.</p>
+        <p>@Html.ActionLink("Edit Account", "Account_Details", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>

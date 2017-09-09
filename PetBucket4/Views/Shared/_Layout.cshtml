@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetBucket</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" runat="server" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,12 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img class="logo" src="~/Images/dog-in-enamel-bucket(small).png" />
                 @Html.ActionLink("PetBucket", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) <
+                <img class="logo" src="~/Images/dog-in-enamel-bucket(small).png" />
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Make a Booking", "Booking", "Home")</li>
                     <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Community", "Community", "Home")</li>
@@ -30,6 +29,7 @@
                 </ul>
                 <ul class="nav navbar-nav login-list">
                     <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    <li>@Html.ActionLink("My Account", "MyAccount", "Home")</li>
                     <li>@Html.ActionLink("Register", "Register", "Home")</li>
                 </ul>
             </div>
@@ -37,11 +37,10 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <footer style="bottom:0px;">
+        <footer class="footer">
             <p>&copy; @DateTime.Now.Year - OOMS Solutions</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

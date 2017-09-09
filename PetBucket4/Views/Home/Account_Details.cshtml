@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Account_Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Page triggers 404 error when loaded-->
+<div class="row">
+    <div class="col-md-5 small-insert">
+        <h1>My Account</h1>
+        <p>Username: <!--Insert username--></p>
+        <p>First Name: <!--Insert Name--></p>
+        <p>Last Name: <!--Insert Name--></p>
+        <p>Address: <!--Insert Address--></p>
+        <p>Email: <!--Insert Address--></p>
+        <p>Mobile Number: <!--Insert Number--></p>
+        <p>@Html.ActionLink("Change Details", "Services", "Home", new { area = "" }, new { @class = "btn btn-default btn-lg" })</p>
+    </div>
+</div>
+

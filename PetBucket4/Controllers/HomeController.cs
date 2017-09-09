@@ -57,8 +57,13 @@ namespace PetBucket4.Controllers
                     db.Customers.Add(X);
                     db.SaveChanges();
                     ModelState.Clear();
+<<<<<<< HEAD
                     X = null;
                     ViewBag.Message = "Successfully Registration Complete";
+=======
+                    U = null;
+                    ViewBag.Message = "Registration Complete";
+>>>>>>> origin/master
                 }
             }
             return View();
@@ -93,6 +98,11 @@ namespace PetBucket4.Controllers
         }
 
         public ActionResult UserDashBoard()
+        {
+            return View();
+        }
+
+        public ActionResult MyAccount()
         {
             return View();
         }

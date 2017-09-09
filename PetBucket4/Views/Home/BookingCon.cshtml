@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "BookingCon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--Controller Method Required to access this page-->
+
+<div class="row">
+    <div class="jumbotron large-insert">
+        <h1 class="text-center">Booking Confirmed!</h1>
+        <p>Congratulations! Your booking has been confirmed. Please find a copy of your receipt below. A copy has also been sent to your nominated email specified by you when you
+        created your account. We look forward to taking care of your pet.</p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-12 large-insert">
+        <h2 class="text-center">Receipt</h2>
+        <p><!--Place generated receipts here--> placeholder</p>
+        <p>@Html.ActionLink("Click Here", "Index", "Home") to return home.</p>
+    </div>
+</div>

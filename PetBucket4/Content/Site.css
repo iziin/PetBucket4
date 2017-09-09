@@ -11,6 +11,8 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 100px;
+    min-height: 100%;
+    margin-bottom: -50px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -30,6 +32,8 @@ textarea {
 
 .logo {
     height: 75px;
+    margin-top: -5px;
+    margin-left: -10px;
 }
 
 .login-list {
@@ -48,7 +52,19 @@ textarea {
     margin-left: 18px;
     margin-bottom: 30px;
     border-radius: 6px;
-    width: 30%;
+}
+
+.center-insert {
+    opacity: 0.9;
+    background-color: #eeeeee;
+    margin-right: 0px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.force-width-30{
+    width: 30%
 }
 
 .large-insert {
@@ -56,6 +72,15 @@ textarea {
     background-color: #eeeeee;
     border-radius: 6px;
     margin-left: 36px;
+    padding: 20px;
+}
+
+.large-insert-title{
+    opacity: 0.9;
+    background-color: #eeeeee;
+    border-radius: 6px;
+    margin-left: 36px;
+    padding: 5px;
 }
 
 .login-window {
@@ -63,4 +88,12 @@ textarea {
     opacity: 0.9;
     background-color: #eeeeee;
     border-radius: 6px;
+}
+
+.footer {
+    bottom: 0px;
+}
+
+.wrapper{
+    margin-left: 50px;
 }

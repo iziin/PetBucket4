@@ -4,5 +4,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Services</h2>
+<div class="row">
+    <div class="jumbotron large-insert-title">
+        <h1 class="text-center">Services</h1>
+        <p class="text-center">We offer 3 different tiers of service and 2 different types of service to ensure that we have the right package for you.</p>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-10 center-insert">
+        <h2>Basic Service</h2>
+        <p>Placeholder</p>
+        <p>@Html.ActionLink("Make a Booking With Basic Service", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 center-insert">
+        <h2>Standard Service</h2>
+        <p>Placeholder</p>
+        <p>@Html.ActionLink("Make a Booking With Standard Service", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 center-insert">
+        <h2>Premium Service</h2>
+        <p>Placeholder</p>
+        <p>@Html.ActionLink("Make a Booking With Premium Service", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
 
