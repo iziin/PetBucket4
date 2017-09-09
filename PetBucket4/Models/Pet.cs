@@ -2,6 +2,7 @@ namespace PetBucket4.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     
     public partial class Pet
     {
@@ -16,4 +17,6 @@ namespace PetBucket4.Models
         public string indoors_safe { get; set; }
         public string under13_safe { get; set; }
     }
+
+  
 }

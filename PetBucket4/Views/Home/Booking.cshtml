@@ -1,61 +1,126 @@
-﻿
+﻿@model PetBucket4.Models.Pet
+
+
+
 @{
     ViewBag.Title = "Booking";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div class="row">
-        <div class="col-md-5 login-window">
-            <h1>Booking</h1>
+@using (Html.BeginForm("Book"))
+{
+    @Html.AntiForgeryToken()
+    if (ViewBag.Message != null)
+    {
+       @* <div style="border:solid 1px green">
+            @ViewBag.Message
+        </div> *@
+    }
 
-            <form method="post" action="#" id="booking-form">
-                <p>
-                    Name of Pet:
-                    <br />
-                    <input type="text" name="pet-name" id="pet-name-txt" />
-                </p>
-                <p>
-                    Type of Pet:
-                    <br/>
-                    <select name="pet" id="pet-select">
-                        <option value="dog" id="dog-select">Dog</option>
-                        <option value="cat" id="cat-select">Cat</option>
-                        <option value="bird" id="bird-select">Bird</option>
-                        <option value="reptile" id="reptile-select">Reptile</option>
-                        <option value="rodent" id="rodent-select">Rodent</option>
-                    </select>
-                </p>
-                <p>
-                    Drop Off Date: <br />
-                    <input type="datetime-local" id="drop-off-date" name="drop-off-date" />
-                </p>
-                <p>
-                    Pick-Up Date:
-                    <br />
-                    <input type="datetime-local" id="pick-up-date" name="pick-up-date" />
-                </p>
-                <p>
-                    Service:
-                    <br />
-                    <select name="service" id="service-select">
-                        <option value="Basic" id="basic-select">Basic</option>
-                        <option value="Standard" id="standard-select">Standard</option>
-                        <option value="Premium" id="premium-select">Premium</option>
-                        <option value="To-Your-Door" id="to-your-door-select">To-Your-Door</option>
-                    </select>
-                </p>
-                <input type="submit" value="Booking" id="submit-booking" />
-            </form>
-        </div>
-    </div>
-</body>
-</html>
 
+        <body>
+            <div class="row">
+                <div class="col-md-5 login-window">
+                    <h1>Booking</h1>
+                    <form method="post" action="#" id="booking-form">
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <p>Type Of Pet</p>
+                            <div class="col-md-10">
+                                <div class="col-md-10">
+                                    @{
+                                        List<SelectListItem> listItems = new List<SelectListItem>();
+                                        listItems.Add(new SelectListItem
+                                        {
+                                            Text = "Dog",
+                                            Value = "Dog"
+                                        });
+                                        listItems.Add(new SelectListItem
+                                        {
+                                            Text = "Cat",
+                                            Value = "Cat",
+                                            Selected = true
+                                        });
+                                        listItems.Add(new SelectListItem
+                                        {
+                                            Text = "Bird",
+                                            Value = "Bird"
+                                        });
+                                        listItems.Add(new SelectListItem
+                                        {
+                                            Text = "Reptile",
+                                            Value = "Reptile"
+                                        });
+                                        listItems.Add(new SelectListItem
+                                        {
+                                            Text = "Rodent",
+                                            Value = "Rodent"
+                                        });
+                                    }
+                                    </div>
+                                    </div>
+                                    @Html.DropDownList("animal", listItems, new { @class = "form-control" })
+                                </div>
+
+                                <p>
+                                    Drop Off Date: <br />
+                                    <input type="datetime-local" id="drop-off-date" name="drop-off-date" />
+                                </p>
+                                <p>
+                                    Pick-Up Date:
+                                    <br />
+                                    <input type="datetime-local" id="pick-up-date" name="pick-up-date" />
+                                </p>
+
+                        <div class="form-group">
+                            <p>Service</p>
+                            <div class="col-md-10">
+                                <div class="col-md-10">
+                                    @{
+                                        List<SelectListItem> ServiceListItems = new List<SelectListItem>();
+                                        ServiceListItems.Add(new SelectListItem
+                                        {
+                                            Text = "Basic",
+                                            Value = "Standard"
+                                        });
+                                        ServiceListItems.Add(new SelectListItem
+                                        {
+                                            Text = "Standard",
+                                            Value = "Standard",
+                                            Selected = true
+                                        });
+                                        ServiceListItems.Add(new SelectListItem
+                                        {
+                                            Text = "Premium",
+                                            Value = "Premium"
+                                        });
+                                        ServiceListItems.Add(new SelectListItem
+                                        {
+                                            Text = "To your door",
+                                            Value = "To your door"
+                                        });
+
+                                    }
+                                </div>
+                            </div>
+                            @Html.DropDownList("Service", ServiceListItems, new { @class = "form-control" })
+                        </div>
+
+                           
+                            <input type="submit" value="Booking" id="submit-booking" />
+                    </form>
+                </div>
+            </div>
+        </body>
+  
+    }

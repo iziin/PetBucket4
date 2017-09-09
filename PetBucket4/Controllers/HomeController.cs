@@ -48,17 +48,35 @@ namespace PetBucket4.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Customer U)
+        public ActionResult Register(Customer X)
         {
             if(ModelState.IsValid)
             {
                 using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
-                    db.Customers.Add(U);
+                    db.Customers.Add(X);
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    X = null;
+                    ViewBag.Message = "Successfully Registration Complete";
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Booking(Pet U)
+        {
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    db.Pets.Add(U);
                     db.SaveChanges();
                     ModelState.Clear();
                     U = null;
-                    ViewBag.Message = "Successfully Registration Complete";
+                    ViewBag.Message = "Successfully Booking Completed";
                 }
             }
             return View();

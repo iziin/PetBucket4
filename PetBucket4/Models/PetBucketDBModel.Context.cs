@@ -12,7 +12,8 @@ namespace PetBucket4.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.Entity.Validation;
+
     public partial class PetBucketDatabaseEntities : DbContext
     {
         public PetBucketDatabaseEntities()
@@ -30,4 +31,6 @@ namespace PetBucket4.Models
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
     }
+    
+    
 }
