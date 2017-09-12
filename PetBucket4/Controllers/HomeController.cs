@@ -24,14 +24,12 @@ namespace PetBucket4.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
         public ActionResult Booking()
         {
-            ViewBag.Message = "Booking Page.";
 
             return View();
         }
@@ -75,6 +73,16 @@ namespace PetBucket4.Controllers
         }
 
         public ActionResult UserDashBoard()
+        {
+            return View();
+        }
+
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+
+        public ActionResult My_Account()
         {
             return View();
         }

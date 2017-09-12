@@ -22,14 +22,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Make a Booking", "Booking", "Home")</li>
                     <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Community", "Community", "Home")</li>
+                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav login-list">
                     <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    <li>@Html.ActionLink("My Account", "My_Account", "Home")</li> <!--Should only appear when logged in or redirect to login-->
                     <li>@Html.ActionLink("Register", "Register", "Home")</li>
                 </ul>
             </div>
