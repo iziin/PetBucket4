@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PetBucket4.Models;
+using System.Data.Entity;
 
 namespace PetBucket4.Controllers
 {
@@ -72,9 +73,42 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        public ActionResult UserDashBoard()
+        [HttpPost]
+        public ActionResult Login(Customer user)
         {
+            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+            {
+                var i = db.Customers.Where(u => u.username == user.username && u.password == user.password).FirstOrDefault();
+                if (i != null)
+                {
+                    Session["UserID"] = i.id.ToString();
+                    Session["Username"] = i.username.ToString();
+                    return RedirectToAction("My_Account");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Username or Password is Incorrect!");
+                }
+            }
             return View();
+        }
+
+        public ActionResult My_Account()
+        {
+            if(Session["UserId"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Gallery()
@@ -82,9 +116,5 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        public ActionResult My_Account()
-        {
-            return View();
-        }
     }
 }

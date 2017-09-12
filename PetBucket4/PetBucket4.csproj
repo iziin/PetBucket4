@@ -257,7 +257,6 @@
     <Content Include="Views\Home\Community.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\UserDashBoard.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\My_Account.cshtml" />
   </ItemGroup>
