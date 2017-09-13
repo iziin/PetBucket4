@@ -17,17 +17,16 @@
 <div class="row">
     <div class="col-md-7 insert middle-center">
         <h2>Bookings</h2>
-        <p>Populate with drop-off and pick-up times for current bookings.</p>
-        <p>(Example Only) Pet Name: Jim, Start Date: 10/10/17 End Date: 12/10/17
-        @Html.ActionLink("Manage This Booking", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
-        <p>@Html.ActionLink("Make a New Booking", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+        <p>Manage your current bookings or create a new booking.</p>
+        <p>@Html.ActionLink("Manage Bookings", "Manage_Bookings", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+        @Html.ActionLink("Make a New Booking", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-7 insert middle-center">
         <h2>Your Pets</h2>
-        <p>Check up on your pets</p>
+        <p>See the most recent photos or videos of your pet, uploaded daily by our staff, or watch our livestream, available 24/7, and see what your pet is doing in real time.</p>
         <p>@Html.ActionLink("Check on Your Pets", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
@@ -35,7 +34,7 @@
 <div class="row">
     <div class="col-md-7 insert middle-center">
         <h2>Account Details</h2>
-        <p>Check your account details and make any changes</p>
+        <p>View and update your account details.</p>
         <p>@Html.ActionLink("Account Details", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>

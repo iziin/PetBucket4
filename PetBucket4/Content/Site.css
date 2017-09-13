@@ -4,6 +4,7 @@
     background-image: url("../Images/dog2.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
+    background-color: #40495c;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -43,7 +44,7 @@ textarea {
     padding-bottom: 10px;
 }
 
-.small-insert {
+.index-small-insert {
     opacity: 0.9;
     background-color: #eeeeee;
     margin-right: 18px;
@@ -54,11 +55,21 @@ textarea {
     padding-bottom: 10px;
 }
 
+.dual-small-insert {
+    opacity: 0.9;
+    background-color: #eeeeee;
+    border-radius: 6px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    width: 48%
+}
+
 .large-insert {
     opacity: 0.9;
     background-color: #eeeeee;
     border-radius: 6px;
-    margin-left: 36px;
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
@@ -80,4 +91,8 @@ textarea {
 .title-center{
     text-align: center;
     padding: 25px;
+}
+
+.sub-heading{
+    font-size: 1.5em;
 }

@@ -31,7 +31,6 @@
                 <ul class="nav navbar-nav login-list">
                     @if (Session["UserId"] != null)
                     {
-                        <li>Hello @Session["Username"].ToString()</li>
                         <li>@Html.ActionLink("My Account", "My_Account", "Home")</li> <!--Should only appear when logged in or redirect to login-->
                         <li>@Html.ActionLink("Logout", "LogOut")</li>
                     }

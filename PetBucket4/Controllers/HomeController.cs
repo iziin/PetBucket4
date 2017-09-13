@@ -49,7 +49,7 @@ namespace PetBucket4.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(Customer U)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
@@ -95,7 +95,7 @@ namespace PetBucket4.Controllers
 
         public ActionResult My_Account()
         {
-            if(Session["UserId"] != null)
+            if (Session["UserId"] != null)
             {
                 return View();
             }
@@ -116,5 +116,9 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        public ActionResult Manage_Bookings()
+        {
+            return View();
+        }
     }
 }
