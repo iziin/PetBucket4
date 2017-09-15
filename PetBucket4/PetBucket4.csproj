@@ -260,6 +260,7 @@
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\My_Account.cshtml" />
     <Content Include="Views\Home\Manage_Bookings.cshtml" />
+    <Content Include="Views\Home\Reviews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

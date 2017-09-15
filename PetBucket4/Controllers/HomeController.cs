@@ -45,6 +45,11 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        public ActionResult Reviews()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(Customer U)
