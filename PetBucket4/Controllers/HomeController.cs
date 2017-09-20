@@ -35,6 +35,24 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Booking(Appointment BK)
+        {
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    db.Appointments.Add(BK);
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    BK = null;
+                    ViewBag.Message = "Successfully Registration Complete";
+                }
+            }
+            return View();
+        }
+
         public ActionResult Reviews()
         {
             return View();
@@ -100,7 +118,7 @@ namespace PetBucket4.Controllers
 
         public ActionResult My_Account()
         {
-            if (Session["UserId"] != null)
+            if (Session["UserID"] != null)
             {
                 return View();
             }

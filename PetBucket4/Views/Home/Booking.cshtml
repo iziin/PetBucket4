@@ -1,61 +1,92 @@
-﻿
+﻿@model PetBucket4.Models.Appointment
+
 @{
     ViewBag.Title = "Booking";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Booking</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div class="row">
-        <div class="col-md-5 login-window">
-            <h1>Booking</h1>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Appointment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.customer_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.customer_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.customer_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-            <form method="post" action="#" id="booking-form">
-                <p>
-                    Name of Pet:
-                    <br />
-                    <input type="text" name="pet-name" id="pet-name-txt" />
-                </p>
-                <p>
-                    Type of Pet:
-                    <br/>
-                    <select name="pet" id="pet-select">
-                        <option value="dog" id="dog-select">Dog</option>
-                        <option value="cat" id="cat-select">Cat</option>
-                        <option value="bird" id="bird-select">Bird</option>
-                        <option value="reptile" id="reptile-select">Reptile</option>
-                        <option value="rodent" id="rodent-select">Rodent</option>
-                    </select>
-                </p>
-                <p>
-                    Drop Off Date: <br />
-                    <input type="datetime-local" id="drop-off-date" name="drop-off-date" />
-                </p>
-                <p>
-                    Pick-Up Date:
-                    <br />
-                    <input type="datetime-local" id="pick-up-date" name="pick-up-date" />
-                </p>
-                <p>
-                    Service:
-                    <br />
-                    <select name="service" id="service-select">
-                        <option value="Basic" id="basic-select">Basic</option>
-                        <option value="Standard" id="standard-select">Standard</option>
-                        <option value="Premium" id="premium-select">Premium</option>
-                        <option value="To-Your-Door" id="to-your-door-select">To-Your-Door</option>
-                    </select>
-                </p>
-                <input type="submit" value="Booking" id="submit-booking" />
-            </form>
+        <div class="form-group">
+            @Html.LabelFor(model => model.pet_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pet_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pet_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date_start, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.date_start, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.date_start, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date_end, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.date_end, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.date_end, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.service, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.service, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.service, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.needs_pickup, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.needs_pickup, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.needs_pickup, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.pickup_distance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pickup_distance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pickup_distance, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
-</body>
-</html>
+}
 
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
