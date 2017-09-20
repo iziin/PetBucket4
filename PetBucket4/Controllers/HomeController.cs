@@ -35,6 +35,11 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        public ActionResult Reviews()
+        {
+            return View();
+        }
+
         public ActionResult Community()
         {
             return View();

@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using PetBucket4.Models;
 using System.Data.Entity.Validation;
-using System.Linq;
 
 namespace PetBucket4.Controllers
 {
