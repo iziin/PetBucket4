@@ -143,5 +143,15 @@ namespace PetBucket4.Controllers
         {
             return View();
         }
+
+        public ActionResult Staff()
+        {
+            return View();
+        }
+
+        public ActionResult Current_Bookings()
+        {
+            return View();
+        }
     }
 }

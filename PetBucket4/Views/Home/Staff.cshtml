@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Staff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Page should be in a folder called staff-->
+<div class="row">
+    <div class="col-lg-12 large-insert">
+        <h1 class="title-center">Staff Home</h1>
+        @if (Session["UserId"] != null)
+        {
+            <p class="text-center">Hello @Session["Username"].ToString()</p> <!--Except for staff instead of user-->
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7 insert middle-center">
+        <h2>Create New Booking</h2>
+        <p>
+            @Html.ActionLink("Create New", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7 insert middle-center">
+        <h2>Current Bookings</h2>
+        <p>View and update active bookings here.</p>
+        <p>
+            @Html.ActionLink("View Active Bookings", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7 insert middle-center">
+        <h2>Upcoming Bookings</h2>
+        <p>View and update upcoming bookings here.</p>
+        <p>
+            @Html.ActionLink("View Upcoming Bookings", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+        </p>
+    </div>
+</div>

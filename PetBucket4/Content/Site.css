@@ -96,3 +96,47 @@ textarea {
 .sub-heading{
     font-size: 1.5em;
 }
+
+.logo-fb {
+    background: url(../Images/facebook.png) no-repeat;
+    display: block;
+    height: 75px;
+    text-indent: -9999px; /* hides the link text */
+}
+
+.logo-insta {
+    background: url(../Images/instagram.png) no-repeat;
+    display: block;
+    height: 75px;
+    text-indent: -9999px; /* hides the link text */
+}
+
+.logo-twit {
+    background: url(../Images/twitter.png) no-repeat;
+    display: block;
+    height: 75px;
+    text-indent: -9999px; /* hides the link text */
+}
+
+.footer {
+    margin-bottom: -50px;
+}
+
+.footer li {
+        margin-bottom: 5px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+.copyright {
+       float: right;
+    }
+
+.b-button{
+    float: right;
+    margin-right: 10px;
+}
+
+.footer-txt {
+    color: #E5E5E5;
+}

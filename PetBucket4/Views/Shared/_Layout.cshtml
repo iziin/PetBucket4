@@ -31,7 +31,7 @@
                 <ul class="nav navbar-nav login-list">
                     @if (Session["UserId"] != null)
                     {
-                        <li>@Html.ActionLink("My Account", "My_Account", "Home")</li> <!--Should only appear when logged in or redirect to login-->
+                        <li>@Html.ActionLink("My Account", "My_Account", "Home")</li> 
                         <li>@Html.ActionLink("Logout", "LogOut")</li>
                     }
                     else
@@ -45,9 +45,22 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <footer style="bottom:0px;">
-            <p>&copy; @DateTime.Now.Year - OOMS Solutions</p>
-        </footer>
+    </div>
+
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-collapse collapse">
+                    <p class="footer-txt">Connect with us on social media!</p>
+                    <ul class="nav navbar-nav footer">
+                        <li>@Html.ActionLink("Facebook", "#", "Home", null, new { @class = "logo-fb" })</li>
+                        <li>@Html.ActionLink("Instagram", "#", "Home", null, new { @class = "logo-insta" })</li>
+                        <li>@Html.ActionLink("Twitter", "#", "Home", null, new { @class = "logo-twit" })</li>
+                        <li class="footer-txt">&copy; @DateTime.Now.Year - OOMS Solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
