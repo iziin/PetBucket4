@@ -3,3 +3,4 @@
 *.cache
 *.ide
 .vs/PetBucket4/v15/.suo
+*.ini
