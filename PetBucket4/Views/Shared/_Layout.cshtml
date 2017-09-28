@@ -22,11 +22,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Make a Booking", "Booking", "Home")</li>
                     <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Community", "Community", "Home")</li>
-                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
-                    <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav login-list">
                     @if (Session["UserId"] != null)
@@ -35,8 +34,10 @@
                         <li>@Html.ActionLink("Logout", "LogOut")</li>
                     }
                     else
-                    {<li>@Html.ActionLink("Login", "Login", "Home")</li>
-                    <li>@Html.ActionLink("Register", "Register", "Home")</li>}
+                    {
+                        <li>@Html.ActionLink("Staff", "Staff_Login", "Home")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Home")</li>}
                     
                     
                 </ul>
@@ -53,9 +54,10 @@
                 <div class="navbar-collapse collapse">
                     <p class="footer-txt">Connect with us on social media!</p>
                     <ul class="nav navbar-nav footer">
-                        <li>@Html.ActionLink("Facebook", "#", "Home", null, new { @class = "logo-fb" })</li>
-                        <li>@Html.ActionLink("Instagram", "#", "Home", null, new { @class = "logo-insta" })</li>
-                        <li>@Html.ActionLink("Twitter", "#", "Home", null, new { @class = "logo-twit" })</li>
+                        <li>@Html.ActionLink("Facebook", "Facebook", "Home", null, new { @class = "logo-fb" })</li>
+                        <li>@Html.ActionLink("Instagram", "Instagram", "Home", null, new { @class = "logo-insta" })</li>
+                        <li>@Html.ActionLink("Twitter", "Twitter", "Home", null, new { @class = "logo-twit" })</li>
+                        <li>@Html.ActionLink("Email", "#", "Home", null, new { @class = "logo-email" })</li> <!--Currently not working-->
                         <li class="footer-txt">&copy; @DateTime.Now.Year - OOMS Solutions</li>
                     </ul>
                 </div>

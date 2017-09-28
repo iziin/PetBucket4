@@ -1,20 +1,20 @@
 ﻿@model PetBucket4.Models.Customer
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Staff_Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row">
     <div class="col-lg-7 large-insert">
-        <h1>Login</h1>
+        <h1>Staff Login</h1>
         <br />
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h2 class="sub-heading">Customer</h2>
+                <h2 class="sub-heading">Staff</h2>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -42,6 +42,3 @@
         }
     </div>
 </div>
-
-
-

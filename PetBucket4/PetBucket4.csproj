@@ -279,6 +279,10 @@
     <Content Include="Views\Home\Staff.cshtml" />
     <Content Include="Views\Home\Current_Bookings.cshtml" />
     <Content Include="Views\Home\Upcoming_Bookings.cshtml" />
+    <Content Include="Views\Home\Livestream.cshtml" />
+    <Content Include="Views\Home\Pet_Info.cshtml" />
+    <Content Include="Views\Home\Staff_Login.cshtml" />
+    <Content Include="Views\Home\Your_Pets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

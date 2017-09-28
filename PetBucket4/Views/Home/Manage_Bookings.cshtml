@@ -17,38 +17,36 @@
 <div class="row">
     <div class="col-md-5 dual-small-insert">
         <h2>Your Current Bookings</h2>
-        <p> Number of Pets: 2<br />
-            Pet Name(s): Fluffy, Sprinkles<br />
-            Pet Type(s): Dog, Cat<br />
-            Dates: 11/09/17 - 16/09/17<br />
-            Service: Basic <br />
-            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
-        <p>
-            Number of Pets: 1<br />
-            Pet Name(s): Rosey<br />
-            Pet Type(s): Bird<br />
-            Dates: 10/09/17 - 16/09/17<br />
-            Service: Premium <br />
-            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
-        </p>
+        @{
+            var m = 2; <!--Where m equals the amount of pets linked to user-->
+            for (var i = 1; i <= m; i++)
+            {
+                <p>
+                    Number of Pets: <br />
+                    Pet Name(s): <br />
+                    Pet Type(s): <br />
+                    Dates: <br />
+                    Service:  <br />
+                    @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+                </p>
+            }
+        }
     </div>
     <div class="col-md-5 dual-small-insert">
         <h2>Your Upcoming Bookings</h2>
-        <p>
-            Number of Pets: 1 <br />
-            Pet Name(s): Bubbles<br />
-            Pet Type(s): Fish<br />
-            Dates: 20/09/17 - 30/09/17<br />
-            Service: Standard <br />
-            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
-        </p>
-        <p>
-            Number of Pets: 3<br />
-            Pet Name(s): Carrot, Ginger, Lucy<br />
-            Pet Type(s): Rabbit, Cat<br />
-            Dates: 18/10/17 - 21/10/17<br />
-            Service: To-Your-Door <br />
-            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
-        </p>
+        @{
+            var n = 2; <!--Where n equals the amount of pets linked to user-->
+            for (var i = 1; i <= m; i++)
+            {
+                <p>
+                    Number of Pets: <br/>
+                    Pet Name(s): <br/>
+                    Pet Type(s): <br />
+                    Dates: <br />
+                    Service:  <br />
+                    @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+                </p>
+            }
+        }
     </div>
 </div>

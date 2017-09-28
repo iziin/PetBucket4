@@ -153,5 +153,40 @@ namespace PetBucket4.Controllers
         {
             return View();
         }
+
+        public ActionResult Facebook()
+        {
+            return Redirect("https://www.facebook.com/peter.bucket.545");
+        }
+
+        public ActionResult Instagram()
+        {
+            return Redirect("https://www.instagram.com/pet.bucket/");
+        }
+
+        public ActionResult Twitter()
+        {
+            return Redirect("https://twitter.com/petbucket4");
+        }
+
+        public ActionResult Your_Pets()
+        {
+            return View();
+        }
+
+        public ActionResult Pet_Info()
+        {
+            return View();
+        }
+
+        public ActionResult Livestream()
+        {
+            return View();
+        }
+
+        public ActionResult Staff_Login()
+        {
+            return View();
+        }
     }
 }
