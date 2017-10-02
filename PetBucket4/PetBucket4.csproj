@@ -175,31 +175,34 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Appointment.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Pet.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetBucketDBModel.Context.cs">
+    <Compile Include="Models\PetBucketDatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PetBucketDBModel.Context.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetBucketDBModel.cs">
+    <Compile Include="Models\PetBucketDatabaseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetBucketDBModel.Designer.cs">
+    <Compile Include="Models\PetBucketDatabaseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Staff.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -214,27 +217,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\PetBucketDBModel.Context.tt">
+    <Content Include="Models\PetBucketDatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PetBucketDBModel.Context.cs</LastGenOutput>
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>PetBucketDatabaseModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PetBucketDBModel.tt">
+    <Content Include="Models\PetBucketDatabaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
-      <LastGenOutput>PetBucketDBModel.cs</LastGenOutput>
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>PetBucketDatabaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\PetBucketDBModel.edmx">
+    <EntityDeploy Include="Models\PetBucketDatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PetBucketDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PetBucketDatabaseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\PetBucketDBModel.edmx.diagram">
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
+    <Content Include="Models\PetBucketDatabaseModel.edmx.diagram">
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

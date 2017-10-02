@@ -101,11 +101,11 @@ namespace PetBucket4.Controllers
         {
             using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
             {
-                var i = db.Customers.Where(u => u.username == user.username && u.password == user.password).FirstOrDefault();
+                var i = db.Customers.Where(u => u.email == user.email && u.password == user.password).FirstOrDefault();
                 if (i != null)
                 {
                     Session["UserID"] = i.id.ToString();
-                    Session["Username"] = i.username.ToString();
+                    Session["Username"] = i.email.ToString();
                     return RedirectToAction("My_Account");
                 }
                 else

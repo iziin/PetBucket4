@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PetBucketDatabaseModelStoreContainer" CdmEntityContainer="PetBucketDatabaseEntities">
+    <EntitySetMapping Name="Appointments">
+      <EntityTypeMapping TypeName="PetBucketDatabaseModel.Appointment">
+        <MappingFragment StoreEntitySet="Appointment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="number_of_pets" ColumnName="number_of_pets" />
+          <ScalarProperty Name="pet_id" ColumnName="pet_id" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="entry_instructions" ColumnName="entry_instructions" />
+          <ScalarProperty Name="care_instructions" ColumnName="care_instructions" />
+          <ScalarProperty Name="inspection_visit_date" ColumnName="inspection_visit_date" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="food" ColumnName="food" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="PetBucketDatabaseModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="home_phone" ColumnName="home_phone" />
+          <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+          <ScalarProperty Name="unit_no" ColumnName="unit_no" />
+          <ScalarProperty Name="house_no" ColumnName="house_no" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="last_logged_in" ColumnName="last_logged_in" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pets">
+      <EntityTypeMapping TypeName="PetBucketDatabaseModel.Pet">
+        <MappingFragment StoreEntitySet="Pet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="animal" ColumnName="animal" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="indoors_safe" ColumnName="indoors_safe" />
+          <ScalarProperty Name="under_13_safe" ColumnName="under_13_safe" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="last_active" ColumnName="last_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="PetBucketDatabaseModel.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="review_text" ColumnName="review_text" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="created" ColumnName="created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="PetBucketDatabaseModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="last_logged_in" ColumnName="last_logged_in" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

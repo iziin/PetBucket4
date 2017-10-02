@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PetBucketDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="number_of_pets" Type="int" />
+          <Property Name="pet_id" Type="int" />
+          <Property Name="service" Type="int" Nullable="false" />
+          <Property Name="entry_instructions" Type="varchar" MaxLength="255" />
+          <Property Name="care_instructions" Type="varchar" MaxLength="255" />
+          <Property Name="inspection_visit_date" Type="date" />
+          <Property Name="start_time" Type="datetime2" Precision="0" />
+          <Property Name="end_time" Type="datetime2" Precision="0" />
+          <Property Name="created" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="food" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="surname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="home_phone" Type="varchar" MaxLength="45" />
+          <Property Name="mobile_phone" Type="varchar" MaxLength="45" />
+          <Property Name="unit_no" Type="varchar" MaxLength="45" />
+          <Property Name="house_no" Type="varchar" MaxLength="45" />
+          <Property Name="street" Type="varchar" MaxLength="255" />
+          <Property Name="city" Type="varchar" MaxLength="45" />
+          <Property Name="state" Type="varchar" MaxLength="3" />
+          <Property Name="postcode" Type="varchar" MaxLength="5" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="last_logged_in" Type="datetime2" Precision="0" />
+          <Property Name="created" Type="datetime2" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="size" Type="varchar" MaxLength="45" />
+          <Property Name="animal" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="active" Type="smallint" />
+          <Property Name="indoors_safe" Type="smallint" />
+          <Property Name="under_13_safe" Type="smallint" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="created" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="last_active" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="review_text" Type="varchar(max)" />
+          <Property Name="rating" Type="int" Nullable="false" />
+          <Property Name="created" Type="datetime2" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="255" />
+          <Property Name="surname" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="created" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="last_logged_in" Type="datetime2" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="PetBucketDatabaseModelStoreContainer">
+          <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pet" EntityType="Self.Pet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetBucketDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="number_of_pets" Type="Int32" />
+          <Property Name="pet_id" Type="Int32" />
+          <Property Name="service" Type="Int32" Nullable="false" />
+          <Property Name="entry_instructions" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="care_instructions" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="inspection_visit_date" Type="DateTime" Precision="0" />
+          <Property Name="start_time" Type="DateTime" Precision="0" />
+          <Property Name="end_time" Type="DateTime" Precision="0" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="food" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="home_phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="mobile_phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="unit_no" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="house_no" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="street" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="postcode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_logged_in" Type="DateTime" Precision="0" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="size" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="animal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="active" Type="Int16" />
+          <Property Name="indoors_safe" Type="Int16" />
+          <Property Name="under_13_safe" Type="Int16" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="last_active" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="review_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Int32" Nullable="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="last_logged_in" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="PetBucketDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appointments" EntityType="Self.Appointment" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Pets" EntityType="Self.Pet" />
+          <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PetBucketDatabaseModelStoreContainer" CdmEntityContainer="PetBucketDatabaseEntities">
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="PetBucketDatabaseModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="number_of_pets" ColumnName="number_of_pets" />
+                <ScalarProperty Name="pet_id" ColumnName="pet_id" />
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="entry_instructions" ColumnName="entry_instructions" />
+                <ScalarProperty Name="care_instructions" ColumnName="care_instructions" />
+                <ScalarProperty Name="inspection_visit_date" ColumnName="inspection_visit_date" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="food" ColumnName="food" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="PetBucketDatabaseModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="home_phone" ColumnName="home_phone" />
+                <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+                <ScalarProperty Name="unit_no" ColumnName="unit_no" />
+                <ScalarProperty Name="house_no" ColumnName="house_no" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="last_logged_in" ColumnName="last_logged_in" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pets">
+            <EntityTypeMapping TypeName="PetBucketDatabaseModel.Pet">
+              <MappingFragment StoreEntitySet="Pet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="animal" ColumnName="animal" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="indoors_safe" ColumnName="indoors_safe" />
+                <ScalarProperty Name="under_13_safe" ColumnName="under_13_safe" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="last_active" ColumnName="last_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="PetBucketDatabaseModel.Review">
+              <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="review_text" ColumnName="review_text" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="PetBucketDatabaseModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="last_logged_in" ColumnName="last_logged_in" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

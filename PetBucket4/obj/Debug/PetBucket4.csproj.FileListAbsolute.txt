@@ -88,7 +88,6 @@ C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Microsoft.AI.DependencyColl
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Microsoft.AI.Web.xml
-C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csprojResolveAssemblyReference.cache
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.CoreCompileInputs.cache
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.dll
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.pdb

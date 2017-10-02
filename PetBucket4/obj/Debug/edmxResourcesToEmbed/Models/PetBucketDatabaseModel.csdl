@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetBucketDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="number_of_pets" Type="Int32" />
+    <Property Name="pet_id" Type="Int32" />
+    <Property Name="service" Type="Int32" Nullable="false" />
+    <Property Name="entry_instructions" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="care_instructions" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="inspection_visit_date" Type="DateTime" Precision="0" />
+    <Property Name="start_time" Type="DateTime" Precision="0" />
+    <Property Name="end_time" Type="DateTime" Precision="0" />
+    <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="food" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="home_phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="mobile_phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="unit_no" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="house_no" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="street" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="postcode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_logged_in" Type="DateTime" Precision="0" />
+    <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Pet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="size" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="animal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="active" Type="Int16" />
+    <Property Name="indoors_safe" Type="Int16" />
+    <Property Name="under_13_safe" Type="Int16" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="last_active" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_id" Type="Int32" Nullable="false" />
+    <Property Name="review_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rating" Type="Int32" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="last_logged_in" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="PetBucketDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Appointments" EntityType="Self.Appointment" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Pets" EntityType="Self.Pet" />
+    <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <EntitySet Name="Staffs" EntityType="Self.Staff" />
+  </EntityContainer>
+</Schema>
