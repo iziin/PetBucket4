@@ -14,29 +14,11 @@
 
 <!--This page needs to be populated with data from the database relative to the user login. Below is a style example only.-->
 
-<div class="row">
-    <div class="col-md-5 dual-small-insert">
-        <h2>Your Current Bookings</h2>
-        @{
-            var m = 2; <!--Where m equals the amount of pets linked to user-->
-            for (var i = 1; i <= m; i++)
-            {
-                <p>
-                    Number of Pets: <br />
-                    Pet Name(s): <br />
-                    Pet Type(s): <br />
-                    Dates: <br />
-                    Service:  <br />
-                    @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
-                </p>
-            }
-        }
-    </div>
-    <div class="col-md-5 dual-small-insert">
+    <div class="col-md-7 insert middle-center">
         <h2>Your Upcoming Bookings</h2>
         @{
             var n = 2; <!--Where n equals the amount of pets linked to user-->
-            for (var i = 1; i <= m; i++)
+            for (var i = 1; i <= n; i++)
             {
                 <p>
                     Number of Pets: <br/>

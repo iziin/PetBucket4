@@ -171,6 +171,7 @@
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,12 +266,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Home\Community.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
-    <Content Include="Views\Home\My_Account.cshtml" />
+    <Content Include="Views\User\My_Account.cshtml" />
     <Content Include="Views\Home\Manage_Bookings.cshtml" />
     <Content Include="Views\Home\Reviews.cshtml" />
     <Content Include="Views\Booking\Create.cshtml" />
@@ -279,13 +280,13 @@
     <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Home\Booking.cshtml" />
-    <Content Include="Views\Home\Staff.cshtml" />
+    <Content Include="Views\User\Staff_Home.cshtml" />
     <Content Include="Views\Home\Current_Bookings.cshtml" />
     <Content Include="Views\Home\Upcoming_Bookings.cshtml" />
-    <Content Include="Views\Home\Livestream.cshtml" />
-    <Content Include="Views\Home\Pet_Info.cshtml" />
-    <Content Include="Views\Home\Staff_Login.cshtml" />
-    <Content Include="Views\Home\Your_Pets.cshtml" />
+    <Content Include="Views\User\Livestream.cshtml" />
+    <Content Include="Views\User\Pet_Info.cshtml" />
+    <Content Include="Views\Login\Staff_Login.cshtml" />
+    <Content Include="Views\User\Your_Pets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -303,7 +304,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\NewFolder1\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

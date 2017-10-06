@@ -30,14 +30,14 @@
                 <ul class="nav navbar-nav login-list">
                     @if (Session["UserId"] != null)
                     {
-                        <li>@Html.ActionLink("My Account", "My_Account", "Home")</li> 
+                        <li>@Html.ActionLink("My Account", "My_Account", "User")</li> 
                         <li>@Html.ActionLink("Logout", "LogOut")</li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Staff", "Staff_Login", "Home")</li>
-                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
-                        <li>@Html.ActionLink("Register", "Register", "Home")</li>}
+                        <li>@Html.ActionLink("Staff", "Staff_Login", "Login")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Login")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Login")</li>}
                     
                     
                 </ul>

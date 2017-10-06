@@ -1,4 +1,5 @@
-﻿body {
+﻿/*Applied to all body elements*/
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url("../Images/dog2.jpg");
@@ -7,11 +8,12 @@
     background-color: #40495c;
 }
 
-/* Set padding to keep content from hitting the edges */
+/* Set padding and margins to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -28,21 +30,24 @@ textarea {
     max-width: 280px;
 }
 
-
+/*Sets PetBucket logo height*/
 .logo {
     height: 75px;
 }
 
+/*Floats, Login, Register, Staff, Staff Home, and My Account pages to right of navbar*/
 .login-list {
     float: right;
 }
 
+/*Generic class used by most visual divs*/
 .insert {
     background-color: #eeeeee;
     border-radius: 6px;
     padding-bottom: 10px;
 }
 
+/*Style for small inserts on index page*/
 .index-small-insert {
     background-color: #eeeeee;
     margin-right: 18px;
@@ -53,6 +58,7 @@ textarea {
     padding-bottom: 10px;
 }
 
+/*Style for placing two inserts side by side*/
 .dual-small-insert {
     background-color: #eeeeee;
     border-radius: 6px;
@@ -63,6 +69,7 @@ textarea {
     width: 48%
 }
 
+/*Style for large insert*/
 .large-insert {
     background-color: #eeeeee;
     border-radius: 6px;
@@ -70,28 +77,32 @@ textarea {
     margin-bottom: 15px;
 }
 
+/*Style for login div, not sure if currently being used*/
 .login-window {
     padding-bottom: 10px;
     background-color: #eeeeee;
     border-radius: 6px;
 }
 
-
+/*Style for a centered div. Works best with col-md-7 bootstrap class*/
 .middle-center{ 
     margin-left: 21%;
     margin-right: 21%;
     margin-bottom: 30px;
 }
 
+/*Centers a heading or any text*/
 .title-center{
     text-align: center;
     padding: 25px;
 }
 
+/*Style for sub-headings*/
 .sub-heading{
     font-size: 1.5em;
 }
 
+/*Style and picture link for Facebook logo in footer*/
 .logo-fb {
     background: url(../Images/facebook.png) no-repeat;
     display: block;
@@ -99,6 +110,7 @@ textarea {
     text-indent: -9999px; /* hides the link text */
 }
 
+/*Style and picture link for Instagram logo in footer*/
 .logo-insta {
     background: url(../Images/instagram.png) no-repeat;
     display: block;
@@ -106,6 +118,7 @@ textarea {
     text-indent: -9999px; /* hides the link text */
 }
 
+/*Style and picture link for Twitter logo in footer*/
 .logo-twit {
     background: url(../Images/twitter.png) no-repeat;
     display: block;
@@ -114,6 +127,7 @@ textarea {
 
 }
 
+/*Style and picture link for email logo in footer*/
 .logo-email {
     background: url(../Images/email-icon.png) no-repeat;
     display: block;
@@ -121,29 +135,35 @@ textarea {
     text-indent: -9999px; /* hides the link text */
 }
 
+/*Style for footer*/
 .footer {
-    margin-bottom: -50px;
+    margin-bottom: -50px; /*Decreases blank space at bottom of footer*/
 }
 
+/*Style for list of logos in footer*/
 .footer li {
         margin-bottom: 5px;
         margin-right: 5px;
         margin-left: 5px;
     }
 
+/*Style for footer copyright*/
 .copyright {
        float: right;
     }
 
+/*Style for button. Use in conjunction with any boostrap default button*/
 .b-button{
     float: right;
     margin-right: 10px;
 }
 
+/*Changes footer text colour*/
 .footer-txt {
     color: #E5E5E5;
 }
 
+/*Centers element wihtin livestream div*/
 .livestream{
     margin: auto;
     width: 50%;

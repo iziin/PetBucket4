@@ -18,17 +18,20 @@ namespace PetBucket4.Controllers
             _db = new PetBucketDatabaseEntities();
         }
 
+        /*Links to Index page*/
         public ActionResult Index()
         {
             return View();
         }
-
+        
+        /*Links to About page*/
         public ActionResult About()
         {
 
             return View();
         }
 
+        /*Links to Booking page, redirects to Login page if user has not already logged in*/
         public ActionResult Booking()
         {
             if (Session["UserID"] != null)
@@ -37,7 +40,7 @@ namespace PetBucket4.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Login");
             }
         }
 
@@ -63,146 +66,58 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        /*Links to Reviews page*/
         public ActionResult Reviews()
         {
             return View();
         }
 
+        /*Links to Community page*/
         public ActionResult Community()
         {
             return View();
         }
 
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Register(Customer U)
-        {
-            if (ModelState.IsValid)
-            {
-                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-                {
-                    //Adds creation time
-                    U.created = DateTime.Now.ToLocalTime();
-                    
-                    db.Customers.Add(U);
-                    db.SaveChanges();
-                    ModelState.Clear();
-                    U = null;
-                    ViewBag.Message = "Successfully Registration Complete";
-                }
-            }
-            return View();
-        }
-
+        /*Links to Services page*/
         public ActionResult Services()
         {
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Login(Customer user)
-        {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                var i = db.Customers.Where(u => u.email == user.email && u.password == user.password).FirstOrDefault();
-                if (i != null)
-                {
-                    //Needs something here to update the last logged in time for the account.
-                    //i.last_logged_in = DateTime.Now.ToLocalTime();
-
-                    Session["UserID"] = i.id.ToString();
-                    Session["Email"] = i.email.ToString();
-                    return RedirectToAction("My_Account");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Username or Password is Incorrect!");
-                }
-            }
-            return View();
-        }
-
-        public ActionResult My_Account()
-        {
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-        }
-
-        public ActionResult LogOut()
-        {
-            Session.Clear();
-            return RedirectToAction("Index");
-        }
-
+        /*Links to Gallery page*/
         public ActionResult Gallery()
         {
             return View();
         }
 
+        /*Links to Manage_Bookings page*/
         public ActionResult Manage_Bookings()
         {
             return View();
         }
 
-        public ActionResult Staff()
-        {
-            return View();
-        }
-
+        /*Links to Current_Bookings page*/
         public ActionResult Current_Bookings()
         {
             return View();
         }
 
+        /*Redirects to Facebook page*/
         public ActionResult Facebook()
         {
             return Redirect("https://www.facebook.com/peter.bucket.545");
         }
 
+        /*Redirects to Instagram page*/
         public ActionResult Instagram()
         {
             return Redirect("https://www.instagram.com/pet.bucket/");
         }
 
+        /*Redirects to Twitter page*/
         public ActionResult Twitter()
         {
             return Redirect("https://twitter.com/petbucket4");
-        }
-
-        public ActionResult Your_Pets()
-        {
-            return View();
-        }
-
-        public ActionResult Pet_Info()
-        {
-            return View();
-        }
-
-        public ActionResult Livestream()
-        {
-            return View();
-        }
-
-        public ActionResult Staff_Login()
-        {
-            return View();
         }
     }
 }
