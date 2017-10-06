@@ -10,7 +10,7 @@
         <h1 class="title-center">Staff Home</h1>
         @if (Session["UserId"] != null)
         {
-            <p class="text-center">Hello @Session["Username"].ToString()</p> <!--Except for staff instead of user-->
+            <p class="text-center">Hello @Session["Email"].ToString()</p> <!--Except for staff instead of user-->
         }
     </div>
 </div>

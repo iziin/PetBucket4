@@ -31,8 +31,14 @@ namespace PetBucket4.Controllers
 
         public ActionResult Booking()
         {
-
-            return View();
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         [HttpPost]
@@ -43,11 +49,15 @@ namespace PetBucket4.Controllers
             {
                 using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
+                    //Adds creation time and customer ID
+                    BK.created = DateTime.Now.ToLocalTime();
+                    BK.customer_id = Convert.ToInt32(Session["UserID"].ToString());
+
                     db.Appointments.Add(BK);
                     db.SaveChanges();
                     ModelState.Clear();
                     BK = null;
-                    ViewBag.Message = "Successfully Registration Complete";
+                    ViewBag.Message = "Booking completed";
                 }
             }
             return View();
@@ -76,6 +86,9 @@ namespace PetBucket4.Controllers
             {
                 using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
+                    //Adds creation time
+                    U.created = DateTime.Now.ToLocalTime();
+                    
                     db.Customers.Add(U);
                     db.SaveChanges();
                     ModelState.Clear();
@@ -104,8 +117,11 @@ namespace PetBucket4.Controllers
                 var i = db.Customers.Where(u => u.email == user.email && u.password == user.password).FirstOrDefault();
                 if (i != null)
                 {
+                    //Needs something here to update the last logged in time for the account.
+                    //i.last_logged_in = DateTime.Now.ToLocalTime();
+
                     Session["UserID"] = i.id.ToString();
-                    Session["Username"] = i.email.ToString();
+                    Session["Email"] = i.email.ToString();
                     return RedirectToAction("My_Account");
                 }
                 else

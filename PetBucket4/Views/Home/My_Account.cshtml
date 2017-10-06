@@ -9,7 +9,7 @@
         <h1 class="title-center">My Account</h1>
         @if (Session["UserId"] != null)
         {
-            <p class="text-center">Hello @Session["Username"].ToString()</p>
+            <p class="text-center">Hello @Session["Email"].ToString()</p>
         }
     </div>
 </div>

@@ -17,7 +17,6 @@ namespace PetBucket4.Models
         public int id { get; set; }
         public string first_name { get; set; }
         public string surname { get; set; }
-        public int age { get; set; }
         public string home_phone { get; set; }
         public string mobile_phone { get; set; }
         public string unit_no { get; set; }
@@ -30,5 +29,6 @@ namespace PetBucket4.Models
         public string password { get; set; }
         public Nullable<System.DateTime> last_logged_in { get; set; }
         public System.DateTime created { get; set; }
+        public Nullable<System.DateTime> date_of_birth { get; set; }
     }
 }

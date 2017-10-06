@@ -582,3 +582,4 @@ C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Web.Http.WebHost.dll
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Net.Http.Formatting.xml
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Web.Http.xml
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Web.Http.WebHost.xml
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csprojResolveAssemblyReference.cache

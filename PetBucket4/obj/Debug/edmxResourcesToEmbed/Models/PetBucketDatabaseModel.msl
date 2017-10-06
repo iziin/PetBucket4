@@ -4,10 +4,11 @@
     <EntitySetMapping Name="Appointments">
       <EntityTypeMapping TypeName="PetBucketDatabaseModel.Appointment">
         <MappingFragment StoreEntitySet="Appointment">
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="number_of_pets" ColumnName="number_of_pets" />
           <ScalarProperty Name="pet_id" ColumnName="pet_id" />
-          <ScalarProperty Name="service" ColumnName="service" />
           <ScalarProperty Name="entry_instructions" ColumnName="entry_instructions" />
           <ScalarProperty Name="care_instructions" ColumnName="care_instructions" />
           <ScalarProperty Name="inspection_visit_date" ColumnName="inspection_visit_date" />
@@ -21,10 +22,10 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="PetBucketDatabaseModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="first_name" ColumnName="first_name" />
           <ScalarProperty Name="surname" ColumnName="surname" />
-          <ScalarProperty Name="age" ColumnName="age" />
           <ScalarProperty Name="home_phone" ColumnName="home_phone" />
           <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
           <ScalarProperty Name="unit_no" ColumnName="unit_no" />

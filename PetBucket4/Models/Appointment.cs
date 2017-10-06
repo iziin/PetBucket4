@@ -17,7 +17,6 @@ namespace PetBucket4.Models
         public int id { get; set; }
         public Nullable<int> number_of_pets { get; set; }
         public Nullable<int> pet_id { get; set; }
-        public int service { get; set; }
         public string entry_instructions { get; set; }
         public string care_instructions { get; set; }
         public Nullable<System.DateTime> inspection_visit_date { get; set; }
@@ -25,5 +24,7 @@ namespace PetBucket4.Models
         public Nullable<System.DateTime> end_time { get; set; }
         public System.DateTime created { get; set; }
         public string food { get; set; }
+        public Nullable<int> customer_id { get; set; }
+        public string service { get; set; }
     }
 }

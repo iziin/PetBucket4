@@ -7,7 +7,6 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="number_of_pets" Type="Int32" />
     <Property Name="pet_id" Type="Int32" />
-    <Property Name="service" Type="Int32" Nullable="false" />
     <Property Name="entry_instructions" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="care_instructions" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="inspection_visit_date" Type="DateTime" Precision="0" />
@@ -15,6 +14,8 @@
     <Property Name="end_time" Type="DateTime" Precision="0" />
     <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="food" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="service" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -23,7 +24,6 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="first_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="surname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="age" Type="Int32" Nullable="false" />
     <Property Name="home_phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="mobile_phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="unit_no" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -36,6 +36,7 @@
     <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="last_logged_in" Type="DateTime" Precision="0" />
     <Property Name="created" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="date_of_birth" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Pet">
     <Key>
