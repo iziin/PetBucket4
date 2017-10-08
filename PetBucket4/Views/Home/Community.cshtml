@@ -1,33 +1,45 @@
 ﻿
 @{
     ViewBag.Title = "Community";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
 }
+
+<!--Community page allows users to connect with each other and have some fun-->
+
+<!--New row-->
 <div class="row">
+    <!--Title insert-->
     <div class="col-lg-12 large-insert">
         <h1 class="title-center">Community</h1>
         <p class="text-center">Placeholder</p>
     </div>
 </div>
 
+<!--New row-->
 <div class="row">
+    <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>Fun Facts</h2>
         <p>Placeholder</p>
     </div>
 </div>
 
+<!--New row-->
 <div class="row">
+    <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>Training Tips</h2>
         <p>Placeholder</p>
     </div>
 </div>
 
+<!--New row-->
 <div class="row">
+    <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>Reviews</h2>
-        <p>Click below to read what other people are saying about us. Our leave your own review.</p>
+        <p>Find out what other people are saying about us. Our leave your own review.</p>
+        <!--Links to review page-->
         <p>@Html.ActionLink("Reviews", "Reviews", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>

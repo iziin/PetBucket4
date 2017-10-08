@@ -1,42 +1,61 @@
 ﻿
 @{
     ViewBag.Title = "Services";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
 }
+<!--Services page allows users to browse various service options for their pets and select one to make a booking with-->
+
+<!--New row-->
 <div class="row">
+    <!--Title insert-->
     <div class="col-lg-12 large-insert">
         <h1 class="title-center">Services</h1>
         <p class="text-center">Placeholder</p>
     </div>
 </div>
+
+<!--New row-->
 <div class="row">
+    <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>Basic Service</h2>
         <p>
             Placeholder
         </p>
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-7 insert middle-center">
-        <h2>Standard Service</h2>
-        <p>Placeholder</p>
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-7 insert middle-center">
-        <h2>Premium Service</h2>
-        <p>Placeholder</p>
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
 
+<!--New row-->
 <div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h2>Standard Service</h2>
+        <p>Placeholder</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h2>Premium Service</h2>
+        <p>Placeholder</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>To-Your-Door Service</h2>
         <p>Placeholder</p>
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Home", new { area = "" }, new { @class = "btn btn-primary" })</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = "btn btn-primary" })</p>
     </div>
 </div>

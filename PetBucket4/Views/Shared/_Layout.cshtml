@@ -4,69 +4,75 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetBucket</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css") <!--Links to bootstrap style page-->
     @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" /> <!--Links to Site.css-->
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+    <div class="navbar navbar-inverse navbar-fixed-top"> <!--Creates top-fixed navbar-->
+        <div class="container"> <!--Container div for navbar contents-->
+            <div class="navbar-header"> <!--Navbar Header content does not collapse on small screen sizes-->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img class="logo" src="~/Images/dog-in-enamel-bucket(small).png" />
-                @Html.ActionLink("PetBucket", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) <
+                <img class="logo" src="~/Images/dog-in-enamel-bucket(small).png" /> <!--PetBucket logo-->
+                @Html.ActionLink("PetBucket", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) <!--Link to home page-->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Make a Booking", "Booking", "Home")</li>
-                    <li>@Html.ActionLink("Services", "Services", "Home")</li>
-                    <li>@Html.ActionLink("Community", "Community", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+
+            <div class="navbar-collapse collapse"> <!--Navbar Collapse content collapses on small screen sizes-->
+                <ul class="nav navbar-nav"> <!--Orders links in a list-->
+                    <li>@Html.ActionLink("Make a Booking", "Booking", "Booking")</li> <!--Links to Booking page-->
+                    <li>@Html.ActionLink("Services", "Services", "Home")</li> <!--Links to Services page-->
+                    <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Community page-->
+                    <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
                 </ul>
-                <ul class="nav navbar-nav login-list">
-                    @if (Session["UserId"] != null)
+            
+                <ul class="nav navbar-nav login-list"> <!--Creates new list in navbar and floats to right-->
+                    <!--Only displays 'if' content if user is logged in-->
+                    @if (Session["UserId"] != null)    
                     {
                         <li>@Html.ActionLink("My Account", "My_Account", "User")</li> 
                         <li>@Html.ActionLink("Logout", "LogOut")</li>
                     }
+                    @*Displays 'else' content if user is not logged in*@
                     else
                     {
                         <li>@Html.ActionLink("Staff", "Staff_Login", "Login")</li>
                         <li>@Html.ActionLink("Login", "Login", "Login")</li>
                         <li>@Html.ActionLink("Register", "Register", "Login")</li>}
-                    
-                    
                 </ul>
             </div>
         </div>
     </div>
+
+    <!--Defines where body content should be displayed-->
     <div class="container body-content">
         @RenderBody()
     </div>
 
-    <div class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="navbar-collapse collapse">
+    <div class="navbar navbar-inverse navbar-fixed-bottom"> <!--Fixes footer to bottom of page-->
+        <div class="container"> <!--Defines content area-->
+            <div class="navbar-header"> 
+                <div class="navbar-collapse collapse"> <!--Collapses content on small screen sizes-->
                     <p class="footer-txt">Connect with us on social media!</p>
-                    <ul class="nav navbar-nav footer">
-                        <li>@Html.ActionLink("Facebook", "Facebook", "Home", null, new { @class = "logo-fb" })</li>
-                        <li>@Html.ActionLink("Instagram", "Instagram", "Home", null, new { @class = "logo-insta" })</li>
-                        <li>@Html.ActionLink("Twitter", "Twitter", "Home", null, new { @class = "logo-twit" })</li>
-                        <li>@Html.ActionLink("Email", "#", "Home", null, new { @class = "logo-email" })</li> <!--Currently not working-->
-                        <li class="footer-txt">&copy; @DateTime.Now.Year - OOMS Solutions</li>
+                    <ul class="nav navbar-nav footer"> 
+                        <li>@Html.ActionLink("Facebook", "Facebook", "Home", null, new { @class = "logo-fb" })</li> <!--Redirects to Facebook-->
+                        <li>@Html.ActionLink("Instagram", "Instagram", "Home", null, new { @class = "logo-insta" })</li> <!--Redirects to Instagram-->
+                        <li>@Html.ActionLink("Twitter", "Twitter", "Home", null, new { @class = "logo-twit" })</li> <!--Redirects to Twitter-->
+                        <li>@Html.ActionLink("Email", "#", "Home", null, new { @class = "logo-email" })</li> <!--Currently not working--> <!--Redirects to users email page-->
+                        <li class="footer-txt">&copy; @DateTime.Now.Year - OOMS Solutions</li> <!--Dsiplays copyright and current date/time-->
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery") <!--Links to jquery scripts-->
+    @Scripts.Render("~/bundles/bootstrap") <!--Links to bootstrap scripts-->
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

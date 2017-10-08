@@ -2,18 +2,23 @@
 +﻿
 @{
     ViewBag.Title = "Reviews";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
 }
+
+<!--User can only see 'if' content if user is logged in-->
 @if (Session["UserId"] != null)
 {
-    <div class="col">
+    <!--New column-->
+    <div class="col"> 
+        <!--Creates new column insert-->
         <div class="col-md-5 dual-small-insert">
             <h2>Reviews</h2>
             <p>Placeholder for all reviews</p>
             <br />
             @{
-                var m = 10;
-                for (var i = 1; i <= m; i++)
+                var m = 10; <!--Where 10 will eventually be replaced by a variable based on how many reviews are stored in the db-->
+                @*Displays up to m number of reviews*@
+                for (var i = 1; i <= m; i++)    
                 {
                     <div class="row large-insert text-center">
                         <p>Displays each review based on reviewid(@i)</p>
@@ -21,12 +26,13 @@
                     </div>
                 }
             }
-            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button>
+            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
         </div>
     </div>
 
+    <!--New column insert-->
     <div class="col-md-5 dual-small-insert">
-        <h2>Submit a Review</h2>
+        <h2>Submit a Review</h2> <!--Allows users to submit reviews, currently not linked with db-->
         <div class="col">
             <div>
                 <h1>Review</h1>
@@ -52,27 +58,30 @@
             </div>
         </div>
     </div>
-                }
+ }
 
-                else
+@*Users not logged in will see 'else' content*@
+else
+{
+    <!--New column-->
+    <div class="col">
+        <!-- New medium insert-->
+        <div class="col-md-5 dual-small-insert">
+            <h2>Reviews</h2>
+            <p>Placeholder for all reviews</p>
+            <br />
+            <!--Displays m amount of reviews-->
+            @{
+                var m = 10;
+                for (var i = 1; i <= m; i++)
                 {
-                    <div class="col">
-                        <div class="col-md-5 dual-small-insert">
-                            <h2>Reviews</h2>
-                            <p>Placeholder for all reviews</p>
-                            <br />
-                            @{
-                                var m = 10;
-                                for (var i = 1; i <= m; i++)
-                                {
-                                    <div class="row large-insert text-center">
-                                        <p>Displays each review based on reviewid(@i)</p>
-                                        <br />
-                                    </div>
-                                }
-                            }
-                            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button>
-                        </div>
+                    <div class="row large-insert text-center">
+                    <p>Displays each review based on reviewid(@i)</p>
+                    <br />
                     </div>
-
-                                }
+                }
+            }
+            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
+        </div>
+    </div>
+}

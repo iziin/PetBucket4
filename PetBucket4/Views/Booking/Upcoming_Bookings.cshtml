@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Upcoming_Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines page layout-->
+}
+
+<!--Upcoming bookinsg page displays upcoming bookings to both users and staff-->
+<!--Users only have access to their own bookings though-->
+
+<!--Michael made similar pages. My pages can be integrated or discarded but this layout should serve as a template-->
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-md-10 insert">
+        <h1>Upcoming Bookings</h1>
+        <hr />
+        <p>Placeholder</p>
+        <br />
+        @{
+            var m = 10; <!--Displays upcoming (non-active) bookings based where m is amount of upcoming bookings in db-->
+            for (var i = 1; i <= m; i++)
+            {
+                <!--New row-->
+                <div class="row"> 
+                    <!--Secondary insert-->
+                    <div class="col-md-7 insert">
+                        <p>
+                            Displays each booking based on bookingid(@i)
+                            <!--Displays buttons inline, Edit button is displayed before Delete button despite layout-->
+                            @Html.ActionLink("Delete Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-danger b-button" }) <!--Currently unlinked-->
+                            @Html.ActionLink("Edit Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary b-button" }) <!--Currently unlinked-->
+                        </p>
+                        <br />
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+

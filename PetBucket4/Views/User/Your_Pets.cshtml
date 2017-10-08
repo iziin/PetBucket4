@@ -1,17 +1,22 @@
 ﻿
 @{
     ViewBag.Title = "Your_Pets";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--defines page layout-->
 }
 
+<!--Displays all pets currently in PetBucket care based on user-->
+
+<!--New row-->
 <div class="row">
+    <!--Main insert-->
     <div class="col-md-7 insert">
         <h1>Your Pets</h1>
         <hr />
         <p>Placeholder</p>
         <br />
+        <!--Displays total pets in PetBucket care based on current user-->
         @{
-            var m = 4;
+            var m = 4; <!--Where m is the amount of pets in our care based on db-->
             for (var i = 1; i <= m; i++)
             {
                 <div class="row">
@@ -25,7 +30,7 @@
                             <br/>
                             Current Pick-Up Date:
                             <br/>
-                            @Html.ActionLink("Visit This Pet", "Pet_Info", "User", new { area = "" }, new { @class = " btn btn-primary b-button" })
+                            @Html.ActionLink("Visit This Pet", "Pet_Info", "User", new { area = "" }, new { @class = " btn btn-primary b-button" }) <!--Links to Pet_Info page-->
                         </p>
                         <br />
                     </div>

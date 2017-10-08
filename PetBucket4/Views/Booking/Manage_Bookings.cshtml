@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Manage_Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout-->
+}
+
+<!--Manage bookings page allows satff and users to manage current bookings-->
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-lg-12 large-insert">
+        <h1 class="title-center">Manage Your Bookings</h1>
+        <p class="text-center">View and update your current and upcoming bookings with us!</p>
+    </div>
+</div>
+
+<!--This page needs to be populated with data from the database relative to the user login. Below is a style example only.-->
+<!--Below is an example for user display, staff display needs to be implemented-->
+
+<!--Secondary insert-->
+<div class="col-md-7 insert middle-center">
+    <h2>Your Upcoming Bookings</h2>
+    @{
+        var n = 2; <!--Where n equals the amount of pets linked to user-->
+        for (var i = 1; i <= n; i++)
+        {
+            <p>
+            Number of Pets: <br/>
+            Pet Name(s): <br/>
+            Pet Type(s): <br />
+            Dates: <br />
+            Service:  <br />
+            <!--Allow users to edit booking details if booking is not active-->
+            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+            </p>
+        }
+    }
+</div>

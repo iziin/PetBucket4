@@ -31,41 +31,6 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        /*Links to Booking page, redirects to Login page if user has not already logged in*/
-        public ActionResult Booking()
-        {
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Login");
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Booking(Appointment BK)
-        {
-            if (ModelState.IsValid)
-            {
-                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-                {
-                    //Adds creation time and customer ID
-                    BK.created = DateTime.Now.ToLocalTime();
-                    BK.customer_id = Convert.ToInt32(Session["UserID"].ToString());
-
-                    db.Appointments.Add(BK);
-                    db.SaveChanges();
-                    ModelState.Clear();
-                    BK = null;
-                    ViewBag.Message = "Booking completed";
-                }
-            }
-            return View();
-        }
-
         /*Links to Reviews page*/
         public ActionResult Reviews()
         {
@@ -86,18 +51,6 @@ namespace PetBucket4.Controllers
 
         /*Links to Gallery page*/
         public ActionResult Gallery()
-        {
-            return View();
-        }
-
-        /*Links to Manage_Bookings page*/
-        public ActionResult Manage_Bookings()
-        {
-            return View();
-        }
-
-        /*Links to Current_Bookings page*/
-        public ActionResult Current_Bookings()
         {
             return View();
         }

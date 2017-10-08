@@ -272,17 +272,17 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\User\My_Account.cshtml" />
-    <Content Include="Views\Home\Manage_Bookings.cshtml" />
+    <Content Include="Views\Booking\Manage_Bookings.cshtml" />
     <Content Include="Views\Home\Reviews.cshtml" />
-    <Content Include="Views\Booking\Create.cshtml" />
-    <Content Include="Views\Booking\Delete.cshtml" />
-    <Content Include="Views\Booking\Details.cshtml" />
-    <Content Include="Views\Booking\Edit.cshtml" />
-    <Content Include="Views\Booking\Index.cshtml" />
-    <Content Include="Views\Home\Booking.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Create.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Delete.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Details.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Edit.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Index.cshtml" />
+    <Content Include="Views\Booking\Booking.cshtml" />
     <Content Include="Views\User\Staff_Home.cshtml" />
-    <Content Include="Views\Home\Current_Bookings.cshtml" />
-    <Content Include="Views\Home\Upcoming_Bookings.cshtml" />
+    <Content Include="Views\Booking\Current_Bookings.cshtml" />
+    <Content Include="Views\Booking\Upcoming_Bookings.cshtml" />
     <Content Include="Views\User\Livestream.cshtml" />
     <Content Include="Views\User\Pet_Info.cshtml" />
     <Content Include="Views\Login\Staff_Login.cshtml" />
@@ -304,9 +304,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
