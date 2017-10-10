@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css") <!--Links to bootstrap style page-->
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/Site.css" rel="stylesheet" /> <!--Links to Site.css-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet"> <!--Links to fonts-->
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                     @if (Session["UserId"] != null)    
                     {
                         <li>@Html.ActionLink("My Account", "My_Account", "User")</li> 
-                        <li>@Html.ActionLink("Logout", "LogOut")</li>
+                        <li>@Html.ActionLink("Logout", "LogOut", "Login")</li>
                     }
                     @*Displays 'else' content if user is not logged in*@
                     else
@@ -62,7 +63,7 @@
                         <li>@Html.ActionLink("Facebook", "Facebook", "Home", null, new { @class = "logo-fb" })</li> <!--Redirects to Facebook-->
                         <li>@Html.ActionLink("Instagram", "Instagram", "Home", null, new { @class = "logo-insta" })</li> <!--Redirects to Instagram-->
                         <li>@Html.ActionLink("Twitter", "Twitter", "Home", null, new { @class = "logo-twit" })</li> <!--Redirects to Twitter-->
-                        <li>@Html.ActionLink("Email", "#", "Home", null, new { @class = "logo-email" })</li> <!--Currently not working--> <!--Redirects to users email page-->
+                       @*<li>@Html.ActionLink("Email", "#", "Home", null, new { @class = "logo-email" })</li> <!--Currently not working--> <!--Redirects to users email page-->*@ 
                         <li class="footer-txt">&copy; @DateTime.Now.Year - OOMS Solutions</li> <!--Dsiplays copyright and current date/time-->
                     </ul>
                 </div>

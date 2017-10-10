@@ -46,5 +46,11 @@ namespace PetBucket4.Controllers
         {
             return View();
         }
+
+        /*Links to Account_Details page*/
+        public ActionResult Account_Details()
+        {
+            return View();
+        }
     }
 }

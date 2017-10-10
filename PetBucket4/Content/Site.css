@@ -2,10 +2,13 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("../Images/dog2.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-color: #40495c;
+    /*background-image: url("../Images/dog2.jpg");
+       Old background. Keep just in case. 
+    */
+    background-image: url("../Images/pawprint.png");
+    background-color: #4A5361;
+    background-repeat: repeat;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Set padding and margins to keep content from hitting the edges */
@@ -14,6 +17,7 @@ body {
     padding-right: 15px;
     margin-top: 100px;
     margin-bottom: 100px;
+    padding-bottom: 100px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -28,6 +32,10 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
 }
 
 /*Sets PetBucket logo height*/
@@ -56,6 +64,13 @@ textarea {
     border-radius: 6px;
     width: 30%;
     padding-bottom: 10px;
+    height: 255px;
+}
+
+/*Style for index-small-insert buttons*/
+.index-small-insert-btn{
+    position: absolute;
+    bottom: 10px;
 }
 
 /*Style for placing two inserts side by side*/

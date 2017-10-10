@@ -3,44 +3,53 @@
     ViewBag.Title = "Livestream";
     Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout of page-->
 }
-<<<<<<< HEAD:PetBucket4/Views/Home/Livestream.cshtml
+<!--<<<<<<< HEAD:PetBucket4/Views/Home/Livestream.cshtml-->
 <head>
     <script type="text/javascript" src="//player.wowza.com/player/latest/wowzaplayer.min.js"></script>
 </head>
 <body>
+    <!--New row-->
     <div class="row">
+        <!--Main insert-->
         <div class="col-lg-12 large-insert">
-            <h1 class="title-center">Livestreams</h1> <!--Should display pets name-->
-            <p class="text-center">Placeholder</p>
+            <h1 class="title-center">Livestreams</h1> 
+            <p class="text-center">Welcome to our livestream page. Where you can see what your pet is doing 
+            at anytime, 24 hours a day, 7 days a week.</p>
         </div>
     </div>
+    <!--New row-->
     <div class="row">
+        <!--Second insert-->
         <div class="col-md-7 insert middle-center">
             <h2 class="text-center">Main Area</h2>
             <p class="text-center">
                 Our 24/7 livestream of the main area.
             </p>
         </div>
-        <div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0">
+        <div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"> <!--Div for video player-->
             <script type="text/javascript">
-
+                //Video player
                 WowzaPlayer.create('playerElement',
                     {
                         "license": "PLAY1-97eum-pkWnT-3ZkCP-JHwck-kBFxP",
-                        "title": "Test",
+                        "title": "Main Area",
                         "description": "yeehaw",
                         "sourceURL": "http%3A%2F%2F192.168.199.1%3A1935%2Flive%2FTest1%2Fplaylist.m3u8",
-                        "autoPlay": true,
-                        "volume": "75",
-                        "mute": false,
-                        "loop": false,
-                        "audioOnly": false,
-                        "uiShowQuickRewind": true,
+                        "autoPlay": true,       //Auto plays video on page load
+                        "volume": "75",         //Sets volume to 75% by default
+                        "mute": false,          //Disables mute 
+                        "loop": false,          //Disables loop
+                        "audioOnly": false,     //Enables video and audio
+                        "uiShowQuickRewind": true, 
                         "uiQuickRewindSeconds": "30"
                     }
                 );
             </script>
         </div>
+     </div>
+
+        @*
+            This needs to be fixed!!!!
         <div class="row">
             <h2 class="text-center">Side Area</h2>
             <p class="text-center">
@@ -50,39 +59,42 @@
                     <img src="../Images/fake_livestream2.gif" alt="livestream" class="livestream" />
                 </p>
             </div>
+        </div>
 =======
 
 <!--Users can view livestreams here-->
-
-<!--New row-->
-<div class="row">
-    <!--Main insert-->
-    <div class="col-lg-12 large-insert">
-        <h1 class="title-center">Livestreams</h1> <!--Should display pets name-->
-        <p class="text-center">Placeholder</p>
-    </div>
-</div>
-<!--New row-->
-<div class="row">
-    <!--Secondary Insert-->
-    <div class="col-md-7 insert middle-center">
-        <h2 class="text-center">Main Area</h2> 
-        <p class="text-center">
-            Our 24/7 livestream of the main area. 
-        </p>
-        <p>
-           <img src="../Images/fake_livestream.gif" alt="Livestream" class="livestream"/> <!--Example only-->
-        </p>
-        <!--New row-->
-        <div class="row">
-            <h2 class="text-center">Side Area</h2>
-            <p class="text-center">
-                Our 24/7 livestream of the side area.
-            </p>
-            <p>
-                <img src="../Images/fake_livestream2.gif" alt="livestream" class="livestream" /> <!--Example only-->
-            </p>
->>>>>>> 7c27b7186d2baf472410c74d2da6610575d25dc4:PetBucket4/Views/User/Livestream.cshtml
+        @*
+    <!--New row-->
+    <div class="row">
+        <!--Main insert-->
+        <div class="col-lg-12 large-insert">
+            <h1 class="title-center">Livestreams</h1> <!--Should display pets name-->
+            <p class="text-center">Placeholder</p>
         </div>
     </div>
+    <!--New row-->
+    <div class="row">
+        <!--Secondary Insert-->
+        <div class="col-md-7 insert middle-center">
+            <h2 class="text-center">Main Area</h2>
+            <p class="text-center">
+                Our 24/7 livestream of the main area.
+            </p>
+            <p>
+               <img src="../Images/fake_livestream.gif" alt="Livestream" class="livestream"/> <!--Example only-->
+            </p>
+            <!--New row-->
+            <div class="row">
+                <h2 class="text-center">Side Area</h2>
+                <p class="text-center">
+                    Our 24/7 livestream of the side area.
+                </p>
+                <p>
+                    <img src="../Images/fake_livestream2.gif" alt="livestream" class="livestream" /> <!--Example only-->
+                </p>
+    <!-->>>>>>> 7c27b7186d2baf472410c74d2da6610575d25dc4:PetBucket4/Views/User/Livestream.cshtml-->
+            </div>
+        </div>
+    </div>
+        *@
 </body>

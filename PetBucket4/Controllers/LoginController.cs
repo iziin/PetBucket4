@@ -81,7 +81,7 @@ namespace PetBucket4.Controllers
         public ActionResult LogOut()
         {
             Session.Clear();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
