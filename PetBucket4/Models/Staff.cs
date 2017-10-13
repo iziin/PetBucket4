@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+// Validation is not required - System generated user only.
+
 namespace PetBucket4.Models
 {
     using System;

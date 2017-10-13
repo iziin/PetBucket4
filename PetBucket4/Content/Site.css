@@ -67,6 +67,15 @@ p {
     height: 255px;
 }
 
+.index-twitter {
+    background-color: #eeeeee;
+    margin-right: 18px;
+    margin-left: 18px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
 /*Style for index-small-insert buttons*/
 .index-small-insert-btn{
     position: absolute;

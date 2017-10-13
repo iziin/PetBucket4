@@ -276,7 +276,6 @@ C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\csc.rsp
 C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\csi.exe
 C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\csi.exe.config
 C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\csi.rsp
-C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\desktop.ini
 C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
@@ -814,3 +813,6 @@ C:\Users\Maureen\Documents\Major Project\GitHUb Backups\09-10\PetBucket4\PetBuck
 C:\Users\Maureen\Documents\Major Project\GitHUb Backups\09-10\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.CoreCompileInputs.cache
 C:\Users\Maureen\Documents\Major Project\GitHUb Backups\09-10\PetBucket4\PetBucket4\obj\Debug\PetBucket4.dll
 C:\Users\Maureen\Documents\Major Project\GitHUb Backups\09-10\PetBucket4\PetBucket4\obj\Debug\PetBucket4.pdb
+C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\Oracle.DataAccess.dll
+C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\Oracle.ManagedDataAccess.dll
+C:\Users\Paul\Documents\GitHub\PetBucket4\PetBucket4\bin\Oracle.ManagedDataAccess.EntityFramework.dll
