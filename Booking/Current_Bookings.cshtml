@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Current_Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout-->
+}
+
+<!--Current bookings page specifies which bookings have pets currently in our care (active)-->
+<!--This page is for staff-->
+
+<!--Michael made similar pages. My pages can be integrated or discarded but this layout should serve as a template-->
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-md-10 insert">
+        <h1>Current Bookings</h1>
+        <hr />
+        <p>Placeholder</p>
+        <br />
+        @{
+            <!--Displays m amount of bookings, where m is based on the total amount of active bookings in db-->
+            var m = 10;
+            for (var i = 1; i <= m; i++)
+            {
+                <!--New row-->
+                <div class="row">
+                    <!--New secondary insert-->
+                    <div class="col-md-7 insert">
+                        <p>
+                            Displays each booking based on bookingid(@i)
+                            <!--inline buttons for edit and delete-->
+                            <!--Webpage displays edit button before delete button despite layout-->
+                            @Html.ActionLink("Delete Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-danger b-button" })
+                            @Html.ActionLink("Edit Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary b-button" })
+                        </p>
+                        <br />
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,147 @@
+﻿@model PetBucket4.Models.Customer
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines page layout-->
+}
+
+
+<!--Allows users to register-->
+<!--Needs seperate staff register page or sub-section-->
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-lg-7 large-insert">
+        <h1>Register</h1>
+        <!--Registration handled by form-->
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            if (ViewBag.Message != null)
+            {
+                <div style="border:solid 1px green">
+                    @ViewBag.Message
+                </div>
+            }
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <!--Checks form validation on submission-->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, "Email", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Email field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } }) <!--Email field-->
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.password, "Password", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Password field-->
+                    <div class="col-md-10">
+                        @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-control", placeholder="Password"} }) <!--Password field-->
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.first_name, "First Name", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for First Name field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", placeholder = "First Name"} }) <!--First Name field-->
+                        @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.surname, "Surname", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Surname field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.surname, new { htmlAttributes = new { @class = "form-control", placeholder = "Surname"} }) <!--Surname field-->
+                        @Html.ValidationMessageFor(model => model.surname, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.date_of_birth, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for DoB field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.date_of_birth, new { htmlAttributes = new { @class = "form-control", @type = "date" } }) <!--DoB field-->
+                        @Html.ValidationMessageFor(model => model.date_of_birth, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.house_no, "Street No.", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Street No. field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.house_no, new { htmlAttributes = new { @class = "form-control", placeholder = "House No."} }) <!--Street No field-->
+                        @Html.ValidationMessageFor(model => model.house_no, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.unit_no, "Unit No.", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Unit No field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.unit_no, new { htmlAttributes = new { @class = "form-control", placeholder = "Unit No." } }) <!--Unit No field-->
+                        @Html.ValidationMessageFor(model => model.unit_no, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div> 
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.street, "Street", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Street field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.street, new { htmlAttributes = new { @class = "form-control", placeholder = "Street" } }) <!--Street field-->
+                        @Html.ValidationMessageFor(model => model.street, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.city, "City/Suburb", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for City field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control", placeholder = "City" } }) <!--City field-->
+                        @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.state, "State", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for State field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control", placeholder = "State" } }) <!--State field-->
+                        @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.postcode, "Postcode", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Postcode field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.postcode, new { htmlAttributes = new { @class = "form-control", placeholder = "Postcode" } }) <!--Postcode field-->
+                        @Html.ValidationMessageFor(model => model.postcode, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.home_phone, "Home Phone", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Home Phone field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.home_phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Home Phone" } }) <!--Home Phone field-->
+                        @Html.ValidationMessageFor(model => model.home_phone, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.mobile_phone, "Mobile Phone", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Mobile Phone field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.mobile_phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile Phone" } }) <!--Mobile Phone field-->
+                        @Html.ValidationMessageFor(model => model.mobile_phone, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <!--Submission button-->
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Register!" class="btn btn-block btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <!--Link to home page-->
+        <div>
+            @Html.ActionLink("Home", "Index", "Home")
+        </div>
+    </div>
+</div>

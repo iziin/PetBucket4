@@ -56,6 +56,15 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -159,37 +168,42 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Appointment.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Pet.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetBucketDBModel.Context.cs">
+    <Compile Include="Models\PetBucketDatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PetBucketDBModel.Context.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetBucketDBModel.cs">
+    <Compile Include="Models\PetBucketDatabaseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PetBucketDBModel.Designer.cs">
+    <Compile Include="Models\PetBucketDatabaseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Staff.cs">
-      <DependentUpon>PetBucketDBModel.tt</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,27 +218,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\PetBucketDBModel.Context.tt">
+    <Content Include="Models\PetBucketDatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PetBucketDBModel.Context.cs</LastGenOutput>
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>PetBucketDatabaseModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PetBucketDBModel.tt">
+    <Content Include="Models\PetBucketDatabaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
-      <LastGenOutput>PetBucketDBModel.cs</LastGenOutput>
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>PetBucketDatabaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\PetBucketDBModel.edmx">
+    <EntityDeploy Include="Models\PetBucketDatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PetBucketDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PetBucketDatabaseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\PetBucketDBModel.edmx.diagram">
-      <DependentUpon>PetBucketDBModel.edmx</DependentUpon>
+    <Content Include="Models\PetBucketDatabaseModel.edmx.diagram">
+      <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -252,16 +266,31 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\Home\Booking.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Home\Community.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
-    <Content Include="Views\Home\My_Account.cshtml" />
-    <Content Include="Views\Home\Manage_Bookings.cshtml" />
-    <Content Include="Views\Home\AccountDetails.cshtml" />
-    <Content Include="Views\Home\UpdateDetails.cshtml" />
+    <Content Include="Views\User\My_Account.cshtml" />
+    <Content Include="Views\Booking\Manage_Bookings.cshtml" />
+    <Content Include="Views\Home\Reviews.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Create.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Delete.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Details.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Edit.cshtml" />
+    <Content Include="Views\Booking%28Old%29\Index.cshtml" />
+    <Content Include="Views\Booking\Booking.cshtml" />
+    <Content Include="Views\User\Staff_Home.cshtml" />
+    <Content Include="Views\Booking\Current_Bookings.cshtml" />
+    <Content Include="Views\Booking\Upcoming_Bookings.cshtml" />
+    <Content Include="Views\User\Livestream.cshtml" />
+    <Content Include="Views\User\Pet_Info.cshtml" />
+    <Content Include="Views\Login\Staff_Login.cshtml" />
+    <Content Include="Views\User\Your_Pets.cshtml" />
+    <Content Include="Views\User\Account_Details.cshtml" />
+    <Content Include="Views\User\Change_Password.cshtml" />
+    <Content Include="Views\Booking\Register_Pet.cshtml" />
+    <Content Include="Views\Booking\Select_Pet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -279,9 +308,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Login\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Account_Details";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines page layout-->
+}
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-lg-7 large-insert">
+        <h1>My Account Details</h1>
+        <!--Fields need to be filled with user's info-->
+        <p>First Name: User's first name here</p> 
+        <p>Last Name: User's last name here</p>
+        <p>Date of Birth: User's DoB here</p>
+        <p>Home Phone: User's home phone here</p>
+        <p>Mobile Phone: User's mobile phone here</p>
+        <p>Unit No. </p>
+        <p>Street No.</p>
+        <p>Street Name: </p>
+        <p>Suburb/City: </p>
+        <p>State: </p>
+        <p>Postcode: </p>
+        <p>Email: </p>
+        <p>
+        @Html.ActionLink("Edit Details", "#", "#", new { area = "" }, new { @class = " btn btn-primary" }) <!--Lets users change their details. Unlinked-->
+        @Html.ActionLink("Change Current Password", "Change_Password", "#", new { area = "" }, new { @class = " btn btn-primary" }) <!--Lets users change their password. Unlinked-->
+        </p>
+    </div>
+</div>

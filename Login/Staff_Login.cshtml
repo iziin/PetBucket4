@@ -1,0 +1,52 @@
+﻿@model PetBucket4.Models.Customer 
+
+<!--Model may be wrong. Copied form login page-->
+
+@{
+    ViewBag.Title = "Staff_Login";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout of page-->
+}
+
+<!--Page for staff login-->
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-lg-7 large-insert">
+        <h1>Staff Login</h1>
+        <br />
+        <!--Form handles login-->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h2 class="sub-heading">Staff</h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <!--Checks for submission validity-->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, "Email Address", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Email Label-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Address" } }) <!--Email Field-->
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" }) <!--Checks entry-->
+                    </div> 
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.password, "Password", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Password Label-->
+                    <div class="col-md-10">
+                        @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } }) <!--Password Field-->
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" }) <!--Checks entry-->
+                    </div>
+                </div>
+
+                <!--Submit button-->
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Login" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

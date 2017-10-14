@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
+}
+<!--Services page allows users to browse various service options for their pets and select one to make a booking with-->
+
+<!--New row-->
+<div class="row">
+    <!--Title insert-->
+    <div class="col-lg-12 large-insert">
+        <h1 class="title-center">Services</h1>
+        <p class="text-center">Here at Pet Bucket we offer a variety of services for taking care of your pets while you are away. We will cater to your's and your beloved pet's needs. Simply get in contact with us to discuss specific needs. 
+        As always, when leaving your pet with us it might help to bring with them familiar toys and bedding. This is not a requirement as we can provide these items.                    
+        </p>
+    </div>
+</div>
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h2>Basic Service</h2>
+        <p>
+            Our basic service allows you to bring your pet to us and we will take care of them as per your specific instructions. 
+            Specific needs and requirements can be discussed with us over the phone or when you bring you pet in. 
+            We provide all of their food and water, however should specific dietary requirements be necessary then the food would need to be supplied. 
+        </p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h2>Standard Service</h2>
+        <p>Our standard service includes all of the services of our basic. In addition we will provide you with daily updates on your pets wellbeing via email.</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h2>Premium Service</h2>
+        <p>This is our premier service. It includes all of the benefits of the Standard service. However we will come to your place of residence to pick your pet up. Then when you return home we will drop them off to you. 
+        Additionally we will provide you with a link that you can see how your pet is doing in realtime. This will stream a video to your device!</p>
+        <p>With this service we also offer a 24/7, you can call us up at anytime for an updated or to make alterations to your booking.</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h2>To-Your-Door Service</h2>
+        <p>We will come to your place of residence to look after your pets. This service is perfect for those larger animals such as horses and goats. 
+        We tailor this service to you. Prices vary on distance and need, so contact us for a personalised quote.</p>
+        <!--Links to Booking page so user can make a booking with the selected service-->
+        <p>@Html.ActionLink("Contact us about this Service", "About", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>

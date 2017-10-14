@@ -1,0 +1,89 @@
+﻿
++﻿
+@{
+    ViewBag.Title = "Reviews";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
+}
+
+
+
+<!--User can only see 'if' content if user is logged in-->
+@if (Session["UserId"] != null)
+{
+    <!--New column-->
+    <div class="col"> 
+        <!--Creates new column insert-->
+        <div class="col-md-5 dual-small-insert">
+            <h2>Reviews</h2>
+            <p>Placeholder for all reviews</p>
+            <br />
+            @{
+                var m = 10; <!--Where 10 will eventually be replaced by a variable based on how many reviews are stored in the db-->
+                @*Displays up to m number of reviews*@
+                for (var i = 1; i <= m; i++)    
+                {
+                    <div class="row large-insert text-center">
+                        <p>Displays each review based on reviewid(@i)</p>
+                        <br />
+                    </div>
+                }
+            }
+            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
+        </div>
+    </div>
+
+    <!--New column insert-->
+    <div class="col-md-5 dual-small-insert">
+        <h2>Submit a Review</h2> <!--Allows users to submit reviews, currently not linked with db-->
+        <div class="col">
+            <div>
+                <h1>Review</h1>
+                <form method="post" action="#" id="review-form">
+                    <select name="Score" id="Scoreselect">
+                        <option value="1" id="1-select">1</option>
+                        <option value="2" id="2-select">2</option>
+                        <option value="3" id="3-select">3</option>
+                        <option value="4" id="4-select">4</option>
+                        <option value="5" id="5-select">5</option>
+                        <option value="6" id="6-select">6</option>
+                        <option value="7" id="7-select">7</option>
+                        <option value="8" id="8-select">8</option>
+                        <option value="9" id="9-select">9</option>
+                        <option value="10" id="10-select">10</option>
+                    </select>
+                    <p>
+                        Comment: <input type="text" size="1000" name="score" id="scoretxt" />
+                    </p>
+                    <input type="hidden" value="@Session["Email"]" />
+                    <button type="submit" id="submit-review">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ }
+
+@*Users not logged in will see 'else' content*@
+else
+{
+    <!--New column-->
+    <div class="col">
+        <!-- New medium insert-->
+        <div class="col-md-5 dual-small-insert">
+            <h2>Reviews</h2>
+            <p>Placeholder for all reviews</p>
+            <br />
+            <!--Displays m amount of reviews-->
+            @{
+                var m = 10;
+                for (var i = 1; i <= m; i++)
+                {
+                    <div class="row large-insert text-center">
+                    <p>Displays each review based on reviewid(@i)</p>
+                    <br />
+                    </div>
+                }
+            }
+            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
+        </div>
+    </div>
+}
