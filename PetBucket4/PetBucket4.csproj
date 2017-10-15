@@ -288,6 +288,9 @@
     <Content Include="Views\Login\Staff_Login.cshtml" />
     <Content Include="Views\User\Your_Pets.cshtml" />
     <Content Include="Views\User\Account_Details.cshtml" />
+    <Content Include="Views\User\Change_Password.cshtml" />
+    <Content Include="Views\Booking\Register_Pet.cshtml" />
+    <Content Include="Views\Booking\Select_Pet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

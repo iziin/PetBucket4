@@ -52,5 +52,11 @@ namespace PetBucket4.Controllers
         {
             return View();
         }
+
+        /*Links to Change_Password page*/
+        public ActionResult Change_Password()
+        {
+            return View();
+        }
     }
 }

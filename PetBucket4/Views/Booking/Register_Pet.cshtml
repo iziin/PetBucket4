@@ -1,0 +1,113 @@
+﻿@model PetBucket4.Models.Pet 
+
+@{
+    ViewBag.Title = "Register_Pet"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";   <!--Defines layout page-->
+}
+
+<div class="row">
+    <div class="col-lg-7 large-insert">
+        <h1>Pet Registration</h1>
+
+        @*Scripts for validation*@
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+        <!--Begin Form-->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Register a New Pet</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <!--Checks form validation on submission-->
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.name, "Pet Name", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for Pet Name*@
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } }) @*Input field*@
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" }) @*Message for false validation*@
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.size, "Size", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for Size*@
+                    <div class="col-md-10">
+                        <!--Dropdown items-->
+                        <select name="size" id="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.animal, "Pet Type", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for Pet Type*@
+                    <div class="col-md-10">
+                        <!--Dropdown items-->
+                        <select name="animal" id="animal">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="rabbit">Rabbit</option>
+                            <option value="guinea_pig">Guinea Pig</option>
+                        </select>
+                    </div>
+                </div>
+                
+                 <!--
+                @*Both Radio Buttons displays labels to the right of the buttons, instead of the left, couldn't work out why*@
+                     @*Also these radio buttons do not work with the db, not sure why*@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.indoors_safe, "Is Your Pet Trained to Live Indoors?", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for Indoors-safe*@
+                    <div class="col-md-10">
+                       
+                        <p>
+                            @*Radio button 'yes'*@
+                            Yes
+                            @Html.RadioButtonFor(model => model.indoors_safe, "Yes", htmlAttributes: new { @class = "control-label col-md-2" })
+                        </p>
+                        <p>
+                            @*Radio button 'no'*@
+                            No
+                            @Html.RadioButtonFor(model => model.indoors_safe, "No", htmlAttributes: new { @class = "control-label col-md-2" })
+                        </p>
+                        @*@Html.ValidationMessageFor(model => model.indoors_safe, "", new { @class = "text-danger" }) Message for false validation*@
+                            
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.under_13_safe, "Is Your Pet Safe to be Around Young Children?", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for under-13-safe*@
+                    <div class="col-md-10">
+                        <p>
+                            @*Radio button 'yes'*@
+                            Yes
+                            @Html.RadioButtonFor(model => model.under_13_safe, "Yes", htmlAttributes: new { @class = "control-label col-md-2" })
+                        </p>
+                        <p>
+                            @*Radio button 'no'*@
+                            No
+                            @Html.RadioButtonFor(model => model.under_13_safe, "No", htmlAttributes: new { @class = "control-label col-md-2" })
+                        </p>
+                        @*@Html.ValidationMessageFor(model => model.under_13_safe, "", new { @class = "text-danger" }) Message for false validation*@  
+                    </div>   
+                </div>
+                            -->
+                    <!--Submit button-->
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create Pet" class="btn btn-block btn-primary" />
+                    </div>
+                </div>
+            </div>
+         }
+    </div>
+</div>
+
+
+

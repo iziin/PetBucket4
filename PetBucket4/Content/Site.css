@@ -98,6 +98,7 @@ p {
     background-color: #eeeeee;
     border-radius: 6px;
     padding-bottom: 10px;
+    padding-top: 5px;
     margin-bottom: 15px;
 }
 
@@ -187,10 +188,67 @@ p {
     color: #E5E5E5;
 }
 
-/*Centers element wihtin livestream div*/
+/*Centers element within livestream div*/
 .livestream{
     margin: auto;
     width: 50%;
     display: block;
     margin-bottom: 20px;
+}
+
+/*Style for carousel*/
+#indexCarousel{
+    margin: 30px;
+}
+
+/*Styling for gallery items*/
+.gallery {
+    margin: 5px;
+    float: left;
+    width: 270px;
+}
+
+/*Styling for images in gallery*/
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+/*Gallery image description*/
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*used for standard monitor screen sizes */
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+/*used for screens smaller than 700px*/
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+/*Used for screens smaller than 500px*/
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+/*Ensures items stay within their divs*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }

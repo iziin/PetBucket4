@@ -1,25 +1,268 @@
-﻿
-@{
-    ViewBag.Title = "Gallery";
-    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
-}
+﻿<!DOCTYPE html>
+<html>
+<body>
+    @{
+        ViewBag.Title = "Gallery";
+        Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
+    }
 
-<!--The gallery page contains pictures of users pets-->
-
-<!--New row-->
-<div class="row">
-    <!--Title div-->
-    <div class="col-lg-12 large-insert">
-        <h1 class="title-center">Gallery</h1>
-        <p class="text-center">Placeholder</p>
+    <!--The gallery page contains pictures of users pets-->
+    <!--New row-->
+    <div class="row">
+        <!--Title div-->
+        <div class="col-lg-12 large-insert">
+            <h1 class="title-center">Gallery</h1>
+            <p class="text-center">
+                Check out our pet gallery where you can see some of the many lovely pets that have
+                stayed with us.
+            </p>
+        </div>
     </div>
-</div>
 
-<!--New row-->
-<div class="row">
-    <!--Page spanning div, contains pictures-->
-    <div class="col-lg-12 large-insert">
-        <p>Pictures go here</p>
+    <!--New row-->
+    <div class="row">
+        <!--Page spanning div, provides background-->
+        <div class="col-lg-12 large-insert">
+            <!--Container for pics-->
+            <div class="col-lg-12">
+                <h2 class="text-center">Dogs</h2>
+                <hr />
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                            <img src="../Images/dog3.jpg" alt="Max" width="600" height="400"> <!--Image-->
+                        <div class="desc">Max, enjoying a walk in the park</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                            <img src="../Images/dog4.jpg" alt="Charlie, Roxy, Buster" width="600" height="400"> <!--Image-->
+                        <div class="desc">A tired Charlie, Roxy, and Buster</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                            <img src="../Images/dog5.jpg" alt="Lucy" width="600" height="400"> <!--Image-->
+                        <div class="desc">Lucy rolling around in the grass</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                            <img src="../Images/dog6.jpg" alt="Buddy" width="600" height="400"> <!--Image-->
+                        <div class="desc">An exhausted Buddy having a nap after a big day of fun</div> <!--Description-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div> <!--Keeps items in their correct div-->
+
+            <!--Container for pics-->
+            <div class="col-lg-12">
+                <h2 class="text-center">Cats</h2>
+                <hr />
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                            <img src="../Images/cat2.jpg" alt="Milo" width="600" height="400"> <!--Image-->
+                        <div class="desc">Milo playing with a ball</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/cat3.jpg" alt="Ashes" width="600" height="400"> <!--Image-->
+                        <div class="desc">Ashes enjoys some food</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/cat4.jpg" alt="Angel" width="600" height="400"> <!--Image-->
+                        <div class="desc">Angel isn't letting her disability get her down!</div> <!--Description-->
+                    </div>
+                </div>
+                
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/cat5.jpg" alt="Misty" width="600" height="400"> <!--Image-->
+                        <div class="desc">Misty resting in the sun</div> <!--Description-->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clearfix"></div> <!--Keeps items in their correct div-->
+
+            <!--Container for pics-->
+            <div class="col-lg-12">
+                <h2 class="text-center">Birds</h2>
+                <hr />
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bird3.jpg" alt="Skittles" width="600" height="400"> <!--Image-->
+                        <div class="desc">Skittles enjoying a banana</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bird4.jpg" alt="Sunny" width="600" height="400"> <!--Image-->
+                        <div class="desc">Sunny contemplates whether he wants to fly around or not</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bird5.jpg" alt="Isabelle" width="600" height="400"> <!--Image-->
+                        <div class="desc">Isabelle taking it easy</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bird6.jpg" alt="budgies" width="600" height="400"> <!--Image-->
+                        <div class="desc">Taking some time to be together</div> <!--Description-->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clearfix"></div> <!--Keeps items in their correct div-->
+
+            <!--Container for pics-->
+            <div class="col-lg-12">
+                <h2 class="text-center">Fish</h2>
+                <hr />
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/fish2.jpg" alt="Sakana" width="600" height="400"> <!--Image-->
+                        <div class="desc">One of our friendly staff checking Sakana to see if she's healthy</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery"> 
+                        <img src="../Images/fish3.jpg" alt="Bubbles, Casper" width="600" height="400"> <!--Image-->
+                        <div class="desc">Bubbles and Casper swimming together</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/fish4.jpg" alt="Comet" width="600" height="400"> <!--Image-->
+                        <div class="desc">Comet looking satisfied after a big meal</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/fish5.jpg" alt="Goldie" width="600" height="400"> <!--Image-->
+                        <div class="desc">Goldie playing in the reeds</div> <!--Description-->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clearfix"></div> <!--Keeps items in their correct div-->
+
+            <!--Container for pics-->
+            <div class="col-lg-12">
+                <h2 class="text-center">Rabbits</h2>
+                <hr />
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bun2.jpg" alt="Daisy, Peter" width="600" height="400"> <!--Image-->
+                        <div class="desc">Daisy and Peter spending some time together</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bun3.jpg" alt="Bella" width="600" height="400"> <!--Image-->
+                        <div class="desc">Bella sitting outside</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bun4.jpg" alt="Thumper" width="600" height="400"> <!--Image-->
+                        <div class="desc">Thumper resting on the grass</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/bun5.jpg" alt="Buttercup" width="600" height="400"> <!--Image-->
+                        <div class="desc">Buttercup getting some exercise</div> <!--Description-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div> <!--Keeps items in their correct div-->
+
+            <!--Container for pics-->
+            <div class="col-lg-12">
+                <h2 class="text-center">Other Pets and Farm Animals</h2>
+                <hr />
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/horse2.jpg" alt="Secretarian" width="600" height="400"> <!--Image-->
+                        <div class="desc">Secretariat taking a break</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/chicken.jpg" alt="Hens" width="600" height="400"> <!--Image-->
+                        <div class="desc">Some happy hens pecking at the ground for something good to eat</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/goat.jpg" alt="Pickles" width="600" height="400"> <!--Image-->
+                        <div class="desc">Pickles the baby goat trying out his ability to jump</div> <!--Description-->
+                    </div>
+                </div>
+
+                <!--Gallery item-->
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="../Images/cow.jpg" alt="Betsy" width="600" height="400"> <!--Image-->
+                        <div class="desc">Betsy and Emma spending some quality family time together</div> <!--Description-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div> <!--Keeps items in their correct div-->
+        </div>
     </div>
-</div>
-
+</body>
+</html>

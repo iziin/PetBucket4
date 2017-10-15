@@ -41,7 +41,7 @@ namespace PetBucket4.Controllers
 
     */
 
-
+        /*Code for login*/
         [HttpPost]
         public ActionResult Login(Customer user)
         {

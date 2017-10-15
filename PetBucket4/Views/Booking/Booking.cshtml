@@ -15,6 +15,7 @@
         <script src="~/Scripts/jquery.validate.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
         
+        @*Begin form*@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
@@ -22,37 +23,45 @@
             <div class="form-horizontal">
                 <h4>Appointment</h4>
                 <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" }) @*Checks form validation on submission*@
 
+                @*Number of Pets*@
                 <div class="form-group">
+                    @*Label for Number of Pets*@
                     @Html.LabelFor(model => model.number_of_pets, "Number of Pets", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.pet_id, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.pet_id, "", new { @class = "text-danger" })
+                        @*Sets number of pets in db*@
+                        @Html.EditorFor(model => model.number_of_pets, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.number_of_pets, "", new { @class = "text-danger" }) 
                     </div>
                 </div>
 
-
-                @* Needs a field here to select your registered pets for the booking *@
-
-
+                @*Start date for booking*@
                 <div class="form-group">
+                    @*Label for start date*@
                     @Html.LabelFor(model => model.start_time, "Booking Start", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
+                        @*Sets start_time in db*@
                         @Html.EditorFor(model => model.start_time, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @*Checks validation*@
                         @Html.ValidationMessageFor(model => model.start_time, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
+                @*End date for booking*@
                 <div class="form-group">
                     @Html.LabelFor(model => model.end_time, "Booking End", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
+                        @*Sets end_time in db*@
                         @Html.EditorFor(model => model.end_time, new { htmlAttributes = new { @class = "form-control", @type = "date"} })
+                        @*Checks validation*@
                         @Html.ValidationMessageFor(model => model.end_time, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 @* Make this selection decide which relevant fields to show *@
+                @*Select preffered service*@
                 <div class="form-group">
                     @Html.LabelFor(model => model.service, "Service", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -60,43 +69,59 @@
                             <option value="basic">Shelter - Basic Service</option>
                             <option value="standard">Shelter - Standard Service</option>
                             <option value="premium">Shelter - Premium Service</option>
-                            <option value="toyourdoor">To your door</option> 
+                            <option value="toyourdoor">To Your Door</option> 
                         </select>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.inspection_visit_date, "Inspection Visit Date", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.inspection_visit_date, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                        @Html.ValidationMessageFor(model => model.inspection_visit_date, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
+                @*Special food/nutrition requirements*@
+                @*Should only be available if Standard service or higher was selected*@
                 <div class="form-group">
                     @Html.LabelFor(model => model.food, "Special Food/Nutrition Requirements", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
+                        @*Sets food in db*@
                         @Html.TextAreaFor(model => model.food, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
                         @Html.ValidationMessageFor(model => model.food, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
+                @*This feild should only be available for people who have selected 'to your door' in services dropdown*@
+                @*Inspection Date*@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.inspection_visit_date, "Inspection Visit Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets inspection_visit_date in db*@
+                        @Html.EditorFor(model => model.inspection_visit_date, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.inspection_visit_date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Entry instructions to customers property*@
+                @*Should only be available if 'to your door' was selected in services*@
                 <div class="form-group">
                     @Html.LabelFor(model => model.entry_instructions, "Entry Instructions", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
+                        @*Sets entry_instructions in db*@
                         @Html.TextAreaFor(model => model.entry_instructions, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
                         @Html.ValidationMessageFor(model => model.entry_instructions, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
+                @*Care Instructions*@
                 <div class="form-group">
                     @Html.LabelFor(model => model.care_instructions, "Care Instructions", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
+                        @*Sets care_instructions in db*@
                         @Html.TextAreaFor(model => model.care_instructions, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
                         @Html.ValidationMessageFor(model => model.care_instructions, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
+                @*Submit button*@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Create Booking" class="btn btn-block btn-primary" />

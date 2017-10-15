@@ -13,8 +13,8 @@ namespace PetBucket4.Controllers
 {
     public class BookingController : Controller
     {
-
-        //OLD CONTROLLER SECTION
+        /*
+        //OLD CONTROLLER SECTION, NOT IN USE
 
         private PetBucketDatabaseEntities db = new PetBucketDatabaseEntities();
 
@@ -129,6 +129,7 @@ namespace PetBucket4.Controllers
         }
 
 
+        */
 
 
 
@@ -139,9 +140,8 @@ namespace PetBucket4.Controllers
 
 
 
-
-
-        //NEW CONTROLER SECTION
+        
+        //CURRENT CONTROLER SECTION
         
         /*Links to Booking page, redirects to Login page if user has not already logged in*/
         public ActionResult Booking()
@@ -156,6 +156,7 @@ namespace PetBucket4.Controllers
             }
         }
 
+        /*Creates a new appointment in db*/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Booking(Appointment BK)
@@ -178,6 +179,42 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        /*Links to Register_Pet page*/
+        public ActionResult Register_Pet()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+        /*Creates a new pet in db*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register_Pet(Pet pet)
+        {
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //Adds creation time and customer ID
+                    pet.created = DateTime.Now.ToLocalTime();
+                    pet.customer_id = Convert.ToInt32(Session["UserID"].ToString());
+
+                    db.Pets.Add(pet);
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    pet = null;
+                    ViewBag.Message = "Pet Registered";
+                }
+            }
+            return View();
+        }
+        
         /*Links to Manage_Bookings page*/
         public ActionResult Manage_Bookings()
         {
@@ -194,6 +231,20 @@ namespace PetBucket4.Controllers
         public ActionResult Upcoming_Bookings()
         {
             return View();
+        }
+
+        /*Links to Select_Pet page*/
+        /*Needs to set selected pet to new booking in db*/
+        public ActionResult Select_Pet()
+        {
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
     }
 }
