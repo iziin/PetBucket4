@@ -52,8 +52,8 @@ namespace PetBucket4.Models
         public string email { get; set; }
 
         [Required(ErrorMessage = "Password is Required")]
-        [StringLength(8, ErrorMessage = "Password must be atleast 8 Characters Long")]
         public string password { get; set; }
+
         public Nullable<System.DateTime> last_logged_in { get; set; }
         public System.DateTime created { get; set; }
         public Nullable<System.DateTime> date_of_birth { get; set; }
