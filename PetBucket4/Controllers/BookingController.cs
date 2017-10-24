@@ -146,14 +146,7 @@ namespace PetBucket4.Controllers
         /*Links to Booking page, redirects to Login page if user has not already logged in*/
         public ActionResult Booking()
         {
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Login");
-            }
+            return View();
         }
 
         /*Creates a new appointment in db*/
@@ -235,7 +228,14 @@ namespace PetBucket4.Controllers
         /*Needs to set selected pet to new booking in db*/
         public ActionResult Select_Pet()
         {
-            return View();
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         public ActionResult Register_Pet_Success()
