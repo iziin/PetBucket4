@@ -13,30 +13,30 @@
             <h1>My Account Details</h1>
             <!--Fields need to be filled with user's info-->
             <div class="edit">
-                <p>First Name: </p>
-                <p>Surname: </p>
+                <p>First Name: @Html.DisplayFor(model => model.first_name) </p>
+                <p>Surname: @Html.DisplayFor(model => model.surname)</p>
                 @Html.ActionLink("Edit Name", "Edit_Name", "User", new { area = "" }, new { @class = " btn btn-primary" })
             </div>
             <div class="edit">
-                <p>Date of Birth:</p>
+                <p>Date of Birth: @Html.DisplayFor(model => model.date_of_birth)</p>
             </div>
             <div class="edit">
-                <p>Home Phone: </p>
-                <p>Mobile Phone: </p>
+                <p>Home Phone: @Html.DisplayFor(model => model.home_phone)</p>
+                <p>Mobile Phone: @Html.DisplayFor(model => model.mobile_phone)</p>
                 @Html.ActionLink("Edit Mobile Phone", "Edit_Mobile", "User", new { area = "" }, new { @class = " btn btn-primary" })
                 @Html.ActionLink("Edit Home Phone", "Edit_HomeP", "User", new { area = "" }, new { @class = " btn btn-primary" })
             </div>
             <div class="edit">
-                <p>Unit No. </p>
-                <p>Street No.</p>
-                <p>Street Name: </p>
-                <p>Suburb/City: </p>
-                <p>State: </p>
-                <p>Postcode: </p>
+                <p>Unit No: @Html.DisplayFor(model => model.unit_no) </p>
+                <p>Street No: @Html.DisplayFor(model => model.house_no)</p>
+                <p>Street Name: @Html.DisplayFor(model => model.street)</p>
+                <p>Suburb/City: @Html.DisplayFor(model => model.city)</p>
+                <p>State: @Html.DisplayFor(model => model.state)</p>
+                <p>Postcode: @Html.DisplayFor(model => model.postcode)</p>
                 @Html.ActionLink("Edit Address", "Edit_Address", "User", new { area = "" }, new { @class = " btn btn-primary" })
             </div>
             <div class="edit">
-                <p>Email: </p>
+                <p>Email: @Html.DisplayFor(model => model.email)</p>
                 @Html.ActionLink("Edit Email", "Edit_Email", "User", new { area = "" }, new { @class = " btn btn-primary" })
             </div>
             <div>

@@ -1,4 +1,6 @@
-﻿
+﻿@model Tuple<PetBucket4.Models.Appointment, PetBucket4.Models.Pet>
+<!--To identify the above models in the code: Model 1 = Appointment, Model 2 = Pet-->
+
 @{
     ViewBag.Title = "Manage_Bookings";
     Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout-->
@@ -26,11 +28,12 @@
         for (var i = 1; i <= n; i++)
         {
             <p>
-            Number of Pets: <br/>
-            Pet Name(s): <br/>
-            Pet Type(s): <br />
-            Dates: <br />
-            Service:  <br />
+            Number of Pets: @Html.DisplayFor(model => model.Item1.number_of_pets)<br/>
+            <!--Somehow link this to display the correct data-->
+            Pet Name(s): @Html.DisplayFor(model => model.Item2.name)<br/>
+            Pet Type(s): @Html.DisplayFor(model => model.Item2.animal)<br />
+            Dates: @Html.DisplayFor(model => model.Item1.start_time) TO @Html.DisplayFor(model => model.Item1.end_time)<br />
+            Service:  @Html.DisplayFor(model => model.Item1.service)<br />
             <!--Allow users to edit booking details if booking is not active-->
             @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
             </p>
