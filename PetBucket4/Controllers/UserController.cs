@@ -10,6 +10,9 @@ namespace PetBucket4.Controllers
 {
     public class UserController : Controller
     {
+        /* Not sure if this should be needed or not
+        * private PetBucketDatabaseEntities db = new PetBucketDatabaseEntities();
+        */
         /*Links to My_Account page if user has logged in, otherwise, redirects to Login page*/
         public ActionResult My_Account()
         {
