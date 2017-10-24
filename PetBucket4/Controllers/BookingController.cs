@@ -173,23 +173,21 @@ namespace PetBucket4.Controllers
                     db.SaveChanges();
                     ModelState.Clear();
                     BK = null;
-                    ViewBag.Message = "Booking completed";
+                    return RedirectToAction("Booking_Success", "Booking");
                 }
             }
+            return View();
+        }
+
+        public ActionResult Booking_Success()
+        {
             return View();
         }
 
         /*Links to Register_Pet page*/
         public ActionResult Register_Pet()
         {
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Login");
-            }
+            return View();
         }
 
         /*Creates a new pet in db*/
@@ -209,7 +207,7 @@ namespace PetBucket4.Controllers
                     db.SaveChanges();
                     ModelState.Clear();
                     pet = null;
-                    ViewBag.Message = "Pet Registered";
+                    return RedirectToAction("Register_Pet_Success", "Booking");
                 }
             }
             return View();
@@ -237,14 +235,12 @@ namespace PetBucket4.Controllers
         /*Needs to set selected pet to new booking in db*/
         public ActionResult Select_Pet()
         {
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Login");
-            }
+            return View();
+        }
+
+        public ActionResult Register_Pet_Success()
+        {
+            return View();
         }
     }
 }

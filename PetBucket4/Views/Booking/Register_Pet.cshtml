@@ -59,45 +59,30 @@
                     </div>
                 </div>
                 
-                 <!--
-                @*Both Radio Buttons displays labels to the right of the buttons, instead of the left, couldn't work out why*@
-                     @*Also these radio buttons do not work with the db, not sure why*@
+                 
+               <!--Doesn't work with db, no idea why
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.indoors_safe, "Is Your Pet Trained to Live Indoors?", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for Indoors-safe*@
                     <div class="col-md-10">
-                       
-                        <p>
-                            @*Radio button 'yes'*@
-                            Yes
-                            @Html.RadioButtonFor(model => model.indoors_safe, "Yes", htmlAttributes: new { @class = "control-label col-md-2" })
-                        </p>
-                        <p>
-                            @*Radio button 'no'*@
-                            No
-                            @Html.RadioButtonFor(model => model.indoors_safe, "No", htmlAttributes: new { @class = "control-label col-md-2" })
-                        </p>
-                        @*@Html.ValidationMessageFor(model => model.indoors_safe, "", new { @class = "text-danger" }) Message for false validation*@
-                            
+                        <select name="indoors_safe" id="indoors_safe">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>                          
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.under_13_safe, "Is Your Pet Safe to be Around Young Children?", htmlAttributes: new { @class = "control-label col-md-2" }) @*Label for under-13-safe*@
                     <div class="col-md-10">
-                        <p>
-                            @*Radio button 'yes'*@
-                            Yes
-                            @Html.RadioButtonFor(model => model.under_13_safe, "Yes", htmlAttributes: new { @class = "control-label col-md-2" })
-                        </p>
-                        <p>
-                            @*Radio button 'no'*@
-                            No
-                            @Html.RadioButtonFor(model => model.under_13_safe, "No", htmlAttributes: new { @class = "control-label col-md-2" })
-                        </p>
-                        @*@Html.ValidationMessageFor(model => model.under_13_safe, "", new { @class = "text-danger" }) Message for false validation*@  
+                        <select name="under_13_safe" id="under_13_safe">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
                     </div>   
                 </div>
-                            -->
+          -->
+
                     <!--Submit button-->
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">

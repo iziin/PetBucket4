@@ -291,6 +291,15 @@
     <Content Include="Views\User\Change_Password.cshtml" />
     <Content Include="Views\Booking\Register_Pet.cshtml" />
     <Content Include="Views\Booking\Select_Pet.cshtml" />
+    <Content Include="Views\Booking\Booking_Success.cshtml" />
+    <Content Include="Views\Login\Register_Success.cshtml" />
+    <Content Include="Views\Booking\Register_Pet_Success.cshtml" />
+    <Content Include="Views\User\Change_Password_Success.cshtml" />
+    <Content Include="Views\User\Edit_Address.cshtml" />
+    <Content Include="Views\User\Edit_Name.cshtml" />
+    <Content Include="Views\User\Edit_Mobile.cshtml" />
+    <Content Include="Views\User\Edit_HomeP.cshtml" />
+    <Content Include="Views\User\Edit_Email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

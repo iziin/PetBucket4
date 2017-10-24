@@ -53,8 +53,51 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        /*Links to Edit_Address page*/
+        public ActionResult Edit_Address()
+        {
+            return View();
+        }
+
+        /*Links to Edit_Email page*/
+        public ActionResult Edit_Email()
+        {
+            return View();
+        }
+
+        /*Links to Edit_HomeP page*/
+        public ActionResult Edit_HomeP()
+        {
+            return View();
+        }
+
+        /*Links to Edit_HomeP page*/
+        public ActionResult Edit_Mobile()
+        {
+            return View();
+        }
+
+        /*Links to Edit_HomeP page*/
+        public ActionResult Edit_Name()
+        {
+            return View();
+        }
+
         /*Links to Change_Password page*/
         public ActionResult Change_Password()
+        {
+            return View();
+        }
+
+        /*Only redirects on submit atm, needs to be updated*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Change_Password(Customer newPassword)
+        {
+            return RedirectToAction("Change_Password_Success", "User");
+        }
+
+        public ActionResult Change_Password_Success()
         {
             return View();
         }

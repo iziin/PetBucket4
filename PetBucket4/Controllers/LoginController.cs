@@ -99,7 +99,7 @@ namespace PetBucket4.Controllers
                     db.SaveChanges();
                     ModelState.Clear();
                     U = null;
-                    ViewBag.Message = "Successfully Registration Complete";
+                    return RedirectToAction("Register_Success", "Login");
                 }
             }
             return View();
@@ -107,6 +107,11 @@ namespace PetBucket4.Controllers
 
         /*Links to Register page*/
         public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult Register_Success()
         {
             return View();
         }

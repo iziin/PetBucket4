@@ -1,0 +1,42 @@
+﻿@model PetBucket4.Models.Customer
+@{
+    ViewBag.Title = "Edit_HomeP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--New row-->
+<div class="row">
+    <!--Main insert-->
+    <div class="col-lg-7 large-insert">
+        <h1>Change Home Phone Number</h1>
+        <br />
+
+        <!--Not currently linked to db-->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <h2 class="sub-heading">New Home Phone Number</h2>
+            <hr />
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.home_phone, "Home Phone", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Home Phone field-->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.home_phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Home Phone" } }) <!--Home Phone field-->
+                        @Html.ValidationMessageFor(model => model.home_phone, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
+                    </div>
+                </div>
+
+                <!--Submit button-->
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save Changes" class="btn btn-block btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
