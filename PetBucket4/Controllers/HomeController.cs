@@ -23,7 +23,7 @@ namespace PetBucket4.Controllers
         {
             return View();
         }
-        
+
         /*Links to About page*/
         public ActionResult About()
         {
@@ -72,5 +72,31 @@ namespace PetBucket4.Controllers
         {
             return Redirect("https://twitter.com/petbucket4");
         }
+
+
+        public ActionResult New_Review()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult New_Review([Bind(Include = "review_text,rating")] Review _review)
+        {
+
+            if(ModelState.IsValid)
+            {
+                _review.customer_id = Convert.ToInt32(Session["UserID"].ToString());
+                _review.created = DateTime.Now;
+                _db.Reviews.Add(_review);
+                _db.SaveChanges();
+
+                ModelState.Clear();
+                _review = null;
+                return RedirectToAction("Reviews");
+            }
+            return View(_review);
+        }
+
     }
 }

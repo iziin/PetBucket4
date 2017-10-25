@@ -300,6 +300,7 @@
     <Content Include="Views\User\Edit_Mobile.cshtml" />
     <Content Include="Views\User\Edit_HomeP.cshtml" />
     <Content Include="Views\User\Edit_Email.cshtml" />
+    <Content Include="Views\Home\New_Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
