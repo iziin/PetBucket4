@@ -29,17 +29,19 @@
                     {
                         <li>@Html.ActionLink("Make a Booking", "Select_Pet", "Booking")</li> <!--Links to Booking page-->
                         <li>@Html.ActionLink("Services", "Services", "Home")</li> <!--Links to Services page-->
-                        <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Gallery page-->
-                        <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
+                        <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Community page-->
+                        <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li> <!--Links to Gallery page-->
                         <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
+                        <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to Reviews page-->
                     }
                     @*Displays 'else' content if user is not logged in*@
                     else
                     {
                     <li>@Html.ActionLink("Services", "Services", "Home")</li> <!--Links to Services page-->
                     <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Gallery page-->
-                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>} <!--Links to About page-->
+                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li> <!--Links to Gallery page-->
+                    <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
+                    <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to Reviews page-->} 
                 </ul>
             
                 <ul class="nav navbar-nav login-list"> <!--Creates new list in navbar and floats to right-->

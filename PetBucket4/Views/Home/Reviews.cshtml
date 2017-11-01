@@ -4,13 +4,24 @@
     ViewBag.Title = "Reviews";
     Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
 }
-<!--User can only see 'if' content if user is logged in-->
-@if (Session["UserId"] != null)
-{
+
+
+
+<!--Remove this page if it still doesn't function before submission and replace with New_Review page-->
+
+<!--New row-->
+<div class="row">
+    <!--Centered insert-->
+    <div class="col-md-7 insert middle-center">
+        <h1>Reviews</h1>
+        <p>Find out what other people are saying about us. Or leave your own review and tell us what you thought of PetBucket.</p>
+        <p>@Html.ActionLink("Write a Review", "New_Review", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+    </div>
+</div>
 
     <div class="col">
         <!-- New medium insert-->
-        <div class="col-md-5 dual-small-insert">
+        <div class="col-md-7 insert middle-center">
             <h2>Reviews</h2>
             <p>Placeholder for all reviews</p>
             <br />
@@ -28,39 +39,3 @@
             <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
         </div>
     </div>
-
-    <p>@Html.ActionLink("Submit Review", "New_Review", new { area = "" }, new { @class = " btn btn-primary" })</p>
-
-}
-
-
-        @*Users not logged in will see 'else' content*@
-else
-{
-
-
-
-        <div class="col">
-            <!-- New medium insert-->
-            <div class="col-md-5 dual-small-insert">
-                <h2>Reviews</h2>
-                <p>Placeholder for all reviews</p>
-                <br />
-                <!--Displays m amount of reviews-->
-                @{
-                    var m = 10;
-                    for (var i = 1; i <= m; i++)
-                    {
-                        <div class="row large-insert text-center">
-                            <p>Displays each review based on reviewid(@i)</p>
-                            <br />
-                        </div>
-                    }
-                }
-                <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
-            </div>
-        </div>
-
-        <p>@Html.ActionLink("Submit Review", "New_Review", new { area = "" }, new { @class = " btn btn-primary" })</p>
-
-}

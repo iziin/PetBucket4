@@ -76,7 +76,14 @@ namespace PetBucket4.Controllers
 
         public ActionResult New_Review()
         {
-            return View();
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
 
 

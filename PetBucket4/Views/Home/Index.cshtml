@@ -2,17 +2,6 @@
     ViewBag.Title = "Home Page";
 }
 
-    <!--Main div on index page-->
-    <div class="jumbotron insert">
-        <h1>PetBucket</h1>
-        <p>
-            PetBucket is a pet boarding service designed with your convenience in mind. Choose from 3 fantastic levels of service and leave your pet with us
-            so that you can take that long-awaited holiday.
-            Don't want to drop your pets off? We'll even come to you and take care of your pets in your home while you're gone.
-        </p>
-        <p>@Html.ActionLink("Learn More", "Services", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p> <!--Links to Services page-->
-    </div>
-
 <!--Image Carousel-->
 <div id="indexCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -32,10 +21,11 @@
             <img src="../Images/dog2-resize.jpg" alt="Dog">
             <!--Specifies Caption-->
             <div class="carousel-caption">
-                <h3>We Take All Kinds of Pets
+                <h3>
+                    We Take All Kinds of Pets
                 </h3>
                 <p>
-                 Including Dogs
+                    Including Dogs
                 </p>
             </div>
         </div>
@@ -91,19 +81,31 @@
                 </p>
             </div>
         </div>
-    <!--Defines an item in the carousel-->
-    <div class="item">
-        <img src="../Images/horse-resize.jpg" alt="Horse">
-        <!--Specifies Caption-->
-        <div class="carousel-caption">
-            <h3>
-                We Take All Kinds of Pets
-            </h3>
-            <p>
-                We'll Even Come to You
-            </p>
+        <!--Defines an item in the carousel-->
+        <div class="item">
+            <img src="../Images/horse-resize.jpg" alt="Horse">
+            <!--Specifies Caption-->
+            <div class="carousel-caption">
+                <h3>
+                    We Take All Kinds of Pets
+                </h3>
+                <p>
+                    We'll Even Come to You
+                </p>
+            </div>
         </div>
     </div>
+</div>
+    <br />
+<!--Main div on index page-->
+<div class="jumbotron insert">
+    <h1>PetBucket</h1>
+    <p>
+    PetBucket is a pet boarding service designed with your convenience in mind. Choose from 3 fantastic levels of service and leave your pet with us
+    so that you can take that long-awaited holiday.
+    Don't want to drop your pets off? We'll even come to you and take care of your pets in your home while you're gone.
+    </p>
+    <p>@Html.ActionLink("Learn More", "Services", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p> <!--Links to Services page-->
 </div>
 
 @*
@@ -119,8 +121,6 @@
     </a>
 
 *@
-
-</div>
 
     <!--New row-->
     <div class="row">
@@ -154,7 +154,7 @@
     <!--New row-->
     <div class="row">
         <!--Page-spanning div-->
-        <div class="col-md-12 large-insert">
+        <div class="col-md-7 insert middle-center">
             <h2 style="padding-top:20px">To-Your-Door Service</h2>
             <p>
                 Our To-Your-Door offering allows us to come to your place of residence to take care of your animals. This service is perfect for those larger animals that we cannot cater for at our center.
@@ -162,11 +162,13 @@
             </p>
             <p>@Html.ActionLink("Learn More", "Services", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p> <!--Links to Services page-->
         </div>
-    </div>
+        </div>
 
-    <div class="row">
-        <!--1st Div - Twitter Handle-->
-        <a class="twitter-timeline" data-width="300" data-height="500" href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park Tweets - Curated tweets by TwitterDev</a>
+<div class="row"> 
+    <div class="twitter-middle-center">
+        <!--Twitter Handle-->
+        <a class="twitter-timeline" data-width="500" data-height="600" href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park Tweets - Curated tweets by TwitterDev</a>
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
     </div>
+</div>
+

@@ -143,7 +143,6 @@ C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\roslyn\VBCSCompiler.
 C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\PetBucket4.dll.config
 C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\PetBucket4.dll
 C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\PetBucket4.pdb
-C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\Newtonsoft.Json.dll
 C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\EntityFramework.xml
 C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\EntityFramework.SqlServer.xml
 C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -925,3 +924,10 @@ C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Stripe.net.dll
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\RestSharp.xml
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.Properties.Resources.resources
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.GenerateResource.Cache
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.Properties.Resources.resources
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.GenerateResource.Cache
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\Newtonsoft.Json.dll
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\RestSharp.dll
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\Stripe.dll
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\Stripe.net.dll
+C:\Users\Maureen\Documents\GitHub\PetBucket4\PetBucket4\bin\RestSharp.xml

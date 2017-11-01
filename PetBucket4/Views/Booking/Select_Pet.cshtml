@@ -1,9 +1,27 @@
-﻿@model PetBucket4.Models.Pet 
+﻿@model IEnumerable<PetBucket4.Models.Pet>
+
 
 @{
     ViewBag.Title = "Select_Pet";
     Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines page layout-->
 }
+
+<!--Show/hide button script. Not working atm. Take out if needed-->
+<script>
+function showDiv() {
+    var showDiv = document.getElementById("hiddenDiv");
+    if (showDiv.style.display === "none")
+    {
+        showDiv.style.display = "block";
+    }
+    else
+    {
+        showDiv.style.display = "none";
+    }
+}
+
+</script>
+
 
 <!--New row-->
 <div class="row">
@@ -11,16 +29,24 @@
     <div class="col-lg-7 large-insert">
         <h1>Pets</h1>
         <p>Choose which pets you would like to stay with us this booking from a list of your pets
-        who have previously stayed with us!</p>
+        who have previously stayed with us!
+        </p>
+        <!--foreach example. Displays each pet's name registered to logged in user-->
+        <p>
+            @foreach (var item in Model)
+            {
+                @Html.DisplayFor(modelItem => item.name);
+            }
+        </p>
 
         <!--Begin Form-->
         <div class="form-horizontal">
-            <h4>Select a Pet</h4>
+            <h2>Select a Pet</h2>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <!--Checks for valid form submission-->
 
             <div class="form-group">
-                @Html.LabelFor(model => model.name, "Your Pets", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for dropdown-->
+               @* @Html.LabelFor(model => model.name, "Your Pets", htmlAttributes: new { @class = "control-label col-md-2" }) *@<!--Label for dropdown-->
                 <div class="col-md-10">
                     <!--Dropdown items-->
                     <select name="pet" id="size">
@@ -28,6 +54,36 @@
                         <option value="pet_1">Example Cat</option>
                         <option value="pet_3">Example Bird</option>
                     </select>
+                </div>
+            </div>
+
+            <button onclick="showDiv()" class="btn btn-default">Add a Pet</button>
+            <div id="hiddenDiv" class="hiddenDiv">
+                <div class="form-group">
+                   @* @Html.LabelFor(model => model.name, "Your Pets", htmlAttributes: new { @class = "control-label col-md-2" }) *@<!--Label for dropdown-->
+                    <div class="col-md-10">
+                        <!--Dropdown items-->
+                        <select name="pet" id="size">
+                            <option value="pet_0">Example Dog</option>
+                            <option value="pet_1">Example Cat</option>
+                            <option value="pet_3">Example Bird</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="showDiv()" class="btn btn-default">Add a Pet</button>
+            <div id="hiddenDiv" class="hiddenDiv">
+                <div class="form-group">
+                 @*  @Html.LabelFor(model => model.name, "Your Pets", htmlAttributes: new { @class = "control-label col-md-2" }) *@ <!--Label for dropdown-->
+                    <div class="col-md-10">
+                        <!--Dropdown items-->
+                        <select name="pet" id="size">
+                            <option value="pet_0">Example Dog</option>
+                            <option value="pet_1">Example Cat</option>
+                            <option value="pet_3">Example Bird</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 

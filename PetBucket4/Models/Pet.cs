@@ -10,9 +10,10 @@
 namespace PetBucket4.Models
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     
-    public partial class Pet
+    public partial class Pet : IEnumerable
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -24,5 +25,11 @@ namespace PetBucket4.Models
         public Nullable<int> customer_id { get; set; }
         public System.DateTime created { get; set; }
         public Nullable<System.DateTime> last_active { get; set; }
+
+        public IEnumerator GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
     }
 }
