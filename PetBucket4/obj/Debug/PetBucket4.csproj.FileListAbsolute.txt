@@ -919,3 +919,9 @@ C:\Users\Testing1\Desktop\New folder\PetBucket4\PetBucket4\obj\Debug\PetBucket4.
 C:\Users\Testing1\Desktop\New folder\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.CoreCompileInputs.cache
 C:\Users\Testing1\Desktop\New folder\PetBucket4\PetBucket4\obj\Debug\PetBucket4.dll
 C:\Users\Testing1\Desktop\New folder\PetBucket4\PetBucket4\obj\Debug\PetBucket4.pdb
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\RestSharp.dll
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Stripe.dll
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\Stripe.net.dll
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\RestSharp.xml
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.Properties.Resources.resources
+C:\Users\Izin\source\repos\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.GenerateResource.Cache
