@@ -47,6 +47,15 @@ namespace PetBucket4.Controllers
         /*Links to Your_Pets page*/
         public ActionResult Your_Pets()
         {
+            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+            {
+                int userID = Int32.Parse(Session["UserID"].ToString());
+                var model = db.Pets.Where(u => u.customer_id == userID).ToList();
+                if (model != null)
+                {
+                    return View(model);
+                }
+            }
             return View();
         }
 

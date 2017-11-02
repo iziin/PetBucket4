@@ -168,6 +168,7 @@ namespace PetBucket4.Controllers
                     //Adds creation time and customer ID
                     BK.created = DateTime.Now.ToLocalTime();
                     BK.customer_id = Convert.ToInt32(Session["UserID"].ToString());
+                    BK.pet_id = Convert.ToInt32(Session["petID"].ToString());
 
                     db.Appointments.Add(BK);
                     db.SaveChanges();
@@ -216,6 +217,15 @@ namespace PetBucket4.Controllers
         /*Links to Manage_Bookings page*/
         public ActionResult Manage_Bookings()
         {
+            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+            {
+                int userID = Int32.Parse(Session["UserID"].ToString());
+                var bookingModel = db.Appointments.Where(u => u.customer_id == userID).ToList();
+                if (bookingModel != null)
+                {
+                    return View(bookingModel);
+                }
+            }
             return View();
         }
 
@@ -233,30 +243,29 @@ namespace PetBucket4.Controllers
 
 
         /*Links to Select_Pet page*/
-        /*Needs to set selected pet to new booking in db*/
-        /*example of how to select table elements based on user id. NEEDS TO BE MOVED TO A BETTER SPOT WITHIN CONTROLLER. THIS IS A TEST.*/
-        public ActionResult Select_Pet(Pet user)
+        public ActionResult Select_Pet()
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                int userID = Int32.Parse(Session["UserID"].ToString());
-                var model = db.Pets.Where(u => u.customer_id == userID).ToList();
-                if (model != null)
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Select_Pet(Pet selectedPet)
+        {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
-                    if (Session["UserID"] != null)
+                    int userID = Int32.Parse(Session["UserID"].ToString());
+                    var pet = db.Pets.Where(m => m.name == selectedPet.name && m.customer_id == userID).FirstOrDefault();
+                    if (pet != null)
                     {
-                        return View(model);
+                        Session["petID"] = pet.id.ToString();
+                        return RedirectToAction("Booking", "Booking");
                     }
                     else
                     {
-                        return RedirectToAction("Login", "Login");
+                        return View();
                     }
-                    
-
                 }
-
-                return View();
-            }
         }
 
         public ActionResult Register_Pet_Success()
