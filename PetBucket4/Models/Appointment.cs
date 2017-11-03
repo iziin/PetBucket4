@@ -10,10 +10,9 @@
 namespace PetBucket4.Models
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     
-    public partial class Appointment :IEnumerable
+    public partial class Appointment
     {
         public int id { get; set; }
         public Nullable<int> number_of_pets { get; set; }
@@ -27,11 +26,5 @@ namespace PetBucket4.Models
         public string food { get; set; }
         public Nullable<int> customer_id { get; set; }
         public string service { get; set; }
-
-        public IEnumerator GetEnumerator()
-        {
-            return GetEnumerator();
-        }
     }
-
 }

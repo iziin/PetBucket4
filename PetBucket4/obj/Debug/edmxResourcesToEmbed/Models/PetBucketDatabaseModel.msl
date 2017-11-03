@@ -49,8 +49,6 @@
           <ScalarProperty Name="size" ColumnName="size" />
           <ScalarProperty Name="animal" ColumnName="animal" />
           <ScalarProperty Name="active" ColumnName="active" />
-          <ScalarProperty Name="indoors_safe" ColumnName="indoors_safe" />
-          <ScalarProperty Name="under_13_safe" ColumnName="under_13_safe" />
           <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="created" ColumnName="created" />
           <ScalarProperty Name="last_active" ColumnName="last_active" />
@@ -65,19 +63,6 @@
           <ScalarProperty Name="review_text" ColumnName="review_text" />
           <ScalarProperty Name="rating" ColumnName="rating" />
           <ScalarProperty Name="created" ColumnName="created" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Staffs">
-      <EntityTypeMapping TypeName="PetBucketDatabaseModel.Staff">
-        <MappingFragment StoreEntitySet="Staff">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="first_name" ColumnName="first_name" />
-          <ScalarProperty Name="surname" ColumnName="surname" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="created" ColumnName="created" />
-          <ScalarProperty Name="last_logged_in" ColumnName="last_logged_in" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

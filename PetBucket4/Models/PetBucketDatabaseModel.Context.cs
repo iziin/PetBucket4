@@ -29,6 +29,5 @@ namespace PetBucket4.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
-        public virtual DbSet<Staff> Staffs { get; set; }
     }
 }
