@@ -10,34 +10,40 @@
 <!--New row-->
 <div class="row">
     <!--Main insert-->
-    <div class="col-md-7 insert middle-center">
-        <h1>Your Pets</h1>
+    <div class="col-lg-12 large-insert">
+        <h1 class="title-center">Your Pets</h1>
         <hr />
-        <p>View your currently registered pets and register a new pet here.</p>
-        <br />
-        <!--Displays total pets in PetBucket care based on current user-->
-        @foreach (var item in Model)
-        {
-            <div class="row">
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().name, "Pet Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                        @Html.DisplayFor(modelItem => item.name)
-                    </p>
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().animal, "Pet Type", htmlAttributes: new { @class = "control-label col-md-2" })
-                        @Html.DisplayFor(modelItem => item.animal)
-                    </p>
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().size, "Size", htmlAttributes: new { @class = "control-label col-md-2" })
-                        @Html.DisplayFor(modelItem => item.size)
-                    </p>
-                    <p>
-                        @Html.ActionLink("Visit This Pet", "Pet_Info", "User", new { area = "" }, new { @class = " btn btn-primary b-button" }) <!--Links to Pet_Info page-->
-                    </p>
-            </div>
-        }
-        <p>
-            @Html.ActionLink("Register New Pet", "Register_Pet", "Booking", new { area = "" }, new { @class = " btn btn-primary" }) <!--Button to Register_Pet page-->
-        </p>
+        <p class="text-center">View your currently registered pets and register a new pet here.</p>
     </div>
+    <br />
 </div>
+
+    <div class="row">
+        <div class="col-md-7 insert middle">
+            <!--Displays total pets in PetBucket care based on current user-->
+            @foreach (var item in Model)
+            {
+                <div class="row">
+                    
+                        <br />
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().name, "Pet Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <span class="capitalize">@Html.DisplayFor(modelItem => item.name)</span>
+                        </p>
+                        <br />
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().animal, "Pet Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <span class="capitalize">@Html.DisplayFor(modelItem => item.animal)</span>
+                        </p>
+                        <br />
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().size, "Size", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <span class="capitalize">@Html.DisplayFor(modelItem => item.size)</span>
+                        </p>
+                        <br />
+                    
+                </div>
+            }
+        </div>
+    </div>
+

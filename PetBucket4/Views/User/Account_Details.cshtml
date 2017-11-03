@@ -13,39 +13,50 @@
             <h1>My Account Details</h1>
             <!--Fields need to be filled with user's info-->
             <div class="edit">
-                <p>First Name: @Session["First"]
+                <p>
+                    First Name: <span class="capitalize">@Html.DisplayFor(m => m.first_name)</span>
                 </p>
-                <p>Surname: @Session["Surname"]</p>
-                @Html.ActionLink("Edit Name", "Edit_Name", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                <p>
+                    Surname: <span class="capitalize">@Html.DisplayFor(m => m.surname)</span>
+                </p>
+                <p>
+                    @Html.ActionLink("Edit Name", "Edit_Name", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                </p>
             </div>
 
             <div class="edit">
-                <p>Date of Birth: @Session["DOB"]</p>
+                <p>Date of Birth: @Html.DisplayFor(m => m.date_of_birth)</p>
             </div>
 
             <div class="edit">
-                <p>Home Phone: @Session["HomePh"]</p>
-                <p>Mobile Phone: @Session["Mobile"]</p>
-                @Html.ActionLink("Edit Mobile Phone", "Edit_Mobile", "User", new { area = "" }, new { @class = " btn btn-primary" })
-                @Html.ActionLink("Edit Home Phone", "Edit_HomeP", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                <p>Home Phone: @Html.DisplayFor(m => m.home_phone)</p>
+                <p>Mobile Phone: @Html.DisplayFor(m => m.mobile_phone)</p>
+                <p>
+                    @Html.ActionLink("Edit Mobile Phone", "Edit_Mobile", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                    @Html.ActionLink("Edit Home Phone", "Edit_HomeP", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                </p>
             </div>
 
             <div class="edit">
-                <p>Unit No: @Session["UnitNo"] </p>
-                <p>Street No: @Session["HouseNo"]</p>
-                <p>Street Name: @Session["Street"]</p>
-                <p>Suburb/City: @Session["City"]</p>
-                <p>State: @Session["State"]</p>
-                <p>Postcode: @Session["Postcode"]</p>
-                @Html.ActionLink("Edit Address", "Edit_Address", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                <p>Unit No: @Html.DisplayFor(m => m.unit_no) </p>
+                <p>Street No: @Html.DisplayFor(m => m.house_no)</p>
+                <p>Street Name: <span class="capitalize">@Html.DisplayFor(m => m.street)</span></p>
+                <p>Suburb/City: <span class="capitalize">@Html.DisplayFor(m => m.city)</span></p>
+                <p>State: <span class="uppercase">@Html.DisplayFor(m => m.state)</span></p>
+                <p>Postcode: @Html.DisplayFor(m => m.postcode)</p>
+                <p>
+                    @Html.ActionLink("Edit Address", "Edit_Address", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                </p>
             </div>
 
             <div class="edit">
-                <p>Email: @Session["Email"]</p>
-                @Html.ActionLink("Edit Email", "Edit_Email", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                <p>Email: @Html.DisplayFor(m => m.email)</p>
+                <p>
+                    @Html.ActionLink("Edit Email", "Edit_Email", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                </p>
             </div>
 
-            <div>
+            <div class="edit">
                 <p>
                     @Html.ActionLink("Change Current Password", "Change_Password", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--Lets users change their password. Unlinked-->
                 </p>

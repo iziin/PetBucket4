@@ -10,9 +10,6 @@ namespace PetBucket4.Controllers
 {
     public class UserController : Controller
     {
-        /* Not sure if this should be needed or not
-        * private PetBucketDatabaseEntities db = new PetBucketDatabaseEntities();
-        */
         /*Links to My_Account page if user has logged in, otherwise, redirects to Login page*/
         public ActionResult My_Account()
         {
@@ -62,6 +59,15 @@ namespace PetBucket4.Controllers
         /*Links to Account_Details page*/
         public ActionResult Account_Details()
         {
+            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+            {
+                int userID = Int32.Parse(Session["UserID"].ToString());
+                var accDets = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                if (accDets != null)
+                {
+                    return View(accDets);
+                }
+            }
             return View();
         }
 

@@ -57,16 +57,6 @@ namespace PetBucket4.Controllers
                     Session["UserID"] = i.id.ToString();
                     Session["Email"] = i.email.ToString();
                     Session["First"] = i.first_name.ToString();
-                    Session["Surname"] = i.surname.ToString();
-                    Session["HomePh"] = i.home_phone.ToString();
-                    Session["Mobile"] = i.mobile_phone.ToString();
-                    if (i.unit_no != null) { Session["UnitNo"] = i.unit_no.ToString(); }
-                    if (i.house_no != null) { Session["HouseNo"] = i.house_no.ToString(); }
-                    if (i.street != null) { Session["Street"] = i.street.ToString(); }
-                    if (i.city != null) { Session["City"] = i.city.ToString(); }
-                    if (i.state != null) { Session["State"] = i.state.ToString(); }
-                    if (i.postcode != null) { Session["Postcode"] = i.postcode.ToString(); }
-                    Session["DOB"] = i.date_of_birth.ToString();
                     return RedirectToAction("My_Account", "User");
                 }
                 else

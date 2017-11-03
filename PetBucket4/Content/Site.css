@@ -275,3 +275,15 @@ p {
     padding: 5px;
     border-width: 1px;
 }
+
+#toyourdoor1, #toyourdoor2, #premium1, #premium2{
+    display: none;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}

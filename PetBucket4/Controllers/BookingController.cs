@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -138,6 +138,7 @@ namespace PetBucket4.Controllers
             {
                 int userID = Int32.Parse(Session["UserID"].ToString());
                 var bookingModel = db.Appointments.Where(u => u.customer_id == userID).ToList();
+                
                 if (bookingModel != null)
                 {
                     return View(bookingModel);

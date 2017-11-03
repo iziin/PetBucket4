@@ -25,33 +25,42 @@
         <h2>Your Upcoming Bookings</h2>
         @foreach (var item in Model)
         {
-            <div class="row">
-                <div class="col-md-7">
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().number_of_pets, "Total Number of Pets: ", htmlAttributes: new { @class = "control-label col-md-4" })
-                        @Html.DisplayFor(modelItem => item.number_of_pets)
-                    </p>
-                    <br />
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().start_time, "Drop-Off Date/Time: ", htmlAttributes: new { @class = "control-label col-md-4" })
-                        @Html.DisplayFor(modelItem => item.start_time)
-                    </p>
-                    <br />
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().end_time, "Pick-Up Date/Time: ", htmlAttributes: new { @class = "control-label col-md-4" })
-                        @Html.DisplayFor(modelItem => item.end_time)
-                    </p>
-                    <br />
-                    <p>
-                        @Html.LabelFor(model => model.FirstOrDefault().service, "Service: ", htmlAttributes: new { @class = "control-label col-md-4" })
-                        @Html.DisplayFor(modelItem => item.service)
-                    </p>
-                    <br />
-                    <p>
-                        @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
-                    </p>
+            if (item.end_time > DateTime.Now)
+            {
+                <div class="row">
+                    <div class="col-md-7">
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().number_of_pets, "Total Number of Pets: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.DisplayFor(modelItem => item.number_of_pets)
+                        </p>
+                        <br />
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().start_time, "Drop-Off Date/Time: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.DisplayFor(modelItem => item.start_time)
+                        </p>
+                        <br />
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().end_time, "Pick-Up Date/Time: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                            @Html.DisplayFor(modelItem => item.end_time)
+                        </p>
+                        <br />
+                        <p>
+                            @Html.LabelFor(model => model.FirstOrDefault().service, "Service: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <span class="capitalize">@Html.DisplayFor(modelItem => item.service)</span>
+                        </p>
+                        <br />
+                        <p>
+                            @if (item.start_time < DateTime.Now && item.service == "premium")
+                            {
+                                @Html.ActionLink("View Livestream", "Livestream", "User", new { area = "" }, new { @class = " btn btn-warning" })
+                            }
+                        </p>
+                        <p>
+                            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
+                        </p>
+                    </div>
                 </div>
-            </div>
+            }
         }
     </div>
 </div>

@@ -14,8 +14,23 @@
         <script src="~/Scripts/jquery-1.10.2.js"></script>
         <script src="~/Scripts/jquery.validate.js"></script>
         <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-        
-        @*Begin form*@
+
+       @* Script for showing and hiding divs.*@
+    <script>
+        function ShowHideDiv() {
+            var serviceDropDown = document.getElementById("serviceDropDown");
+            var premiumService1 = document.getElementById("premium1");
+            var premiumService2 = document.getElementById("premium2");
+            var tydService1 = document.getElementById("toyourdoor1");
+            var tydService2 = document.getElementById("toyourdoor2");
+            premiumService1.style.display = serviceDropDown.value == "premium" ? "block" : "none";
+            premiumService2.style.display = serviceDropDown.value == "premium" ? "block" : "none";
+            tydService1.style.display = serviceDropDown.value == "toyourdoor" ? "block" : "none";
+            tydService2.style.display = serviceDropDown.value == "toyourdoor" ? "block" : "none";
+        }
+    </script>
+
+    @*Begin form*@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
@@ -64,8 +79,8 @@
                 @*Select preffered service*@
                 <div class="form-group">
                     @Html.LabelFor(model => model.service, "Service", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        <select name="service" id="service">
+                    <div class="col-md-10" id="service">
+                        <select name="service" id="serviceDropDown" onchange="ShowHideDiv()">
                             <option value="basic">Shelter - Basic Service ($15.00)</option>
                             <option value="standard">Shelter - Standard Service ($25.00)</option>
                             <option value="premium">Shelter - Premium Service ($35.00)</option>
@@ -76,7 +91,7 @@
 
                 @*Special food/nutrition requirements*@
                 @*Should only be available if Standard service or higher was selected*@
-                <div class="form-group">
+                <div class="form-group" id="premium1">
                     @Html.LabelFor(model => model.food, "Special Food/Nutrition Requirements", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @*Sets food in db*@
@@ -88,7 +103,7 @@
 
                 @*This feild should only be available for people who have selected 'to your door' in services dropdown*@
                 @*Inspection Date*@
-                <div class="form-group">
+                <div class="form-group" id="toyourdoor1">
                     @Html.LabelFor(model => model.inspection_visit_date, "Inspection Visit Date", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @*Sets inspection_visit_date in db*@
@@ -100,7 +115,7 @@
 
                 @*Entry instructions to customers property*@
                 @*Should only be available if 'to your door' was selected in services*@
-                <div class="form-group">
+                <div class="form-group" id="toyourdoor2">
                     @Html.LabelFor(model => model.entry_instructions, "Entry Instructions", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @*Sets entry_instructions in db*@
@@ -111,8 +126,8 @@
                 </div>
 
                 @*Care Instructions*@
-                <div class="form-group">
-                    @Html.LabelFor(model => model.care_instructions, "Care Instructions", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="form-group" id="premium2">
+                    @Html.LabelFor(model => model.care_instructions, "Specific Care Instructions", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @*Sets care_instructions in db*@
                         @Html.TextAreaFor(model => model.care_instructions, new { htmlAttributes = new { @class = "form-control" } })

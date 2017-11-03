@@ -185,15 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Appointment.cs">
-      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Pet.cs">
-      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Pet.cs" />
     <Compile Include="Models\PetBucketDatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,9 +203,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PetBucketDatabaseModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Review.cs">
-      <DependentUpon>PetBucketDatabaseModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Models\StripeSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

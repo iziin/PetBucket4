@@ -22,12 +22,12 @@
     <div class="col-md-7 insert middle-center">
         <h2>Basic Service</h2>
         <p>
-            Our basic service allows you to bring your pet to us and we will take care of them as per your specific instructions. 
+            Our basic service allows you to bring your pet to us and we will take care of them. 
             Specific needs and requirements can be discussed with us over the phone or when you bring you pet in. 
             We provide all of their food and water, however should specific dietary requirements be necessary then the food would need to be supplied. 
         </p>
         <!--Links to Booking page so user can make a booking with the selected service-->
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+        <p>@Html.ActionLink("Make a Booking With This Service", "Select_Pet", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
 
@@ -36,9 +36,10 @@
     <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>Standard Service</h2>
-        <p>Our standard service includes all of the services of our basic. In addition we will provide you with daily updates on your pets wellbeing via email.</p>
+        <p>Our standard service includes all the benefits of the basic service. In addition we will provide you with daily updates on your pets wellbeing via email,
+        and we will give your pet a nicer area to stay in while you're gone.</p>
         <!--Links to Booking page so user can make a booking with the selected service-->
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+        <p>@Html.ActionLink("Make a Booking With This Service", "Select_Pet", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
 
@@ -47,11 +48,12 @@
     <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
         <h2>Premium Service</h2>
-        <p>This is our premier service. It includes all of the benefits of the Standard service. However we will come to your place of residence to pick your pet up. Then when you return home we will drop them off to you. 
+        <p>This is our premier service. It includes all of the benefits of the standard service and basic service. However we will come to your place of residence to pick your pet up. 
+        Then when you return home we will drop them off to you. With this service you can also specify what food your pet eats, and any specific care instructions. 
         Additionally we will provide you with a link that you can see how your pet is doing in realtime. This will stream a video to your device!</p>
         <p>With this service we also offer a 24/7, you can call us up at anytime for an updated or to make alterations to your booking.</p>
         <!--Links to Booking page so user can make a booking with the selected service-->
-        <p>@Html.ActionLink("Make a Booking With This Service", "Booking", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
+        <p>@Html.ActionLink("Make a Booking With This Service", "Select_Pet", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
 
@@ -61,8 +63,9 @@
     <div class="col-md-7 insert middle-center">
         <h2>To-Your-Door Service</h2>
         <p>We will come to your place of residence to look after your pets. This service is perfect for those larger animals such as horses and goats. 
-        We tailor this service to you. Prices vary on distance and need, so contact us for a personalised quote.</p>
+        We tailor this service to you. Prices vary on distance and need. Upon booking this service you will be prompted to specify instructions on how to
+        enter your property, and an inspection date so that one of our staff can confirm your entry instructions and locations of animals.</p>
         <!--Links to Booking page so user can make a booking with the selected service-->
-        <p>@Html.ActionLink("Contact us about this Service", "About", "Home", new { area = "" }, new { @class = " btn btn-primary" })</p>
+        <p>@Html.ActionLink("Make a Booking With This Service", "Select_Pet", "Booking", new { area = "" }, new { @class = " btn btn-primary" })</p>
     </div>
 </div>
