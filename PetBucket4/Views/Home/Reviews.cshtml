@@ -1,15 +1,11 @@
-﻿@model PetBucket4.Models.Review
+﻿@model IEnumerable<PetBucket4.Models.Review>
 
 @{
     ViewBag.Title = "Reviews";
-    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
-<!--Remove this page if it still doesn't function before submission and replace with New_Review page-->
-
 <!--New row-->
+
 <div class="row">
     <!--Centered insert-->
     <div class="col-md-7 insert middle-center">
@@ -19,23 +15,41 @@
     </div>
 </div>
 
-    <div class="col">
-        <!-- New medium insert-->
-        <div class="col-md-7 insert middle-center">
-            <h2>Reviews</h2>
-            <p>Placeholder for all reviews</p>
-            <br />
-            <!--Displays m amount of reviews-->
-            @{
-                var m = 10;
-                for (var i = 1; i <= m; i++)
-                {
-                    <div class="row large-insert text-center">
-                        <p>Displays each review based on reviewid(@i)</p>
-                        <br />
-                    </div>
-                }
+
+<div class="row">
+    <div class="col-md-7 insert middle-center">
+        <table class="table">
+            <tr>
+                <th>
+                    Review Text
+                </th>
+                <th>
+                    Rating
+                </th>
+                <th>
+                    Date Created
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.review_text)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rating)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.created)
+                    </td>
+
+                </tr>
             }
-            <button type="button" value="Show More" style="height: 50px; width: 100px">Show More</button> <!--Displays m more reviews, currently not working-->
-        </div>
+
+        </table>
     </div>
+</div>

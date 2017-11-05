@@ -32,10 +32,6 @@ namespace PetBucket4.Controllers
         }
 
         /*Links to Reviews page*/
-        public ActionResult Reviews()
-        {
-            return View();
-        }
 
         /*Links to Community page*/
         public ActionResult Community()
@@ -103,6 +99,19 @@ namespace PetBucket4.Controllers
                 return RedirectToAction("Reveiws");
             }
             return View(_review);
+        }
+
+        public ActionResult Reviews()
+        {
+            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+            {
+                var model = db.Reviews.ToList();
+                if (model != null)
+                {
+                    return View(model);
+                }
+            }
+            return View();
         }
 
     }
