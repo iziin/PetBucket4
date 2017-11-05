@@ -294,8 +294,6 @@
     <Content Include="Views\Booking%28Old%29\Edit.cshtml" />
     <Content Include="Views\Booking%28Old%29\Index.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
-    <Content Include="Views\User\Staff_Home.cshtml" />
-    <Content Include="Views\Booking\Current_Bookings.cshtml" />
     <Content Include="Views\Booking\Upcoming_Bookings.cshtml" />
     <Content Include="Views\User\Livestream.cshtml" />
     <Content Include="Views\User\Pet_Info.cshtml" />

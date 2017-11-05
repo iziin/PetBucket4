@@ -23,12 +23,6 @@ namespace PetBucket4.Controllers
             }
         }
 
-        /*Links to Staff_Home page*/
-        public ActionResult Staff_Home()
-        {
-            return View();
-        }
-
         /*Links to Livestream page*/
         public ActionResult Livestream()
         {

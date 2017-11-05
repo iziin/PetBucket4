@@ -931,3 +931,9 @@ C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Web.WebPages.Deploym
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Web.WebPages.dll
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\System.Web.WebPages.Razor.dll
 C:\Users\Izin\source\repos\PetBucket4\PetBucket4\bin\WebGrease.dll
+C:\Users\User\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.dll
+C:\Users\User\Documents\GitHub\PetBucket4\PetBucket4\obj\Debug\PetBucket4.pdb

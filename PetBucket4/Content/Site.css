@@ -43,7 +43,7 @@ p {
     height: 75px;
 }
 
-/*Floats, Login, Register, Staff, Staff Home, and My Account pages to right of navbar*/
+/*Floats, Login, Register, and My Account pages to right of navbar*/
 .login-list {
     float: right;
 }
