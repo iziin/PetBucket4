@@ -96,7 +96,7 @@ namespace PetBucket4.Controllers
 
                 ModelState.Clear();
                 _review = null;
-                return RedirectToAction("Reveiws");
+                return RedirectToAction("Reviews", "Home");
             }
             return View(_review);
         }

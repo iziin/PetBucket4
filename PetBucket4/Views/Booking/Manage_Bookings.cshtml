@@ -43,7 +43,6 @@
                             @Html.LabelFor(model => model.FirstOrDefault().service, "Service: ", htmlAttributes: new { @class = "control-label col-md-4" })
                             <span class="capitalize">@Html.DisplayFor(modelItem => item.service)</span>
                         </p>
-                        <br />
                             @if(item.start_time < DateTime.Now)
                             {
                                <p>Your pet is currently under our care!</p>
@@ -54,6 +53,8 @@
                                 @Html.ActionLink("View Livestream", "Livestream", "User", new { area = "" }, new { @class = " btn btn-warning" })
                             }
                         </p>
+                        <br />
+                        <hr />
                     </div>
                 </div>
             }
