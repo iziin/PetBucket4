@@ -12,7 +12,7 @@
         <br />
 
         <!--Not currently linked to db-->
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Edit_HomeP", "User"))
         {
             @Html.AntiForgeryToken()
             <h2 class="sub-heading">New Home Phone Number</h2>
@@ -31,7 +31,7 @@
                 <!--Submit button-->
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save Changes" class="btn btn-block btn-primary" />
+                        <input type="submit" value="Save" class="btn btn-block btn-primary" />
                     </div>
                 </div>
             </div>

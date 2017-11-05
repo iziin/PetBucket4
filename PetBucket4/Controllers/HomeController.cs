@@ -58,7 +58,7 @@ namespace PetBucket4.Controllers
         /*Redirects to Facebook page*/
         public ActionResult Facebook()
         {
-            return Redirect("https://www.facebook.com/peter.bucket.545");
+            return Redirect("https://www.facebook.com/PetBucket-1210864389059345/");
         }
 
         /*Redirects to Instagram page*/
@@ -100,7 +100,7 @@ namespace PetBucket4.Controllers
 
                 ModelState.Clear();
                 _review = null;
-                return RedirectToAction("Reviews");
+                return RedirectToAction("Reveiws");
             }
             return View(_review);
         }

@@ -12,10 +12,7 @@
         <p class="text-center">
             Congratulations! You have successfully completed your booking!
         </p>
-            @if (Session["Service"].ToString() == "premium")
-            {
-                <p class="text-center">You can view your livestream from @Html.ActionLink("here", "Manage_Bookings", "Booking") after we have picked your pet up.</p>
-            }
+        <p class="text-center">If you booked a premium service you can view your livestream from  @Html.ActionLink("here", "Manage_Bookings", "Booking") after we have picked your pet up.</p>
         <br />
         <p class="text-center">
             @Html.ActionLink("Continue", "My_Account", "User", new { area = "" }, new { @class = "btn btn-primary btn-lg" }) <!--Links to My_Account-->

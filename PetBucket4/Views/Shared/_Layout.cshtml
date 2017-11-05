@@ -32,7 +32,7 @@
                         <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Community page-->
                         <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li> <!--Links to Gallery page-->
                         <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
-                        <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to Reviews page-->
+                        <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to New_Review page. Link back to review page if review page is finished-->
                     }
                     @*Displays 'else' content if user is not logged in*@
                     else
@@ -41,7 +41,8 @@
                     <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Gallery page-->
                     <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li> <!--Links to Gallery page-->
                     <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
-                    <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to Reviews page-->} 
+                    <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to New_Review page. Link back to review page if review page is finished-->
+                    } 
                 </ul>
             
                 <ul class="nav navbar-nav login-list"> <!--Creates new list in navbar and floats to right-->

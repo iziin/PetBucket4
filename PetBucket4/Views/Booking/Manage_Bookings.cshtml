@@ -9,7 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout-->
 }
 
-<!--Manage bookings page allows users to manage current bookings-->
+<!--Manage bookings page allows satff and users to manage current bookings-->
 
 <!--New row-->
 <div class="row">
@@ -30,11 +30,6 @@
                 <div class="row">
                     <div class="col-md-7">
                         <p>
-                            @Html.LabelFor(model => model.FirstOrDefault().number_of_pets, "Total Number of Pets: ", htmlAttributes: new { @class = "control-label col-md-4" })
-                            @Html.DisplayFor(modelItem => item.number_of_pets)
-                        </p>
-                        <br />
-                        <p>
                             @Html.LabelFor(model => model.FirstOrDefault().start_time, "Drop-Off Date/Time: ", htmlAttributes: new { @class = "control-label col-md-4" })
                             @Html.DisplayFor(modelItem => item.start_time)
                         </p>
@@ -49,14 +44,15 @@
                             <span class="capitalize">@Html.DisplayFor(modelItem => item.service)</span>
                         </p>
                         <br />
+                            @if(item.start_time < DateTime.Now)
+                            {
+                               <p>Your pet is currently under our care!</p>
+                            }
                         <p>
                             @if (item.start_time < DateTime.Now && item.service == "premium")
                             {
                                 @Html.ActionLink("View Livestream", "Livestream", "User", new { area = "" }, new { @class = " btn btn-warning" })
                             }
-                        </p>
-                        <p>
-                            @Html.ActionLink("Edit This Booking", "#", "Home", new { area = "" }, new { @class = " btn btn-primary" })
                         </p>
                     </div>
                 </div>

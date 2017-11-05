@@ -43,7 +43,10 @@ namespace PetBucket4.Controllers
                     //Adds creation time and customer ID
                     BK.created = DateTime.Now.ToLocalTime();
                     BK.customer_id = Convert.ToInt32(Session["UserID"].ToString());
-                    //BK.pet_id = Convert.ToInt32(Session["petID"].ToString());
+                    BK.pet_id = Convert.ToInt32(Session["petID"].ToString());
+                    BK.number_of_pets = 1;
+                    Session["diff"] = BK.end_time.Day - BK.start_time.Day;
+                    
 
                     selectedService = BK.service;
 
@@ -84,19 +87,19 @@ namespace PetBucket4.Controllers
             ViewBag.StripePublishKey = stripePublishKey;
             if (selectedService.Equals("basic"))
             {
-                selectedServiceCharge = 1500;
+                selectedServiceCharge = 800 * Convert.ToInt32(Session["diff"].ToString());
             }
             else if (selectedService.Equals("standard"))
             {
-                selectedServiceCharge = 2500;
+                selectedServiceCharge = 1400 * Convert.ToInt32(Session["diff"].ToString());
             }
             else if (selectedService.Equals("premium"))
             {
-                selectedServiceCharge = 3500;
+                selectedServiceCharge = 2000 * Convert.ToInt32(Session["diff"].ToString());
             }
             else
             {
-                selectedServiceCharge = 4000;
+                selectedServiceCharge = 3500 * Convert.ToInt32(Session["diff"].ToString());
             }
             ViewBag.ServiceCharge = selectedServiceCharge;
             return View();
@@ -181,6 +184,7 @@ namespace PetBucket4.Controllers
                     }
                     else
                     {
+                        ModelState.AddModelError("", "You Must Select A Pet You Have Registered");
                         return View();
                     }
                 }
