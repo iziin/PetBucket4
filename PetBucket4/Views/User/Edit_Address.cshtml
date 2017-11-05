@@ -24,7 +24,7 @@
 
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.unit_no, "Unit No.", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Unit No field-->
+                    @Html.LabelFor(model => model.unit_no, "Unit Number", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Unit No field-->
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.unit_no, new { htmlAttributes = new { @class = "form-control", placeholder = "Unit No." } }) <!--Unit No field-->
                         @Html.ValidationMessageFor(model => model.unit_no, "", new { @class = "text-danger" }) <!--Checks validation of entry-->
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.house_no, "Street No.", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Street No. field-->
+                    @Html.LabelFor(model => model.house_no, "Street Number", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Label for Street No. field-->
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.house_no, new { htmlAttributes = new { @class = "form-control", placeholder = "House No." } }) <!--Street No field-->
                         @Html.ValidationMessageFor(model => model.house_no, "", new { @class = "text-danger" }) <!--Checks validation of entry-->

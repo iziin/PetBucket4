@@ -40,7 +40,7 @@ namespace PetBucket4.Models
 
         public string state { get; set; }
 
-        [Range(1000, 9999, ErrorMessage = "Post Codes must be no longer then 4 Numbers")]
+        [Range(1000, 9999, ErrorMessage = "Post Codes must be 4 Numbers")]
         public string postcode { get; set; }
 
         [Required(ErrorMessage = "Email is required")]
@@ -52,6 +52,8 @@ namespace PetBucket4.Models
 
         public Nullable<System.DateTime> last_logged_in { get; set; }
         public System.DateTime created { get; set; }
-        public Nullable<System.DateTime> date_of_birth { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime date_of_birth { get; set; }
     }
 }

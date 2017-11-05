@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace PetBucket4.Models
 {
@@ -17,8 +18,12 @@ namespace PetBucket4.Models
         public string entry_instructions { get; set; }
         public string care_instructions { get; set; }
         public Nullable<System.DateTime> inspection_visit_date { get; set; }
-        public Nullable<System.DateTime> start_time { get; set; }
-        public Nullable<System.DateTime> end_time { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime start_time { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime end_time { get; set; }
         public System.DateTime created { get; set; }
         public string food { get; set; }
         public Nullable<int> customer_id { get; set; }

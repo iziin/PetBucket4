@@ -73,6 +73,12 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        /*Links to Staff_Login page*/
+        public ActionResult Staff_Login()
+        {
+            return View();
+        }
+
         /*Redirects to Index page when user requests logout*/
         public ActionResult LogOut()
         {

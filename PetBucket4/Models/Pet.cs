@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace PetBucket4.Models
 {
@@ -12,6 +13,7 @@ namespace PetBucket4.Models
     public partial class Pet : IEnumerable
     {
         public int id { get; set; }
+        [Required]
         public string name { get; set; }
         public string size { get; set; }
         public string animal { get; set; }

@@ -294,7 +294,6 @@
     <Content Include="Views\Booking%28Old%29\Edit.cshtml" />
     <Content Include="Views\Booking%28Old%29\Index.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
-    <Content Include="Views\Booking\Upcoming_Bookings.cshtml" />
     <Content Include="Views\User\Livestream.cshtml" />
     <Content Include="Views\User\Pet_Info.cshtml" />
     <Content Include="Views\User\Your_Pets.cshtml" />
@@ -307,13 +306,13 @@
     <Content Include="Views\Booking\Register_Pet_Success.cshtml" />
     <Content Include="Views\User\Change_Password_Success.cshtml" />
     <Content Include="Views\User\Edit_Address.cshtml" />
-    <Content Include="Views\User\Edit_Name.cshtml" />
     <Content Include="Views\User\Edit_Mobile.cshtml" />
     <Content Include="Views\User\Edit_HomeP.cshtml" />
     <Content Include="Views\User\Edit_Email.cshtml" />
     <Content Include="Views\Home\New_Review.cshtml" />
     <Content Include="Views\Booking\Payment.cshtml" />
     <Content Include="Views\Booking\Stripe_Payment.cshtml" />
+    <Content Include="Views\User\New_Password.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
