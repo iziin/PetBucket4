@@ -15,10 +15,11 @@ namespace PetBucket4.Models
 
         public int customer_id { get; set; }
 
-        [Required(ErrorMessage = "Test is Required")]
+        [Required(ErrorMessage = "Your review is blank!")]
         public string review_text { get; set; }
 
-        [Required(ErrorMessage = "A Score is Required")]
+        [Required]
+        [Range(1, 10, ErrorMessage = "Please choose a rating between 1 and 10")]
         public int rating { get; set; }
 
         public System.DateTime created { get; set; }

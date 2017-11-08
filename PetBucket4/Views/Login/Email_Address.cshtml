@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Email_Address";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--defines layout-->
+}
+
+<!--New row-->
+<div class="row">
+    <!--Main div-->
+    <div class="col-lg-12 large-insert">
+        <h1 class="title-center">Your Email</h1>
+        <p class="text-center">
+            Your email address is @Session["RecoveryEmail"]
+        </p>
+        <br />
+        <p class="text-center">
+            @Html.ActionLink("Return to Login", "Login", "Login", new { area = "" }, new { @class = "btn btn-primary btn-lg" }) <!--Links to Login-->
+        </p>
+    </div>
+</div>
+

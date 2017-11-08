@@ -289,14 +289,8 @@
     <Content Include="Views\User\My_Account.cshtml" />
     <Content Include="Views\Booking\Manage_Bookings.cshtml" />
     <Content Include="Views\Home\Reviews.cshtml" />
-    <Content Include="Views\Booking%28Old%29\Create.cshtml" />
-    <Content Include="Views\Booking%28Old%29\Delete.cshtml" />
-    <Content Include="Views\Booking%28Old%29\Details.cshtml" />
-    <Content Include="Views\Booking%28Old%29\Edit.cshtml" />
-    <Content Include="Views\Booking%28Old%29\Index.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
     <Content Include="Views\User\Livestream.cshtml" />
-    <Content Include="Views\User\Pet_Info.cshtml" />
     <Content Include="Views\User\Your_Pets.cshtml" />
     <Content Include="Views\User\Account_Details.cshtml" />
     <Content Include="Views\User\Change_Password.cshtml" />
@@ -314,6 +308,11 @@
     <Content Include="Views\Booking\Payment.cshtml" />
     <Content Include="Views\Booking\Stripe_Payment.cshtml" />
     <Content Include="Views\User\New_Password.cshtml" />
+    <Content Include="Views\Login\Forgot_Password.cshtml" />
+    <Content Include="Views\Login\Forgot_Email.cshtml" />
+    <Content Include="Views\Login\Email_Address.cshtml" />
+    <Content Include="Views\Login\Recover_Password.cshtml" />
+    <Content Include="Views\Booking\Booking_TYD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

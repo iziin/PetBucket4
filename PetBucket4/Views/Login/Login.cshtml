@@ -21,7 +21,10 @@
             <div class="form-horizontal">
                 <h2 class="sub-heading">Customer</h2>
                 <hr />
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" }) 
+
+                <!--Email Address-->
                 <div class="form-group">
                     @Html.LabelFor(model => model.email, "Email Address", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Email address label-->
                     <div class="col-md-10">
@@ -30,6 +33,7 @@
                     </div>
                 </div>
 
+                <!--Password-->
                 <div class="form-group">
                     @Html.LabelFor(model => model.password, "Password", htmlAttributes: new { @class = "control-label col-md-2" }) <!--Password label-->
                     <div class="col-md-10">
@@ -46,9 +50,14 @@
                 </div>
             </div>
         }
-        <!--I forgot my email/password link could go here-->
+
+
         <!--Link for unregistered users-->
         <p>Don't have an account? @Html.ActionLink("Click Here", "Register", "Login") to make one!</p>
+        <!--Link for forgotten password-->
+        <p>@Html.ActionLink("I forgot my password", "Forgot_Password", "Login")</p>
+        <!--Link for forgotten email-->
+        <p>@Html.ActionLink("I forgot my email", "Forgot_Email", "Login")</p>
     </div>
 </div>
 

@@ -32,16 +32,16 @@
                         <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Community page-->
                         <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li> <!--Links to Gallery page-->
                         <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
-                        <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to New_Review page. Link back to review page if review page is finished-->
+                        <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to Reviews page-->
                     }
                     @*Displays 'else' content if user is not logged in*@
                     else
                     {
                     <li>@Html.ActionLink("Services", "Services", "Home")</li> <!--Links to Services page-->
-                    <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Gallery page-->
+                    <li>@Html.ActionLink("Community", "Community", "Home")</li> <!--Links to Community page-->
                     <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li> <!--Links to Gallery page-->
                     <li>@Html.ActionLink("About", "About", "Home")</li> <!--Links to About page-->
-                    <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to New_Review page. Link back to review page if review page is finished-->
+                    <li>@Html.ActionLink("Reviews", "Reviews", "Home")</li> <!--Links to Reviews page-->
                     } 
                 </ul>
             
@@ -75,8 +75,7 @@
                     <ul class="nav navbar-nav footer"> 
                         <li>@Html.ActionLink("Facebook", "Facebook", "Home", null, new { @class = "logo-fb" })</li> <!--Redirects to Facebook-->
                         <li>@Html.ActionLink("Instagram", "Instagram", "Home", null, new { @class = "logo-insta" })</li> <!--Redirects to Instagram-->
-                        <li>@Html.ActionLink("Twitter", "Twitter", "Home", null, new { @class = "logo-twit" })</li> <!--Redirects to Twitter-->
-                       @*<li>@Html.ActionLink("Email", "#", "Home", null, new { @class = "logo-email" })</li> <!--Currently not working--> <!--Redirects to users email page-->*@ 
+                        <li>@Html.ActionLink("Twitter", "Twitter", "Home", null, new { @class = "logo-twit" })</li> <!--Redirects to Twitter--> 
                         <li class="footer-txt">&copy; @DateTime.Now.Year - OOMS Solutions</li> <!--Dsiplays copyright and current date/time-->
                     </ul>
                 </div>

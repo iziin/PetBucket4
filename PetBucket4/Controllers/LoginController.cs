@@ -10,60 +10,49 @@ namespace PetBucket4.Controllers
 {
     public class LoginController : Controller
     {
-        /* Not currently in use
-         
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
-
-    */
 
         /*Code for login*/
-        /*Should move away from session based storage*/
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(Customer user)
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                var i = db.Customers.Where(u => u.email == user.email && u.password == user.password).FirstOrDefault();
-                if (i != null)
-                {
-                    //Needs something here to update the last logged in time for the account.
-                    //i.last_logged_in = DateTime.Now.ToLocalTime();
+            //removes required annotation from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
 
-                    Session["UserID"] = i.id.ToString();
-                    Session["Email"] = i.email.ToString();
-                    Session["First"] = i.first_name.ToString();
-                    return RedirectToAction("My_Account", "User");
-                }
-                else
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
-                    ModelState.AddModelError("", "Username or Password is Incorrect!");
+                    //finds user based on email and password
+                    var i = db.Customers.Where(u => u.email == user.email && u.password == user.password).FirstOrDefault();
+                    if (i != null)
+                    {
+                        i.last_logged_in = DateTime.Now.ToLocalTime();
+                        db.Entry(i).State = EntityState.Modified;
+                        db.SaveChanges();
+
+                        Session["UserID"] = i.id.ToString();
+                        Session["Email"] = i.email.ToString();
+                        Session["First"] = i.first_name.ToString();
+                        ModelState.Clear();
+                        return RedirectToAction("My_Account", "User");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Your email or password is incorrect!");
+                    }
                 }
             }
+            else
+            {
+                ModelState.AddModelError("", "Your email or password is incorrect!");
+            }
+
             return View();
         }
 
@@ -73,8 +62,132 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        /*Links to Staff_Login page*/
-        public ActionResult Staff_Login()
+        /*Links to Forgot_Password page*/
+        public ActionResult Forgot_Password()
+        {
+            return View();
+        }
+
+        //Allows users access to reset their password
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Forgot_Password(Customer form)
+        {
+            //removes required annotation from model
+            ModelState.Remove("password");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
+
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on email and name
+                    var user = db.Customers.Where(u => u.email == form.email && u.first_name == form.first_name).FirstOrDefault();
+                    if (user != null)
+                    {
+                        //creates tempID to be used only for password reset
+                        Session["TempUserID"] = user.id;
+                        ModelState.Clear();
+                        return RedirectToAction("Recover_Password", "Login");
+                    }
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Your email or name is incorrect!");
+            }
+            return View();
+        }
+
+        /*Links to Forgot_Password page*/
+        public ActionResult Recover_Password()
+        {
+            return View();
+        }
+
+        //Allows users to reset their password should they forget it
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Recover_Password(Customer form)
+        {
+            //removes required annotation from model
+            ModelState.Remove("email");
+            ModelState.Remove("first_name");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
+
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on ID
+                    int userID = Int32.Parse(Session["TempUserID"].ToString());
+                    var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                    currentUser.password = form.password;
+
+                    db.Entry(currentUser).State = EntityState.Modified;
+                    db.SaveChanges();
+                    Session["TempUserID"] = null;
+                    currentUser = null;
+                    ModelState.Clear();
+                    return RedirectToAction("Login", "Login");
+                }
+            }
+            return View();
+        }
+
+
+        /*Links to Forgot_Email page*/
+        public ActionResult Forgot_Email()
+        {
+            return View();
+        }
+
+        //Allows users to reset their email
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Forgot_Email(Customer form)
+        {
+            //removes required annotation from model
+            ModelState.Remove("email");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
+
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on name and password
+                    var user = db.Customers.Where(u => u.first_name == form.first_name && u.password == form.password).FirstOrDefault();
+                    if (user != null)
+                    {
+                        //creates temp recovery email data
+                        Session["RecoveryEmail"] = user.email;
+                        return RedirectToAction("Email_Address", "Login");
+                    }
+
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Your name or password is incorrect!");
+            }
+
+            return View();
+        }
+
+        /*Links to Forgot_Email page*/
+        public ActionResult Email_Address()
         {
             return View();
         }
@@ -86,21 +199,21 @@ namespace PetBucket4.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Creates a new user
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Customer U)
+        public ActionResult Register(Customer New_User)
         {
             if (ModelState.IsValid)
             {
                 using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
-                    //Adds creation time
-                    U.created = DateTime.Now.ToLocalTime();
+                    New_User.created = DateTime.Now.ToLocalTime();
 
-                    db.Customers.Add(U);
+                    db.Customers.Add(New_User);
                     db.SaveChanges();
                     ModelState.Clear();
-                    U = null;
+                    New_User = null;
                     return RedirectToAction("Register_Success", "Login");
                 }
             }
@@ -113,6 +226,7 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        //Links to register_success page
         public ActionResult Register_Success()
         {
             return View();

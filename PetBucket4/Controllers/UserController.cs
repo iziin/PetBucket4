@@ -30,17 +30,12 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        /*Links to Pet_Info page*/
-        public ActionResult Pet_Info()
-        {
-            return View();
-        }
-
         /*Links to Your_Pets page*/
         public ActionResult Your_Pets()
         {
             using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
             {
+                //finds user's pets based on userID
                 int userID = Int32.Parse(Session["UserID"].ToString());
                 var model = db.Pets.Where(u => u.customer_id == userID).ToList();
                 if (model != null)
@@ -72,25 +67,38 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        //Allows users change their address
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit_Address(Customer user)
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                int userID = Int32.Parse(Session["UserID"].ToString());
-                var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
-                currentUser.unit_no = user.unit_no;
-                currentUser.house_no = user.house_no;
-                currentUser.street = user.street;
-                currentUser.city = user.city;
-                currentUser.state = user.state;
-                currentUser.postcode = user.postcode;
+            //removes annotations from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("email");
+            ModelState.Remove("password");
 
-                db.Entry(currentUser).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Account_Details", "User");
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on UserID
+                    int userID = Int32.Parse(Session["UserID"].ToString());
+                    var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                    currentUser.unit_no = user.unit_no;
+                    currentUser.house_no = user.house_no;
+                    currentUser.street = user.street;
+                    currentUser.city = user.city;
+                    currentUser.state = user.state;
+                    currentUser.postcode = user.postcode;
+
+                    db.Entry(currentUser).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    user = null;
+                    return RedirectToAction("Account_Details", "User");
+                }
             }
+            return View();
         }
 
         /*Links to Edit_Email page*/
@@ -99,20 +107,37 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        //Allows users to edit their email
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit_Email(Customer user)
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                int userID = Int32.Parse(Session["UserID"].ToString());
-                var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
-                currentUser.email = user.email;
+            //removes annotations from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("password");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
 
-                db.Entry(currentUser).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Account_Details", "User");
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on ID
+                    int userID = Int32.Parse(Session["UserID"].ToString());
+                    var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                    currentUser.email = user.email;
+
+                    db.Entry(currentUser).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    user = null;
+                    return RedirectToAction("Account_Details", "User");
+                }
             }
+            return View();
         }
 
         /*Links to Edit_HomeP page*/
@@ -121,20 +146,38 @@ namespace PetBucket4.Controllers
                 return View();
         }
 
+        //allows users to edit their home phone number
        [HttpPost]
        [ValidateAntiForgeryToken]
         public ActionResult Edit_HomeP(Customer user)
         {
+            //removes annotations from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("email");
+            ModelState.Remove("password");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
+
+            if (ModelState.IsValid)
+            {
                 using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
+                    //finds user based on ID
                     int userID = Int32.Parse(Session["UserID"].ToString());
                     var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
                     currentUser.home_phone = user.home_phone;
 
                     db.Entry(currentUser).State = EntityState.Modified;
                     db.SaveChanges();
+                    ModelState.Clear();
+                    user = null;
                     return RedirectToAction("Account_Details", "User");
                 }
+            }
+            return View();
         }
 
         /*Links to Edit_HomeP page*/
@@ -143,20 +186,38 @@ namespace PetBucket4.Controllers
             return View();
         }
 
+        //Allows users to edit mobile phone number
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit_Mobile(Customer user)
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                int userID = Int32.Parse(Session["UserID"].ToString());
-                var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
-                currentUser.mobile_phone = user.mobile_phone;
+            //removes annotations from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("email");
+            ModelState.Remove("password");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
 
-                db.Entry(currentUser).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Account_Details", "User");
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on ID
+                    int userID = Int32.Parse(Session["UserID"].ToString());
+                    var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                    currentUser.mobile_phone = user.mobile_phone;
+
+                    db.Entry(currentUser).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    user = null;
+                    return RedirectToAction("Account_Details", "User");
+                }
             }
+            return View();
         }
 
         /*Links to Change_Password page*/
@@ -165,49 +226,79 @@ namespace PetBucket4.Controllers
             return View();
         }
 
-        /*Only redirects on submit atm, needs to be updated*/
+        /*Asks user to enter thier current password for verification*/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Change_Password(Customer user)
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+            //removes annotations from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("email");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
+
+            if (ModelState.IsValid)
             {
-                int userID = Int32.Parse(Session["UserID"].ToString());
-                var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
-                if(currentUser.password == user.password)
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
                 {
-                    return RedirectToAction("New_Password", "User");
+                    //finds user based on ID
+                    int userID = Int32.Parse(Session["UserID"].ToString());
+                    var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                    if (currentUser.password == user.password)
+                    {
+                        user = null;
+                        return RedirectToAction("New_Password", "User");
+                    }
+                    ModelState.AddModelError("", "Your Password is Incorrect!");
                 }
             }
-
-            ModelState.AddModelError("", "Your Password is Incorrect!");
             return View();
         }
 
-        /*Links to Change_Password page*/
+        /*Links to New_Password page*/
         public ActionResult New_Password()
         {
             return View();
         }
 
 
-        /*Only redirects on submit atm, needs to be updated*/
+        /*Allows users to change their password*/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult New_Password(Customer user)
         {
-            using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
-            {
-                int userID = Int32.Parse(Session["UserID"].ToString());
-                var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
-                currentUser.password = user.password;
+            //removes annotations from model
+            ModelState.Remove("first_name");
+            ModelState.Remove("email");
+            ModelState.Remove("house_no");
+            ModelState.Remove("street");
+            ModelState.Remove("city");
+            ModelState.Remove("state");
+            ModelState.Remove("postcode");
 
-                db.Entry(currentUser).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Change_Password_Success", "User");
+            if (ModelState.IsValid)
+            {
+                using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())
+                {
+                    //finds user based on ID
+                    int userID = Int32.Parse(Session["UserID"].ToString());
+                    var currentUser = db.Customers.Where(u => u.id == userID).FirstOrDefault();
+                    currentUser.password = user.password;
+
+                    db.Entry(currentUser).State = EntityState.Modified;
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    user = null;
+                    return RedirectToAction("Change_Password_Success", "User");
+                }
             }
+            return View();
         }
 
+        //links to change_password_success page
         public ActionResult Change_Password_Success()
         {
             return View();

@@ -1,0 +1,115 @@
+﻿@model PetBucket4.Models.Appointment
+
+@{
+    ViewBag.Title = "Booking_TYD";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout to be used-->
+}
+
+@*Scripts for validation*@
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+<div class="row">
+    <div class="col-lg-7 large-insert">
+        <h1>Booking</h1>
+        <p>When selecting a starting date for the booking please ensure that you select a day beyond today's date.</p>
+
+        @*Begin form*@
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h2>Appointment</h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" }) @*Checks form validation on submission*@
+
+                @*Start date for booking*@
+                <div class="form-group">
+                    @*Label for start date*@
+                    @Html.LabelFor(model => model.start_time, "Start Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets start_time in db*@
+                        @Html.EditorFor(model => model.start_time, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.start_time, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*End date for booking*@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.end_time, "End Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets end_time in db*@
+                        @Html.EditorFor(model => model.end_time, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.end_time, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Select preffered service*@
+                <div class="form-group">
+                    @Html.LabelFor(model => model.service, "Service", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10" id="service">
+                        <select name="service" id="serviceDropDown">
+                            <option value="To-Your-Door">To Your Door ($50.00 p/d)</option>
+                        </select>
+                    </div>
+                </div>
+
+                @*Special food/nutrition requirements*@
+                <div class="form-group" id="premium1">
+                    @Html.LabelFor(model => model.food, "Special Food/Nutrition Requirements (Optional)", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets food in db*@
+                        @Html.TextAreaFor(model => model.food, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.food, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Inspection Date*@
+                <div class="form-group" id="toyourdoor1">
+                    @Html.LabelFor(model => model.inspection_visit_date, "Inspection Visit Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets inspection_visit_date in db*@
+                        @Html.EditorFor(model => model.inspection_visit_date, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.inspection_visit_date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Entry instructions to customers property*@
+                <div class="form-group" id="toyourdoor2">
+                    @Html.LabelFor(model => model.entry_instructions, "Entry Instructions", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets entry_instructions in db*@
+                        @Html.TextAreaFor(model => model.entry_instructions, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.entry_instructions, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Care Instructions*@
+                <div class="form-group" id="premium2">
+                    @Html.LabelFor(model => model.care_instructions, "Specific Care Instructions (Optional)", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*Sets care_instructions in db*@
+                        @Html.TextAreaFor(model => model.care_instructions, new { htmlAttributes = new { @class = "form-control" } })
+                        @*Checks validation*@
+                        @Html.ValidationMessageFor(model => model.care_instructions, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Submit button*@
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create Booking" class="btn btn-block btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

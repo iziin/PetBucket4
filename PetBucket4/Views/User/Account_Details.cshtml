@@ -11,7 +11,8 @@
         <!--Main insert-->
         <div class="col-lg-7 large-insert">
             <h1>My Account Details</h1>
-            <!--Fields need to be filled with user's info-->
+
+            <!--Names-->
             <div class="edit">
                 <p>
                     First Name: <span class="capitalize">@Html.DisplayFor(m => m.first_name)</span>
@@ -21,19 +22,22 @@
                 </p>
             </div>
 
+            <!--DoB-->
             <div class="edit">
                 <p>Date of Birth: @Html.DisplayFor(m => m.date_of_birth)</p>
             </div>
 
+            <!--Phone Numbers-->
             <div class="edit">
                 <p>Home Phone: @Html.DisplayFor(m => m.home_phone)</p>
                 <p>Mobile Phone: @Html.DisplayFor(m => m.mobile_phone)</p>
                 <p>
-                    @Html.ActionLink("Edit Mobile Phone", "Edit_Mobile", "User", new { area = "" }, new { @class = " btn btn-primary" })
-                    @Html.ActionLink("Edit Home Phone", "Edit_HomeP", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                    @Html.ActionLink("Edit Mobile Phone", "Edit_Mobile", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--links to edit_mobile page-->
+                    @Html.ActionLink("Edit Home Phone", "Edit_HomeP", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--links to edit_homep page-->
                 </p>
             </div>
 
+            <!--Address-->
             <div class="edit">
                 <p>Unit No: @Html.DisplayFor(m => m.unit_no) </p>
                 <p>Street No: @Html.DisplayFor(m => m.house_no)</p>
@@ -42,20 +46,22 @@
                 <p>State: <span class="uppercase">@Html.DisplayFor(m => m.state)</span></p>
                 <p>Postcode: @Html.DisplayFor(m => m.postcode)</p>
                 <p>
-                    @Html.ActionLink("Edit Address", "Edit_Address", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                    @Html.ActionLink("Edit Address", "Edit_Address", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--Links to Edit_Address page-->
                 </p>
             </div>
 
+            <!--Email-->
             <div class="edit">
                 <p>Email: @Html.DisplayFor(m => m.email)</p>
                 <p>
-                    @Html.ActionLink("Edit Email", "Edit_Email", "User", new { area = "" }, new { @class = " btn btn-primary" })
+                    @Html.ActionLink("Edit Email", "Edit_Email", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--Links to Edit_Email page-->
                 </p>
             </div>
 
+            <!--Password-->
             <div class="edit">
                 <p>
-                    @Html.ActionLink("Change Current Password", "Change_Password", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--Lets users change their password. Unlinked-->
+                    @Html.ActionLink("Change Current Password", "Change_Password", "User", new { area = "" }, new { @class = " btn btn-primary" }) <!--Links to change_password page-->
                 </p>
             </div>
         </div>

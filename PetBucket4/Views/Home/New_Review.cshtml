@@ -2,9 +2,11 @@
 
 @{
     ViewBag.Title = "New_Review";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Defines layout-->
 }
 
+<!--Main div-->
+<!--New row-->
 <div class="row">
     <div class="col-md-10 large-insert">
 
@@ -19,6 +21,7 @@
             <div class="form-horizontal">
                 <hr />
 
+                <!--Review text-->
                 <div class="form-group">
                     @Html.LabelFor(model => model.review_text, "Review", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -27,6 +30,7 @@
                     </div>
                 </div>
 
+                <!--Rating-->
                 <div class="form-group">
                     @Html.LabelFor(model => model.rating, "Rating",  htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -35,18 +39,20 @@
                     </div>
                 </div>
 
+
+                <!--Submit-->
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <input type="submit" value="Submit Review" class="btn btn-primary" />
                     </div>
                 </div>
             </div>
         }
 
-        <!--Links to home page. Change to link to reviews if reviews page is finished-->
+        <!--Links to Reviews page-->
 
         <div>
-            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Reviews", "Index", "Home", new { area = "" }, new { @class = "btn btn-primary" })
         </div>
 
     </div>

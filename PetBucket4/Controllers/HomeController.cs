@@ -13,6 +13,7 @@ namespace PetBucket4.Controllers
         //Database
         PetBucketDatabaseEntities _db;
 
+        //creates new db context for home controller
         public HomeController()
         {
             _db = new PetBucketDatabaseEntities();
@@ -30,8 +31,6 @@ namespace PetBucket4.Controllers
 
             return View();
         }
-
-        /*Links to Reviews page*/
 
         /*Links to Community page*/
         public ActionResult Community()
@@ -69,7 +68,7 @@ namespace PetBucket4.Controllers
             return Redirect("https://twitter.com/petbucket4");
         }
 
-
+        //links to new_review page if user is logged in
         public ActionResult New_Review()
         {
             if (Session["UserID"] != null)
@@ -82,8 +81,9 @@ namespace PetBucket4.Controllers
             }
         }
 
-
+        //submits review to db
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult New_Review([Bind(Include = "review_text,rating")] Review _review)
         {
 
@@ -101,6 +101,7 @@ namespace PetBucket4.Controllers
             return View(_review);
         }
 
+        //links to reviews page and displays reviews
         public ActionResult Reviews()
         {
             using (PetBucketDatabaseEntities db = new PetBucketDatabaseEntities())

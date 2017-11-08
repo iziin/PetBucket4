@@ -13,37 +13,55 @@
     <div class="col-lg-12 large-insert">
         <h1 class="title-center">Your Pets</h1>
         <hr />
-        <p class="text-center">View your currently registered pets and register a new pet here.</p>
+        <p class="text-center">View your currently registered pets.</p>
     </div>
     <br />
 </div>
 
     <div class="row">
-        <div class="col-md-7 insert middle">
+        <div class="col-md-7 insert middle-center">
             <!--Displays total pets in PetBucket care based on current user-->
             @foreach (var item in Model)
             {
                 <div class="row">
-                    
-                        <br />
-                        <p>
-                            @Html.LabelFor(model => model.FirstOrDefault().name, "Pet Name", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <span class="capitalize">@Html.DisplayFor(modelItem => item.name)</span>
-                        </p>
-                        <br />
-                        <p>
-                            @Html.LabelFor(model => model.FirstOrDefault().animal, "Pet Type", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <span class="capitalize">@Html.DisplayFor(modelItem => item.animal)</span>
-                        </p>
-                        <br />
-                        <p>
-                            @Html.LabelFor(model => model.FirstOrDefault().size, "Size", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <span class="capitalize">@Html.DisplayFor(modelItem => item.size)</span>
-                        </p>
-                        <br />
-                    
+                    <div class="col-md-12">
+                        <div class="edit">
+                            <br />
+                            <p>
+                                @Html.LabelFor(model => model.FirstOrDefault().name, "Pet Name", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <span class="capitalize">@Html.DisplayFor(modelItem => item.name)</span>
+                            </p>
+
+                            <br />
+                            <p>
+                                @Html.LabelFor(model => model.FirstOrDefault().animal, "Pet Type", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <span class="capitalize">@Html.DisplayFor(modelItem => item.animal)</span>
+                            </p>
+
+                            <br />
+                            <p>
+                                @Html.LabelFor(model => model.FirstOrDefault().size, "Size", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <span class="capitalize">@Html.DisplayFor(modelItem => item.size)</span>
+                            </p>
+
+                            <br />
+                            <p>
+                                @Html.LabelFor(model => model.FirstOrDefault().created, "Date/Time Registered", htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.DisplayFor(modelItem => item.created)
+                            </p>
+                            <hr />
+                        </div>
+                    </div>
                 </div>
             }
+
+            <div class="row">
+                <div class="col-md-7">
+                    <p>
+                        @Html.ActionLink("Register a Pet!", "Register_Pet", "Booking", new { area = "" }, new { @class = " btn btn-primary" })
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
